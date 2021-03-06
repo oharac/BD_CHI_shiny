@@ -1,0 +1,63 @@
+ .fa-globe {
+	 font-size: 20px;
+	 padding-right: 30px;
+}
+ .fa-chart-line {
+	 font-size: 20px;
+	 padding-right: 30px;
+}
+ .fa-fish {
+	 font-size: 20px;
+	 padding-right: 30px;
+}
+ .tab-content {
+	 padding-left: 20px;
+	 padding-right: 30px;
+}
+ .fa-question-circle {
+	 font-size: 20px;
+	 padding-right: 30px;
+}
+/* active selected tab in the sidebarmenu */
+ .main-sidebar .sidebar .sidebar-menu .active a {
+	 background-color: #000;
+}
+/* body */
+ .content-wrapper, .right-side {
+	 background-color: #000;
+	 color: #FFFFFF;
+}
+ .content {
+	 background-color: #000;
+}
+
+/* selected btn css */
+.btn-group-toggle .btn:not(:disabled):not(.disabled).active, .btn-group-toggle .btn:not(:disabled):not(.disabled):active, .show>.btn.dropdown-toggle {
+      color: #fff;
+      background-color: #000;
+      border-color: #fff;
+      font-weight: bold;
+}
+
+/* non selected btn css */
+.btn-group-toggle .btn {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+  font-weight: bold;
+}
+
+.btn-group-toggle button:hover {
+  background-color: #3C8DBC;
+}
+
+.radioGroupButtons {
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+.shiny-image-output {
+  padding-bottom: 30px;
+}
+
+ 
