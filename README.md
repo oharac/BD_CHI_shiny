@@ -1,5 +1,5 @@
 # CHI_shiny_app
-This project is a shiny app for some visualizations of the Cumulative Health Impact on world oceans data.
+This project is a shiny app for some visualizations of the Cumulative Human Impact on world oceans data.
 
 ## Author
 Ian Brunjes
