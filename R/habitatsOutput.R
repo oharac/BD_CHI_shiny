@@ -15,6 +15,17 @@ stressor_fields <- c("art_fish","dem_dest","dem_nondest_hb","dem_nondest_lb","di
 stressor_names <- c("artisanal fishing","comm fish: dem dest","comm fish: dem nondest hb","comm fish: dem nondest lb","direct human","light pollution",        
   "nutrient pollution","oa","organic pollution","comm fish: pel hb","comm fish: pel lb","shipping","slr","sst" )
 
+individual_impacts_df <- data.frame(
+  "Category" = c("Fishing","Fishing","Fishing","Fishing","Fishing","Fishing",
+                 "Climate change","Climate change","Climate change","Ocean",
+                 "Land-based","Land-based","Land-based","Land-based"
+                 ),
+  "Impact" = c("commercial demersal destructive", "commercial demersal nondestructive high bycatch", "commercial demersal nondestructive low bycatch", "pelagic high bycatch", "pelagic low bycatch", "artisanal",
+               "sea surface temperature", "ocean acidification", "sea level rise","shipping",
+               "nutrient pollution", "organic chemical pollution", "direct human", "light"
+               )
+  )
+
 ## ggplot theme
 plot_theme <- theme_classic() +
 theme(axis.text.y = element_blank()) +

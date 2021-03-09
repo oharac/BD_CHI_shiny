@@ -16,6 +16,12 @@ server <- function(input, output) {
   # Set initial global values
   current_habitat <<- "rocky_reef"
   current_stressor <<- "shipping"
+  globePlot <<- NULL
+  
+  # Habitat animated gif output
+  output$habitatsPlot <- renderImage({
+    buildHabitatsOutput(habitat_data, input$selected_habitat, current_habitat)
+  }, deleteFile = TRUE)
   
   # Annual impact globe output
   output$globePlot <- renderGlobe({
@@ -31,11 +37,6 @@ server <- function(input, output) {
   output$trendPlot <- renderPlot({
     buildTrendBoxOutput(global_trends, event_data("plotly_selected"))
     })
-  
-  # Habitat animated gif output
-  output$habitatsPlot <- renderImage({
-    buildHabitatsOutput(habitat_data, input$selected_habitat, current_habitat)
-    }, deleteFile = TRUE)
   
   # Stressor animated gif output
   output$stressorsPlot <- renderImage({
@@ -61,4 +62,8 @@ server <- function(input, output) {
   output$stressorCaption <- renderText({
     buildStressorCaption(current_stressor)
     })
+  
+  output$stressor_info <- renderTable({
+    individual_impacts_df
+  })
 }

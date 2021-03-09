@@ -1,4 +1,4 @@
- .fa-globe {
+ .fa-globe-americas {
 	 font-size: 20px;
 	 padding-right: 30px;
 }
@@ -31,6 +31,11 @@
 	 background-color: #000;
 }
 
+/* table */
+ #stressor_info {
+   padding-left:60px !important;
+ }
+
 /* selected btn css */
 .btn-group-toggle .btn:not(:disabled):not(.disabled).active, .btn-group-toggle .btn:not(:disabled):not(.disabled):active, .show>.btn.dropdown-toggle {
       color: #fff;
@@ -60,4 +65,14 @@
   padding-bottom: 30px;
 }
 
- 
+a {
+  color: #fff;
+}
+
+#trend-help {
+  padding-right: 10px !important;
+}
+
+.tippy-content {
+  font-size: 14px;
+}

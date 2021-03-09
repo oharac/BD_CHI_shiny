@@ -15,7 +15,7 @@ buildGlobeOutput <- function(impact_data, year_input){
   col = c("#0055ff","#00aaff","#00ffaa","#aaff00")[impact_data$q]
   
   # Globejs to build 3d globe
-  globejs(lat=impact_data$lat,
+  gloePlot <<-globejs(lat=impact_data$lat,
    long=impact_data$long,
    val=impact_data[[selected_year]] * 20,
    pointsize=1,
