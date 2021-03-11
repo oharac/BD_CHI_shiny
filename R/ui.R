@@ -20,7 +20,11 @@ dashboardHeader( title = HTML("Oceanic CHI"),
  tags$li(a(href = 'https://github.com/BrennieDev/OHI_shiny_app',
    icon("github"),
    title = "GitHub"),
- class = "dropdown")
+ class = "dropdown"),
+ tags$li(a(href = 'https://www.instagram.com/ciscodoggodisco/',
+           icon("dog"),
+           title = "Here is my dog."),
+         class = "dropdown")
  )
 
 

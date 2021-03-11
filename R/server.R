@@ -14,7 +14,7 @@ server <- function(input, output) {
   habitat_data <- read_csv(here("data", "habitat_impacts.csv"))
   
   # Set initial global values
-  current_habitat <<- "rocky_reef"
+  current_habitat <<- "coral_reef"
   current_stressor <<- "shipping"
   globePlot <<- NULL
   
@@ -55,12 +55,12 @@ server <- function(input, output) {
   
   # Caption for habitat output
   output$habitatCaption <- renderText({
-    buildHabitatCaption(current_habitat)
+    buildHabitatCaption(input$selected_habitat)
     })
   
   # Caption for stressor output
   output$stressorCaption <- renderText({
-    buildStressorCaption(current_stressor)
+    buildStressorCaption(input$selected_stressor)
     })
   
   output$stressor_info <- renderTable({
