@@ -9,30 +9,29 @@ library(shinyWidgets)
 library(tippy)
 
 ## 1. header -------------------------------
-header <- 
-dashboardHeader( title = HTML("Oceanic CHI"), 
- disable = FALSE, 
- titleWidth  = 350,
- tags$li(a(href = 'https://brenniedev.github.io/ianbrunjes/',
-   icon("user-circle"),
-   title = "Ian Brunjes"),
- class = "dropdown"),
- tags$li(a(href = 'https://github.com/BrennieDev/OHI_shiny_app',
-   icon("github"),
-   title = "GitHub"),
- class = "dropdown"),
- tags$li(a(href = 'https://www.instagram.com/ciscodoggodisco/',
-           icon("dog"),
-           title = "Here is my dog."),
-         class = "dropdown")
+header <- dashboardHeader(
+  title = HTML("Oceanic CHI"), 
+  disable = FALSE, 
+  titleWidth  = 350,
+  tags$li(a(href = 'https://brenniedev.github.io/ianbrunjes/',
+            icon("user-circle"),
+            title = "Ian Brunjes"),
+            class = "dropdown"),
+  tags$li(a(href = 'https://github.com/BrennieDev/OHI_shiny_app',
+            icon("github"),
+            title = "GitHub"),
+            class = "dropdown"),
+  tags$li(a(href = 'https://www.instagram.com/ciscodoggodisco/',
+            icon("dog"),
+            title = "Here is my dog."),
+            class = "dropdown")
  )
 
 
 
 
 ## 2. sidebar ------------------------------
-sidebar <- 
-dashboardSidebar( 
+sidebar <- dashboardSidebar( 
   width = 350,
   sidebarMenu(
     id = 'sidebar',
@@ -42,7 +41,6 @@ dashboardSidebar(
     menuItem( "Impact Breakdowns", tabName = 'habitat_info', icon = icon('fish')),
     menuItem("Global Annual Impact", tabName = 'annual_impact', icon = icon('globe-americas')),
     menuItem( "Global Trends", tabName = 'global_trend', icon = icon('chart-line'))
-    
     )
   )
 ## 3. body --------------------------------
@@ -77,23 +75,23 @@ body <- dashboardBody(
      ),
     
     ## 3.1.2 Habitat Breakdowns -------
-    tabItem( tabName = 'habitat_info',
-             div(id = 'temp_message_about',
-                 h1('Breakdown of Impacts by Specific Habitats and Stressors',
-                    style = "color:white" , align = "center" ) ,
-                 tags$hr()
-             ),
-             column(6,
-                    selectInput("selected_habitat", label = "By Habitat:", choices = habitat_names, selected = "coral reef"),
-                    imageOutput("habitatsPlot", height = "auto"),
-                    textOutput("habitatCaption")
-             ),
-             column(6,
-                    selectInput("selected_stressor", label = "By Stressor:", choices = stressor_names, selected = "shipping"),
-                    imageOutput("stressorsPlot", height = "auto"),
-                    textOutput("stressorCaption")
-             )
-    ),
+    # tabItem( tabName = 'habitat_info',
+    #          div(id = 'temp_message_about',
+    #              h1('Breakdown of Impacts by Specific Habitats and Stressors',
+    #                 style = "color:white" , align = "center" ) ,
+    #              tags$hr()
+    #          ),
+    #          column(6,
+    #                 selectInput("selected_habitat", label = "By Habitat:", choices = habitat_names, selected = "coral reef"),
+    #                 imageOutput("habitatsPlot", height = "auto"),
+    #                 textOutput("habitatCaption")
+    #          ),
+    #          column(6,
+    #                 selectInput("selected_stressor", label = "By Stressor:", choices = stressor_names, selected = "shipping"),
+    #                 imageOutput("stressorsPlot", height = "auto"),
+    #                 textOutput("stressorCaption")
+    #          )
+    # ),
     
     ## 3.1.3 Global Scores ------------
     tabItem( tabName = 'annual_impact',
@@ -112,36 +110,36 @@ body <- dashboardBody(
      
      globeOutput("globePlot"),
      textOutput("globeCaption")
-     ),
+     )# ,
     
     ## 3.1.4 Trends ------------------
-    tabItem( tabName = 'global_trend',
-     div(id = 'temp_message_about',
-       h1('Average Annual Change (Trend) of Cumulative Impact from 2003-2013',
-        style = "color:white" , align = "center" ) ,
-       tags$hr()
-       ),
-     
-     fluidRow(
-       column(2, offset = 2,
-              fluidRow(
-                materialSwitch(
-                  inputId = "land_toggle",
-                  label = HTML("<i id = 'trend-help' class='fa fa-question-circle' role='presentation' aria-label='question-circle icon'></i><span>Toggle Land Cover</span>"), 
-                  value = TRUE,
-                  status = "primary"
-                ),
-                tippy_this("trend-help", tooltip = "Use the switch to toggle land polygons, and use the interactive plot's select tool to refine a subset of data for the box plot below.", placement = "bottom")
-              )
-        )),
-     
-     fluidRow(
-       column(8, offset = 2, plotlyOutput("trendPlotly"))
-       ),
-     
-     plotOutput("trendPlot"),
-     textOutput("trendCaption")
-     )
+    # tabItem( tabName = 'global_trend',
+    #  div(id = 'temp_message_about',
+    #    h1('Average Annual Change (Trend) of Cumulative Impact from 2003-2013',
+    #     style = "color:white" , align = "center" ) ,
+    #    tags$hr()
+    #    ),
+    #  
+    #  fluidRow(
+    #    column(2, offset = 2,
+    #           fluidRow(
+    #             materialSwitch(
+    #               inputId = "land_toggle",
+    #               label = HTML("<i id = 'trend-help' class='fa fa-question-circle' role='presentation' aria-label='question-circle icon'></i><span>Toggle Land Cover</span>"), 
+    #               value = TRUE,
+    #               status = "primary"
+    #             ),
+    #             tippy_this("trend-help", tooltip = "Use the switch to toggle land polygons, and use the interactive plot's select tool to refine a subset of data for the box plot below.", placement = "bottom")
+    #           )
+    #     )),
+    #  
+    #  fluidRow(
+    #    column(8, offset = 2, plotlyOutput("trendPlotly"))
+    #    ),
+    #  
+    #  plotOutput("trendPlot"),
+    #  textOutput("trendCaption")
+    #  )
     )
   )
 

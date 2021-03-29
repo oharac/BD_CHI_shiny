@@ -1,30 +1,33 @@
 ## Load packages
 library(threejs)
-library(tidyverse)
 
+colors_gradient <- hcl.colors(n = 100, palette = 'viridis')
 ## Build 3d globe output
-buildGlobeOutput <- function(impact_data, year_input){
-  selected_year <- paste("cumulative_impact_", as.character(year_input), sep = "") 
+buildGlobeOutput <- function(impact_data, year_input) {
+  ### color based on % impact, length based on species richness
   
-  # Quartile of each value for color assignment
-  impact_data$q <- as.numeric(
-    cut(impact_data[[selected_year]],
-      breaks=quantile(impact_data[[selected_year]], probs=c(0,0.25,0.5,0.75,1)),
-      include.lowest=TRUE))
-  # Assign colors for each level
-  col = c("#0055ff","#00aaff","#00ffaa","#aaff00")[impact_data$q]
+  ### assign color based on percent of impact
+  impact_data_year <- impact_data[[year_input]] %>%
+    mutate(col = colors_gradient[pct_imp + 1])
+      ### because R indexes from 1, pct_imp of 0 needs to be bumped up one etc.
+
+  ### define a function for transforming species richness
+  richness_xfm <- function(x) {
+    x^.7
+  }
   
-  # Globejs to build 3d globe
-  gloePlot <<-globejs(lat=impact_data$lat,
-   long=impact_data$long,
-   val=impact_data[[selected_year]] * 20,
-   pointsize=1,
-   color = col,
-   atmosphere=TRUE,
-   title = "2002")
+  ### Globejs to build 3d globe
+  globePlot <<- globejs(
+    lat  = impact_data_year$y,
+    long = impact_data_year$x,
+    val  = richness_xfm(impact_data_year$nspp),
+    pointsize = 1,
+    color = impact_data_year$col,
+    atmosphere = TRUE,
+    title = year_input)
 }
 
-## Build caption for 3d globe canvas
+### Build caption for 3d globe canvas
 buildGlobeCaption <- function(year) {
-  paste("Cumulative Human Impact assessed for the year ", year, ".", sep = "")
+  sprintf("Cumulative Human Impact assessed for %s.", year)
 }

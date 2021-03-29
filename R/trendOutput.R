@@ -6,13 +6,13 @@ library(scales)
 
 ## ggplot theme
 plot_theme <- theme_classic() +
-theme(axis.text.y = element_blank()) +
-theme(axis.ticks.y = element_blank()) +
-theme(axis.line.y = element_blank()) +
-theme(legend.position = "none") +
-theme(plot.background = element_rect(fill = "black")) +
-theme(panel.background = element_rect(fill = "black")) +
-theme(axis.text.x = element_text(color = "white"))
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.line.y = element_blank(),
+        legend.position = "none",
+        plot.background = element_rect(fill = "black"),
+        panel.background = element_rect(fill = "black"),
+        axis.text.x = element_text(color = "white"))
 
 ## Build spatial plotly for trend data
 buildTrendMapOutput <- function(global_trends, land_toggle) {
@@ -20,12 +20,10 @@ buildTrendMapOutput <- function(global_trends, land_toggle) {
   plot <- ggplot(data = global_trends, aes(x=long, y = lat, color = value)) +
   geom_point() +
   theme_void() +
-  theme(
-    panel.background = element_rect(fill = "black"),
-    plot.background = element_rect(fill = "black"),
-    legend.text = element_text(color = "white"),
-    legend.title = element_text(color = "white")
-    ) +
+  theme(panel.background = element_rect(fill = "black"),
+        plot.background = element_rect(fill = "black"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white")) +
   labs(color = "Trend") +
   scale_color_viridis_c()
   

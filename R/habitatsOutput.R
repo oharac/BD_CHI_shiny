@@ -1,5 +1,4 @@
 ## Load packages
-library(tidyverse)
 library(gganimate)
 
 ## Habitat/stressor name mappings
@@ -28,16 +27,17 @@ individual_impacts_df <- data.frame(
 
 ## ggplot theme
 plot_theme <- theme_classic() +
-theme(axis.text.y = element_blank()) +
-theme(axis.ticks.y = element_blank()) +
-theme(axis.line.y = element_blank()) +
-theme(legend.position = "none") +
-theme(plot.background = element_rect(fill = "black")) +
-theme(panel.background = element_rect(fill = "black")) +
-theme(axis.text.x = element_text(color = "white"))
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.line.y = element_blank(),
+        legend.position = "none",
+        plot.background = element_rect(fill = "black"),
+        panel.background = element_rect(fill = "black"),
+        axis.text.x = element_text(color = "white"))
 
 ## Build habitat animated bar chart
-buildHabitatsOutput <- function(habitat_data, habitat_input, current_habitat){
+buildHabitatsOutput <- function(habitat_data, habitat_input, current_habitat) {
+  
   current_habitat_field <- habitat_fields[match(current_habitat, habitat_names)]
   next_habitat_field <- habitat_fields[match(habitat_input, habitat_names)] 
   
