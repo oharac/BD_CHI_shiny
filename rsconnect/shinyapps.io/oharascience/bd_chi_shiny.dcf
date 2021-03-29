@@ -1,0 +1,10 @@
+name: bd_chi_shiny
+title:
+username:
+account: oharascience
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3881027
+bundleId: 4408928
+url: https://oharascience.shinyapps.io/bd_chi_shiny/
+when: 1617047122.96593

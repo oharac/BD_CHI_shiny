@@ -1,5 +1,3 @@
-source(here('R', 'setup.R'))
-source(here('R', 'load_data.R'))
 
 ### Server code
 server <- function(input, output) {

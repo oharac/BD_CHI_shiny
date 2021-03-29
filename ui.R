@@ -1,14 +1,4 @@
-## Load packages
-library(shinydashboard)
-library(shiny)
-library(shinyBS)
-library(shinyjs)
-library(shinycssloaders)
-library(shinyWidgets)
-library(tippy)
-library(here)
-library(tidyverse)
-library(threejs)
+
 
 ## 1. header -------------------------------
 header <- dashboardHeader(
