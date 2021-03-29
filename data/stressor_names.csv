@@ -1,0 +1,19 @@
+str_field,str_name,category
+cum_all,Cumulative (all stressors),all
+cum_fishing,Cumulative fishing,fishing
+art_fish,Artisanal fishing,fishing
+dem_dest,Demersal destructive fishing,fishing
+dem_nondest_hb,Demersal non-destr. high bycatch fishing,fishing
+dem_nondest_lb,Demersal non-destr. low bycatch fishing,fishing
+pel_hb,Pelagic high bycatch fishing,fishing
+pel_lb,Pelagic low bycatch fishing,fishing
+cum_climate,Cumulative climate,climate
+oa,Ocean acidification,climate
+slr,Sea level rise,climate
+sst,Sea surface temperature extremes,climate
+cum_land-based,Cumulative land-based,land-based
+direct_human,Direct human disturbance,land-based
+nutrient,Nutrient pollution,land-based
+organic,Organic chemical pollution,land-based
+light,Light pollution,land-based
+shipping,Shipping (cumulative ocean),ocean

@@ -1,0 +1,1272 @@
+iucn_sid,sciname,comname,cat,cat_score
+907,Alosa immaculata,NA,VU,0.4
+1793,Aonyx capensis,African Clawless Otter,NT,0.2
+2057,Arctocephalus galapagoensis,Galápagos Fur Seal,EN,0.6
+2468,Balaena mysticetus Bering-Chukchi-Beaufort Sea subpopulation,Bowhead Whale Bering-Chukchi-Beaufort Seas subpopulation,VU,0.4
+2469,Balaena mysticetus Okhotsk Sea subpopulation,Okhotsk Sea Bowhead Whale,EN,0.6
+2472,Balaena mysticetus East Greenland-Svalbard-Barents Sea subpopulation,Bowhead Whale,EN,0.6
+2475,Balaenoptera borealis,Sei Whale,EN,0.6
+2477,Balaenoptera musculus,Blue Whale,EN,0.6
+2478,Balaenoptera physalus,Fin Whale,VU,0.4
+2480,Balaenoptera bonaerensis,Antarctic Minke Whale,NT,0.2
+3590,Callorhinus ursinus,Northern Fur Seal,VU,0.4
+3764,Canthigaster rapaensis,NA,EN,0.6
+3851,Carcharhinus limbatus,Blacktip Shark,NT,0.2
+3852,Carcharhinus obscurus,Dusky Shark,EN,0.6
+3853,Carcharhinus plumbeus,Sandbar Shark,VU,0.4
+3854,Carcharias taurus,Sand Tiger Shark,VU,0.4
+3855,Carcharodon carcharias,White Shark,VU,0.4
+3897,Caretta caretta,Loggerhead Turtle,VU,0.4
+4160,Cephalorhynchus eutropia,Chilean Dolphin,NT,0.2
+4161,Cephalorhynchus heavisidii,Heaviside's Dolphin,NT,0.2
+4162,Cephalorhynchus hectori,Hector's Dolphin,EN,0.6
+4292,Cetorhinus maximus,Basking Shark,EN,0.6
+4615,Chelonia mydas,Green Turtle,EN,0.6
+4982,Clinus spatulatus,Bot River Klipfish,EN,0.6
+5270,Conus cepasi,NA,VU,0.4
+5272,Conus nobrei,NA,NT,0.2
+5273,Conus zebroides,NA,NT,0.2
+5659,Crocodylus acutus,American Crocodile,VU,0.4
+6204,Cystophora cristata,Hooded Seal,VU,0.4
+6229,Dalatias licha,Kitefin Shark,VU,0.4
+6494,Dermochelys coriacea,Leatherback,VU,0.4
+6909,Dugong dugon,Dugong,VU,0.4
+7750,Enhydra lutris,Sea Otter,EN,0.6
+7859,Epinephelus marginatus,Dusky Grouper,VU,0.4
+7860,Hyporthodus nigritus,Warsaw Grouper,NT,0.2
+7861,Hyporthodus niveatus,Snowy Grouper,VU,0.4
+7862,Epinephelus striatus,Nassau Grouper,CR,0.8
+8005,Eretmochelys imbricata,Hawksbill Turtle,CR,0.8
+8099,Eschrichtius robustus western subpopulation,Western Gray Whale,EN,0.6
+8239,Eumetopias jubatus,Steller Sea Lion,NT,0.2
+9281,Glyphis gangeticus,Ganges Shark,CR,0.8
+10030,Hexanchus griseus,Bluntnose Sixgill Shark,NT,0.2
+10056,Hippocampus capensis,Knysna Seahorse,EN,0.6
+10066,Hippocampus erectus,Lined Seahorse,VU,0.4
+10070,Hippocampus histrix,Thorny Seahorse,VU,0.4
+10072,Hippocampus ingens,Giant Seahorse,VU,0.4
+10082,Hippocampus reidi,Long-snout Seahorse,NT,0.2
+10087,Hippocampus trimaculatus,Three-spot Seahorse,VU,0.4
+10088,Hippocampus whitei,White's Seahorse,EN,0.6
+11130,Lachnolaimus maximus,Hogfish,VU,0.4
+11200,Lamna nasus,Porbeagle,VU,0.4
+11533,Lepidochelys kempii,Kemp's Ridley,CR,0.8
+11534,Lepidochelys olivacea,Olive Ridley,VU,0.4
+12137,Lithognathus lithognathus,White Steenbras,EN,0.6
+12303,Lontra felina,Marine Otter,EN,0.6
+12305,Lontra provocax,Southern River Otter,EN,0.6
+12419,Lutra lutra,Eurasian Otter,NT,0.2
+12421,Lutra sumatrana,Hairy-nosed Otter,EN,0.6
+12427,Lutrogale perspicillata,Smooth-coated Otter,VU,0.4
+13653,Monachus monachus,Mediterranean Monk Seal,EN,0.6
+13654,Neomonachus schauinslandi,Hawaiian Monk Seal,EN,0.6
+14049,Mycteroperca jordani,Gulf Grouper,EN,0.6
+14050,Mycteroperca microlepis,Gag,VU,0.4
+14051,Mycteroperca olfax,Colorado Grouper,VU,0.4
+14549,Neophoca cinerea,Australian Sea Lion,EN,0.6
+15106,Odobenus rosmarus,Walrus,VU,0.4
+15419,Orcaella brevirostris,Irrawaddy Dolphin,EN,0.6
+17026,Phocarctos hookeri,New Zealand Sea Lion,EN,0.6
+17028,Phocoena sinus,Vaquita,CR,0.8
+17029,Phocoena spinipinnis,Burmeister's Porpoise,NT,0.2
+17031,Phocoena phocoena Baltic Sea subpopulation,Harbour Porpoise,CR,0.8
+17978,Pontoporia blainvillei,Franciscana,VU,0.4
+18596,Pseudorca crassidens,False Killer Whale,NT,0.2
+19488,Rhincodon typus,Whale Shark,EN,0.6
+19950,Scarus guacamaia,Rainbow Parrotfish,NT,0.2
+20047,Scomberomorus concolor,Monterrey Spanish Mackerel,VU,0.4
+20425,Sousa teuszii,Atlantic Humpback Dolphin,CR,0.8
+21856,Thunnus alalunga,Albacore Tuna,NT,0.2
+21857,Thunnus albacares,Yellowfin Tuna,NT,0.2
+21858,Thunnus maccoyii,Southern Bluefin Tuna,CR,0.8
+21859,Thunnus obesus,Bigeye Tuna,VU,0.4
+21860,Thunnus thynnus,Atlantic Bluefin Tuna,EN,0.6
+22103,Trichechus manatus,American Manatee,VU,0.4
+22104,Trichechus senegalensis,African Manatee,VU,0.4
+22823,Ursus maritimus,Polar Bear,VU,0.4
+39328,Squatina californica,Pacific Angel Shark,NT,0.2
+39329,Squatina argentina,Argentine Angelshark,CR,0.8
+39331,Squatina occulta,Hidden Angelshark,CR,0.8
+39332,Squatina squatina,Angelshark,CR,0.8
+39335,Brachaelurus colcloughi,Colclough's Shark,VU,0.4
+39339,Alopias vulpinus,Common Thresher,VU,0.4
+39341,Isurus oxyrinchus,Shortfin Mako,EN,0.6
+39345,Haploblepharus edwardsii,Happy Eddie,NT,0.2
+39346,Haploblepharus fuscus,Brown Shyshark,VU,0.4
+39348,Poroderma africanum,Pyjama Shark,NT,0.2
+39349,Scyliorhinus capensis,Yellowspotted Catshark,NT,0.2
+39350,Leptocharias smithii,Barbeled Houndshark,NT,0.2
+39352,Galeorhinus galeus,Tope,VU,0.4
+39353,Hemitriakis leucoperiptera,Whitefin Topeshark,EN,0.6
+39358,Mustelus mustelus,Common Smoothhound,VU,0.4
+39359,Mustelus canis,Dusky Smoothhound,NT,0.2
+39360,Scylliogaleus quecketti,Flapnose Houndshark,VU,0.4
+39361,Triakis acutipinna,Sharpfin Houndshark,EN,0.6
+39362,Triakis megalopterus,Spotted Gully Shark,NT,0.2
+39365,Carcharhinus amblyrhynchos,Grey Reef Shark,NT,0.2
+39367,Carcharhinus borneensis,Borneo Shark,EN,0.6
+39368,Carcharhinus brevipinna,Spinner Shark,NT,0.2
+39369,Carcharhinus hemiodon,Pondicherry Shark,CR,0.8
+39370,Carcharhinus falciformis,Silky Shark,VU,0.4
+39371,Carcharhinus leiodon,Smoothtooth Blacktip Shark,EN,0.6
+39372,Carcharhinus leucas,Bull Shark,NT,0.2
+39374,Carcharhinus longimanus,Oceanic Whitetip Shark,CR,0.8
+39375,Carcharhinus melanopterus,Blacktip Reef Shark,NT,0.2
+39378,Galeocerdo cuvier,Tiger Shark,NT,0.2
+39379,Glyphis glyphis,Speartooth Shark,EN,0.6
+39380,Negaprion brevirostris,Lemon Shark,NT,0.2
+39381,Prionace glauca,Blue Shark,NT,0.2
+39383,Scoliodon laticaudus,Spadenose Shark,NT,0.2
+39384,Triaenodon obesus,Whitetip Reef Shark,NT,0.2
+39385,Sphyrna lewini,Scalloped Hammerhead,CR,0.8
+39386,Sphyrna mokarran,Great Hammerhead,CR,0.8
+39388,Sphyrna zygaena,Smooth Hammerhead,VU,0.4
+39389,Anoxypristis cuspidata,Narrow Sawfish,EN,0.6
+39390,Pristis clavata,Dwarf Sawfish,EN,0.6
+39393,Pristis zijsron,Green Sawfish,CR,0.8
+39394,Rhynchobatus djiddensis,Whitespotted Wedgefish,CR,0.8
+39397,Dipturus batis,Common Skate,CR,0.8
+39399,Raja clavata,Thornback Skate,NT,0.2
+39400,Raja microocellata,Smalleyed Skate,NT,0.2
+39412,Taeniura lymma,Bluespotted Fantail Ray,NT,0.2
+39413,Urogymnus asperrimus,Porcupine Ray,VU,0.4
+39415,Aetobatus narinari,Spotted Eagle Ray,NT,0.2
+39771,Dipturus laevis,Barndoor Skate,EN,0.6
+40797,Carcharhinus amblyrhynchoides,Graceful Shark,NT,0.2
+40802,Hippocampus barbouri,Barbour's Seahorse,VU,0.4
+41007,Hippocampus algiricus,West African Seahorse,VU,0.4
+41008,Hippocampus comes,Tiger Tail Seahorse,VU,0.4
+41010,Hippocampus kelloggi,Great Seahorse,VU,0.4
+41030,Syngnathus watermeyeri,Estuarine Pipefish,CR,0.8
+41064,Pseudobatos horkelii,Brazilian Guitarfish,CR,0.8
+41668,Zalophus wollebaeki,Galápagos Sea Lion,EN,0.6
+41711,Eubalaena japonica,North Pacific Right Whale,EN,0.6
+41712,Eubalaena glacialis,North Atlantic Right Whale,EN,0.6
+41714,Tursiops aduncus,Indo-Pacific Bottlenose Dolphin,NT,0.2
+41730,Atelomycterus marmoratus,Coral Catshark,NT,0.2
+41737,Carcharhinus macloti,Hardnose Shark,NT,0.2
+41738,Carcharhinus sealei,Blackspot Shark,NT,0.2
+41740,Centrophorus harrissoni,Harrisson's Dogfish,EN,0.6
+41741,Carcharhinus brachyurus,Copper Shark,NT,0.2
+41747,Centroscymnus coelolepis,Portuguese Dogfish,NT,0.2
+41749,Centroscymnus owstonii,Roughskin Dogfish,VU,0.4
+41754,Neophocaena asiaeorientalis,Narrow-ridged Finless Porpoise,EN,0.6
+41755,Physeter macrocephalus,Sperm Whale,VU,0.4
+41761,Pontoporia blainvillei Rio Grande do Sul/Uruguay subpopulation,Franciscana,VU,0.4
+41762,Delphinus delphis Mediterranean subpopulation,Short-beaked Common Dolphin,EN,0.6
+41791,Chiloscyllium indicum,Ridgebacked Bamboo Shark,NT,0.2
+41792,Chiloscyllium griseum,Grey Bamboo Shark,NT,0.2
+41797,Hemitrygon fluviorum,Estuary Stingray,VU,0.4
+41810,Eusphyra blochii,Winghead Shark,EN,0.6
+41816,Hemigaleus microstoma,Sickelfin Weasel Shark,VU,0.4
+41819,Hemiscyllium strahani,Hooded Carpet Shark,VU,0.4
+41823,Heptranchias perlo,Sharpnose Sevengill Shark,NT,0.2
+41832,Mobula eregoodoo,Longhorned Pygmy Devil Ray,NT,0.2
+41835,Nebrius ferrugineus,Tawny Nurse Shark,VU,0.4
+41836,Negaprion acutidens,Sharptooth Lemon Shark,VU,0.4
+41840,Oxynotus bruniensis,Prickly Dogfish,NT,0.2
+41848,Rhina ancylostoma,Bowmouth Guitarfish,CR,0.8
+41853,Rhynchobatus australiae,Bottlenose Wedgefish,CR,0.8
+41854,Rhynchobatus laevis,Smoothnose Wedgefish,CR,0.8
+41861,Squalus rancureli,Cyrano Spurdog,NT,0.2
+41871,Centrophorus squamosus,Leafscale Gulper Shark,VU,0.4
+41872,Chiloscyllium punctatum,Grey Carpetshark,NT,0.2
+41874,Hemipristis elongata,Snaggletooth Shark,VU,0.4
+41875,Hemiscyllium hallstromi,Papuan Epaulette Shark,VU,0.4
+41876,Odontaspis ferox,Smalltooth Sand Tiger,VU,0.4
+42706,Cephaloscyllium albipinnum,Whitefin Swellshark,CR,0.8
+42707,Cephaloscyllium variegatum,Saddled Swellshark,NT,0.2
+42712,Glyphis garricki,New Guinea River Shark,CR,0.8
+42726,Squalus nasutus,Western Longnose Spurdog,NT,0.2
+42727,Squalus grahami,Eastern Longnose Spurdog,NT,0.2
+42729,Squatina albipunctata,Eastern Angel Shark,VU,0.4
+42730,Urolophus kapalensis,Kapala Stingaree,NT,0.2
+43974,Epinephelus akaara,Hong Kong Grouper,EN,0.6
+44166,Aonyx cinereus,Asian Small-clawed Otter,VU,0.4
+44228,Bythaelurus hispidus,Bristly Catshark,NT,0.2
+44496,Pliotrema warreni,Sixgill Sawshark,NT,0.2
+44575,Atlantoraja castelnaui,Spotback Skate,EN,0.6
+44577,Benthobatis kreffti,Krefft's Blind Numbfish,VU,0.4
+44578,Galeus mincaronei,Southern Sawtail Catshark,VU,0.4
+44581,Mustelus fasciatus,Striped Smoothhound,CR,0.8
+44586,Schroederichthys saurisqualus,Lizard Catshark,VU,0.4
+44591,Sphyrna corona,Scalloped Bonnethead,NT,0.2
+44595,Rhinoptera brasiliensis,Brazilian Cownose Ray,EN,0.6
+44607,Dipturus campbelli,Blackspot Skate,NT,0.2
+44617,Pseudoginglymostoma brevicaudatum,Shorttail Nurse Shark,CR,0.8
+44642,Sympterygia acuta,Bignose Fanskate,VU,0.4
+44656,Gurgesiella dorsalifera,Onefin Skate,VU,0.4
+44673,Epinephelus fuscoguttatus,Brown-marbled Grouper,VU,0.4
+44677,Epinephelus albomarginatus,White-edged Rockcod,VU,0.4
+44678,Epinephelus andersoni,Brown-spotted Rockcod,NT,0.2
+44681,Epinephelus morio,Red Grouper,VU,0.4
+44683,Mycteroperca venenosa,Yellowfin Grouper,NT,0.2
+44993,Discopyge tschudii,Apron Ray,NT,0.2
+44996,Squatina africana,African Angelshark,NT,0.2
+46865,Scymnodon plunketi,Plunket's Shark,VU,0.4
+60085,Trygonoptera testacea,Common Stingaree,NT,0.2
+60087,Urolophus aurantiacus,Oriental Stingaree,NT,0.2
+60088,Urolophus bucculentus,Sandyback Stingaree,VU,0.4
+60095,Urolophus javanicus,Java Stingaree,CR,0.8
+60100,Urolophus orarius,Coastal Stingaree,EN,0.6
+60104,Urolophus sufflavus,Yellowback Stingaree,VU,0.4
+60105,Urolophus viridis,Greenback Stingaree,VU,0.4
+60113,Gymnura zonura,Zonetail Butterfly Ray,VU,0.4
+60117,Gymnura poecilura,Longtail Butterfly Ray,NT,0.2
+60118,Dipturus crosnieri,Madagascar Skate,VU,0.4
+60119,Aetobatus flagellum,Longhead Eagle Ray,EN,0.6
+60120,Aetomylaeus maculatus,Mottled Eagle Ray,EN,0.6
+60121,Aetomylaeus vespertilio,Ornate Eagle Ray,EN,0.6
+60124,Myliobatis hamlyni,Purple Eagle Ray,NT,0.2
+60125,Myliobatis longirostris,Longnose Eagle Ray,NT,0.2
+60128,Rhinoptera bonasus,American Cownose Ray,NT,0.2
+60129,Rhinoptera javanica,Javanese Cownose Ray,VU,0.4
+60130,Rhinoptera steindachneri,Pacific Cownose Ray,NT,0.2
+60131,Torpedo adenensis,Aden Torpedo,EN,0.6
+60147,Telatrygon acutirostra,Sharpnose Stingray,NT,0.2
+60148,Hemitrygon akajei,Red Stingray,NT,0.2
+60150,Neotrygon annotata,Plain Maskray,NT,0.2
+60151,Fontitrygon colarensis,Colares Stingray,VU,0.4
+60153,Fontitrygon geijskesi,Wingfin Stingray,NT,0.2
+60155,Hemitrygon izuensis,Izu Stingray,NT,0.2
+60160,Telatrygon zugei,Sharpnose Stingray,NT,0.2
+60162,Taeniurops meyeni,Blotched Fantail Ray,VU,0.4
+60166,Glaucostegus granulatus,Sharpnose Guitarfish,CR,0.8
+60167,Rhinobatos hynnicephalus,Ringstraked Guitarfish,NT,0.2
+60168,Pseudobatos leucorhynchus,Whitesnout Guitarfish,NT,0.2
+60170,Glaucostegus obtusus,Widenose Guitarfish,CR,0.8
+60171,Pseudobatos productus,Shovelnose Guitarfish,NT,0.2
+60172,Acroteriobatus salalah,Salalah Guitarfish,NT,0.2
+60175,Glaucostegus thouin,Clubnose Guitarfish,CR,0.8
+60176,Acroteriobatus zanzibarensis,Zanzibar Guitarfish,NT,0.2
+60179,Aptychotrema timorensis,Spotted Shovelnose Ray,VU,0.4
+60180,Rhynchobatus luebberti,African Wedgefish,CR,0.8
+60181,Rhynchobatus cooki,Clown Wedgefish,CR,0.8
+60182,Rhynchobatus springeri,Broadnose Wedgefish,CR,0.8
+60195,Hydrolagus ogilbyi,Ogilby’s Ghostshark,VU,0.4
+60198,Mobula munkiana,Pygmy Devilray,VU,0.4
+60199,Mobula tarapacana,Sicklefin Devilray,EN,0.6
+60200,Mobula thurstoni,Bentfin Devilray,EN,0.6
+60202,Sphyrna tudes,Smalleye Hammerhead,VU,0.4
+60203,Mustelus schmitti,Narrownose Smoothhound,EN,0.6
+60213,Somniosus microcephalus,Greenland Shark,NT,0.2
+60217,Carcharhinus perezi,Caribbean Reef Shark,NT,0.2
+60218,Isogomphodon oxyrhynchus,Daggernose Shark,CR,0.8
+60219,Carcharhinus signatus,Night Shark,VU,0.4
+60222,Chiloscyllium plagiosum,Whitespotted Bamboo Shark,NT,0.2
+60225,Isurus paucus,Longfin Mako,EN,0.6
+61337,Epinephelus daemelii,Black Rockcod,NT,0.2
+61339,Epinephelus polyphekadion,Camouflage Grouper,VU,0.4
+61398,Atlantoraja cyclophora,Eyespot Skate,VU,0.4
+61401,Diplobatis colombiensis,Colombian Dwarf Numbfish,VU,0.4
+61402,Diplobatis guamachensis,Venezuelan Dwarf Numbfish,VU,0.4
+61403,Diplobatis ommata,Pacific Dwarf Numbfish,VU,0.4
+61404,Diplobatis picta,Painted Dwarf Numbfish,VU,0.4
+61405,Leucoraja melitensis,Maltese Skate,CR,0.8
+61406,Narcine brevilabiata,Shortlip Electric Ray,VU,0.4
+61408,Rostroraja alba,White Skate,EN,0.6
+61417,Squatina aculeata,Sawback Angelshark,CR,0.8
+61418,Squatina oculata,Smoothback Angelshark,CR,0.8
+61419,Zapteryx brevirostris,Shortnose Guitarfish,VU,0.4
+61442,Delphinapterus leucas Cook Inlet subpopulation,Beluga,CR,0.8
+63100,Dipturus oxyrinchus,Longnosed Skate,NT,0.2
+63102,Bathyraja albomaculata,Whitedotted Skate,VU,0.4
+63104,Hydrolagus mirabilis,Large-eyed Rabbitfish,NT,0.2
+63106,Bathyraja cousseauae,Joined-fins Skate,NT,0.2
+63109,Rioraja agassizii,Rio Skate,VU,0.4
+63110,Atlantoraja platana,La Plata Skate,VU,0.4
+63113,Bathyraja griseocauda,Graytail Skate,EN,0.6
+63114,Chimaera monstrosa,Rabbitfish,NT,0.2
+63116,Dipturus trachyderma,Roughskin Skate,VU,0.4
+63117,Bathyraja macloviana,Patagonian Skate,NT,0.2
+63120,Raja asterias,Starry Skate,NT,0.2
+63124,Dipturus mennii,Menni's Skate,VU,0.4
+63128,Mustelus mento,Speckled Smoothhound,NT,0.2
+63129,Mustelus whitneyi,Humpback Smoothhound,VU,0.4
+63130,Triakis maculata,Spotted Houndshark,VU,0.4
+63131,Rhinobatos rhinobatos,Common Guitarfish,EN,0.6
+63141,Oxynotus centrina,Angular Rough Shark,VU,0.4
+63144,Bathyraja multispinis,Multispine Skate,NT,0.2
+63145,Bathyraja scaphiops,Cuphead Skate,NT,0.2
+63147,Zearaja chilensis,Yellownose Skate,VU,0.4
+63149,Galeus atlanticus,Atlantic Sawtail Catshark,NT,0.2
+63153,Gymnura altavela,Spiny Butterfly Ray,VU,0.4
+63154,Narcine leoparda,NA,NT,0.2
+63155,Rostroraja cervigoni,Venezuela Skate,NT,0.2
+63156,Urotrygon venezuelae,Venezuelan Round Ray,NT,0.2
+63166,Rhinobatos penggali,NA,VU,0.4
+63167,Rhinobatos jimbaranensis,NA,VU,0.4
+63571,Bolbometopon muricatum,Green Humphead Parrotfish,VU,0.4
+64400,Hyporthodus flavolimbatus,Yellowedge Grouper,VU,0.4
+64409,Mycteroperca fusca,Island Grouper,VU,0.4
+64410,Mycteroperca interstitialis,Yellowmouth Grouper,VU,0.4
+64411,Plectropomus areolatus,Squaretail Coralgrouper,VU,0.4
+64442,Zearaja maugeana,Maugean Skate,EN,0.6
+132722,Epinephelus aeneus,White Grouper,NT,0.2
+132724,Mycteroperca bonaci,Black Grouper,NT,0.2
+132730,Hyporthodus acanthistius,Rooster Hind,VU,0.4
+132765,Epinephelus goreensis,Dungat Grouper,NT,0.2
+132795,Hyporthodus ergastularius,Banded Rockcod,NT,0.2
+132860,Psammocora stellata,NA,VU,0.4
+132865,Alveopora japonica,NA,VU,0.4
+132866,Montipora angulata,NA,VU,0.4
+132868,Goniastrea columella,NA,NT,0.2
+132869,Acropora florida,Branch Coral,NT,0.2
+132870,Moseleya latistellata,NA,VU,0.4
+132871,Pectinia elongata,NA,NT,0.2
+132872,Favia vietnamensis,NA,NT,0.2
+132873,Porites densa,NA,NT,0.2
+132878,Favia maxima,NA,NT,0.2
+132879,Goniopora tenella,NA,NT,0.2
+132880,Pavona venosa,NA,VU,0.4
+132888,Acropora secale,NA,NT,0.2
+132890,Catalaphyllia jardinei,NA,VU,0.4
+132892,Montipora hodgsoni,NA,VU,0.4
+132893,Platygyra crosslandi,NA,NT,0.2
+132894,Favia veroni,NA,NT,0.2
+132896,Alveopora marionensis,NA,VU,0.4
+132897,Porites eridani,NA,EN,0.6
+132898,Goniopora cellulosa,NA,VU,0.4
+132899,Favia rosaria,NA,VU,0.4
+132901,Leptoseris amitoriensis,NA,NT,0.2
+132904,Pavona minuta,NA,NT,0.2
+132905,Alveopora catalai,NA,NT,0.2
+132907,Echinomorpha nishihirai,NA,NT,0.2
+132909,Acropora turaki,NA,VU,0.4
+132910,Acropora divaricata,NA,NT,0.2
+132913,Acropora rudis,NA,EN,0.6
+132918,Pectinia pygmaeus,NA,NT,0.2
+132920,Echinopora ashmorensis,NA,VU,0.4
+132921,Porites branneri,Blue Crust Coral,NT,0.2
+132924,Pachyseris gemmae,NA,NT,0.2
+132927,Leptoseris striata,NA,NT,0.2
+132928,Pectinia lactuca,Lettuce Coral,VU,0.4
+132929,Acanthastrea subechinata,NA,NT,0.2
+132930,Montipora gaimardi,NA,VU,0.4
+132931,Acropora willisae,NA,VU,0.4
+132932,Montipora orientalis,NA,VU,0.4
+132933,Acropora carduus,NA,NT,0.2
+132935,Acropora plumosa,NA,VU,0.4
+132940,Acropora acuminata,NA,VU,0.4
+132942,Montipora patula,NA,VU,0.4
+132943,Stylophora madagascarensis,NA,EN,0.6
+132944,Montipora nodosa,NA,NT,0.2
+132948,Acropora granulosa,NA,NT,0.2
+132956,Pectinia alcicornis,NA,VU,0.4
+132957,Turbinaria bifrons,NA,VU,0.4
+132959,Porites desilveri,NA,EN,0.6
+132964,Fungia taiwanensis,NA,VU,0.4
+132967,Euphyllia yaeyamaensis,NA,NT,0.2
+132968,Halomitra clavator,NA,VU,0.4
+132969,Acropora listeri,NA,VU,0.4
+132970,Agaricia lamarcki,Lamarck's Sheet Coral,VU,0.4
+132972,Acropora paniculata,NA,VU,0.4
+132973,Anacropora matthai,NA,VU,0.4
+132974,Plerogyra discus,NA,VU,0.4
+132976,Acropora loripes,NA,NT,0.2
+132977,Montipora stilosa,NA,VU,0.4
+132978,Montastrea magnistellata,NA,NT,0.2
+132979,Favites complanata,NA,NT,0.2
+132980,Leptoria phrygia,NA,NT,0.2
+132981,Acropora hemprichii,NA,VU,0.4
+132983,Leptastrea bottae,NA,NT,0.2
+132984,Acropora derawanensis,NA,VU,0.4
+132985,Turbinaria radicalis,NA,NT,0.2
+132990,Acropora multiacuta,NA,VU,0.4
+132991,Coscinaraea crassa,NA,NT,0.2
+132992,Acropora humilis,Finger Coral,NT,0.2
+132994,Favites vasta,NA,NT,0.2
+132995,Goniopora planulata,NA,VU,0.4
+132996,Fungia seychellensis,NA,VU,0.4
+132997,Montastrea valenciennesi,NA,NT,0.2
+133002,Seriatopora stellata,NA,NT,0.2
+133003,Leptastrea bewickensis,NA,NT,0.2
+133006,Acropora palmata,Elkhorn Coral,CR,0.8
+133007,Montipora malampaya,NA,VU,0.4
+133009,Favia albidus,NA,NT,0.2
+133011,Pocillopora ankeli,NA,VU,0.4
+133012,Montastraea franksi,NA,VU,0.4
+133014,Goniopora polyformis,NA,VU,0.4
+133019,Galaxea cryptoramosa,NA,VU,0.4
+133020,Acropora tenuis,NA,NT,0.2
+133022,Montipora niugini,NA,NT,0.2
+133025,Acropora vaughani,NA,VU,0.4
+133028,Seriatopora caliendrum,Birdsnest Coral,NT,0.2
+133031,Montipora effusa,NA,NT,0.2
+133032,Lobophyllia flabelliformis,NA,VU,0.4
+133036,Fungia curvata,NA,VU,0.4
+133038,Porites nigrescens,NA,VU,0.4
+133040,Echinopora mammiformis,NA,NT,0.2
+133041,Pavona decussata,Cactus Coral,VU,0.4
+133043,Psammocora digitata,NA,NT,0.2
+133046,Anacropora spinosa,NA,EN,0.6
+133055,Favites halicora,NA,NT,0.2
+133057,Euphyllia paradivisa,NA,VU,0.4
+133059,Platygyra verweyi,NA,NT,0.2
+133060,Goniastrea favulus,NA,NT,0.2
+133064,Montipora florida,NA,VU,0.4
+133067,Platygyra yaeyamaensis,NA,VU,0.4
+133069,Astreopora cucullata,NA,VU,0.4
+133070,Montastrea colemani,NA,NT,0.2
+133071,Montipora foliosa,NA,NT,0.2
+133074,Goniastrea deformis,NA,VU,0.4
+133075,Palauastrea ramosa,NA,NT,0.2
+133078,Favites acuticollis,NA,NT,0.2
+133079,Montipora meandrina,NA,VU,0.4
+133080,Acropora selago,NA,NT,0.2
+133081,Acropora kirstyae,NA,VU,0.4
+133083,Ctenactis albitentaculata,NA,NT,0.2
+133092,Astreopora incrustans,NA,VU,0.4
+133093,Alveopora daedalea,NA,VU,0.4
+133097,Pocillopora danae,NA,VU,0.4
+133099,Pocillopora elegans,NA,VU,0.4
+133101,Goniastrea minuta,NA,NT,0.2
+133102,Dichocoenia stokesii,Elliptical Star Coral,VU,0.4
+133105,Porites murrayensis,NA,NT,0.2
+133106,Acanthastrea hillae,NA,NT,0.2
+133107,Porites attenuata,NA,VU,0.4
+133108,Hydnophora bonsai,NA,EN,0.6
+133109,Galaxea acrhelia,NA,VU,0.4
+133111,Montipora saudii,NA,NT,0.2
+133112,Acropora caroliniana,NA,VU,0.4
+133113,Montipora cactus,NA,VU,0.4
+133114,Duncanopsammia axifuga,NA,NT,0.2
+133115,Acropora retusa,NA,VU,0.4
+133116,Plerogyra simplex,NA,NT,0.2
+133117,Montipora lobulata,NA,VU,0.4
+133118,Porites sillimaniana,NA,VU,0.4
+133121,Siderastrea glynni,NA,CR,0.8
+133123,Porites cumulatus,NA,VU,0.4
+133124,Dendrogyra cylindrus,Pillar Coral,VU,0.4
+133126,Symphyllia hassi,NA,VU,0.4
+133131,Montipora friabilis,NA,VU,0.4
+133132,Acropora aspera,NA,VU,0.4
+133133,Acropora abrolhosensis,NA,VU,0.4
+133134,Montastraea annularis,Boulder Star Coral,EN,0.6
+133136,Favia marshae,NA,NT,0.2
+133139,Isopora palifera,Catch Bowl Coral,NT,0.2
+133142,Cladocora caespitosa,Mediterranean Pillow Coral,EN,0.6
+133145,Stylocoeniella cocosensis,NA,VU,0.4
+133147,Leptoseris yabei,NA,VU,0.4
+133150,Porites aranetai,NA,VU,0.4
+133151,Favia lacuna,NA,NT,0.2
+133152,Lobophyllia pachysepta,NA,NT,0.2
+133156,Alveopora verrilliana,NA,VU,0.4
+133157,Scolymia vitiensis,NA,NT,0.2
+133159,Plesiastrea devantieri,NA,NT,0.2
+133160,Acropora austera,NA,NT,0.2
+133162,Montastrea salebrosa,NA,VU,0.4
+133164,Acropora russelli,NA,VU,0.4
+133165,Oculina varicosa,Large Ivory Coral,VU,0.4
+133170,Montipora dilatata,NA,EN,0.6
+133173,Euphyllia ancora,NA,VU,0.4
+133174,Astreopora moretonensis,NA,VU,0.4
+133175,Montipora efflorescens,NA,NT,0.2
+133177,Turbinaria patula,NA,VU,0.4
+133178,Montastrea annuligera,NA,NT,0.2
+133180,Galaxea longisepta,NA,NT,0.2
+133182,Isopora brueggemanni,NA,VU,0.4
+133185,Montipora calcarea,NA,VU,0.4
+133190,Montipora vietnamensis,NA,VU,0.4
+133191,Montipora porites,NA,NT,0.2
+133193,Heliopora coerulea,Blue Coral,VU,0.4
+133195,Acropora appressa,NA,NT,0.2
+133196,Montipora incrassata,NA,NT,0.2
+133200,Oulophyllia crispa,NA,NT,0.2
+133203,Acropora tenella,NA,VU,0.4
+133205,Pectinia teres,NA,NT,0.2
+133206,Acropora roseni,NA,EN,0.6
+133208,Psammocora contigua,NA,NT,0.2
+133211,Porites negrosensis,NA,NT,0.2
+133213,Lithophyllon undulatum,NA,NT,0.2
+133216,Porites lobata,NA,NT,0.2
+133219,Nemenzophyllia turbida,NA,VU,0.4
+133220,Montipora caliculata,NA,VU,0.4
+133223,Acropora donei,NA,VU,0.4
+133225,Euphyllia divisa,NA,NT,0.2
+133226,Lobophyllia serratus,NA,EN,0.6
+133227,Astreopora expansa,NA,NT,0.2
+133228,Euphyllia paraglabrescens,NA,VU,0.4
+133229,Montipora flabellata,NA,VU,0.4
+133231,Diploastrea heliopora,NA,NT,0.2
+133233,Acropora kimbeensis,NA,VU,0.4
+133235,Turbinaria heronensis,NA,VU,0.4
+133236,Galaxea paucisepta,NA,NT,0.2
+133239,Acropora nasuta,NA,NT,0.2
+133243,Echinopora pacificus,NA,NT,0.2
+133244,Favites flexuosa,NA,NT,0.2
+133247,Acropora pharaonis,NA,VU,0.4
+133250,Acropora digitifera,NA,NT,0.2
+133251,Stylophora wellsi,NA,NT,0.2
+133253,Blastomussa wellsi,NA,NT,0.2
+133254,Acropora suharsonoi,NA,EN,0.6
+133256,Euphyllia glabrescens,NA,NT,0.2
+133258,Plerogyra sinuosa,NA,NT,0.2
+133260,Trachyphyllia geoffroyi,NA,NT,0.2
+133261,Pavona danai,NA,VU,0.4
+133262,Porites annae,NA,NT,0.2
+133263,Montastrea serageldini,NA,VU,0.4
+133269,Heliofungia actiniformis,NA,VU,0.4
+133272,Pectinia paeonia,NA,NT,0.2
+133276,Millepora latifolia,NA,VU,0.4
+133283,Acropora batunai,NA,VU,0.4
+133285,Montipora palawanensis,NA,NT,0.2
+133287,Caulastrea connata,NA,VU,0.4
+133289,Euphyllia paraancora,NA,VU,0.4
+133290,Favites abdita,NA,NT,0.2
+133291,Acropora striata,NA,VU,0.4
+133294,Acropora lokani,NA,VU,0.4
+133296,Porites tuberculosa,NA,VU,0.4
+133300,Millepora boschmai,NA,CR,0.8
+133301,Porites ornata,NA,EN,0.6
+133303,Acropora lutkeni,NA,NT,0.2
+133306,Astreopora macrostoma,NA,NT,0.2
+133307,Favia rotundata,NA,NT,0.2
+133309,Pocillopora inflata,NA,VU,0.4
+133310,Leptoria irregularis,NA,VU,0.4
+133315,Acropora monticulosa,NA,NT,0.2
+133319,Acropora horrida,NA,VU,0.4
+133320,Acropora solitaryensis,NA,VU,0.4
+133321,Cyphastrea ocellina,NA,VU,0.4
+133322,Acropora dendrum,NA,VU,0.4
+133326,Acanthastrea regularis,NA,VU,0.4
+133327,Acropora lovelli,NA,VU,0.4
+133329,Porites stephensoni,NA,NT,0.2
+133331,Millepora tuberosa,NA,EN,0.6
+133332,Alveopora allingi,NA,VU,0.4
+133333,Oulophyllia bennettae,NA,NT,0.2
+133335,Mycedium steeni,NA,VU,0.4
+133338,Acropora speciosa,NA,VU,0.4
+133342,Montipora cryptus,NA,NT,0.2
+133343,Favites russelli,NA,NT,0.2
+133353,Psammocora obtusangula,NA,NT,0.2
+133354,Galaxea astreata,NA,VU,0.4
+133356,Mycetophyllia ferox,Rough Cactus Coral,VU,0.4
+133358,Porites napopora,NA,VU,0.4
+133359,Acropora microclados,NA,VU,0.4
+133360,Pavona bipartita,NA,VU,0.4
+133361,Montipora setosa,NA,EN,0.6
+133366,Acanthastrea lordhowensis,NA,NT,0.2
+133367,Montipora confusa,NA,NT,0.2
+133368,Goniopora albiconus,NA,VU,0.4
+133369,Echinopora robusta,NA,VU,0.4
+133372,Polyphyllia novaehiberniae,NA,NT,0.2
+133373,Montastraea faveolata,NA,EN,0.6
+133374,Montastrea multipunctata,NA,VU,0.4
+133375,Montipora corbettensis,NA,VU,0.4
+133376,Acanthastrea ishigakiensis,NA,VU,0.4
+133381,Acropora cervicornis,Staghorn Coral,CR,0.8
+133383,Barabattoia laddi,NA,VU,0.4
+133384,Cantharellus noumeae,NA,EN,0.6
+133386,Acanthastrea rotundoflora,NA,NT,0.2
+133387,Acropora globiceps,NA,VU,0.4
+133391,Goniopora burgosi,NA,VU,0.4
+133392,Favia laxa,NA,NT,0.2
+133394,Acropora loisetteae,NA,VU,0.4
+133396,Acropora desalwii,NA,VU,0.4
+133399,Porites okinawensis,NA,VU,0.4
+133401,Acropora hoeksemai,NA,VU,0.4
+133403,Turbinaria stellulata,NA,VU,0.4
+133404,Montipora samarensis,NA,VU,0.4
+133405,Caulastrea tumida,NA,NT,0.2
+133407,Pocillopora eydouxi,NA,NT,0.2
+133409,Montipora verruculosus,NA,VU,0.4
+133411,Acanthastrea bowerbanki,NA,VU,0.4
+133413,Cynarina lacrymalis,NA,NT,0.2
+133415,Anacropora puertogalerae,NA,VU,0.4
+133422,Montipora capricornis,NA,VU,0.4
+133424,Leptastrea inaequalis,NA,NT,0.2
+133427,Acropora simplex,NA,VU,0.4
+133429,Echinopora horrida,NA,NT,0.2
+133432,Acropora spicifera,NA,VU,0.4
+133433,Montipora crassituberculata,NA,VU,0.4
+133434,Montipora mactanensis,NA,VU,0.4
+133435,Seriatopora dendritica,NA,VU,0.4
+133438,Montipora foveolata,NA,NT,0.2
+133439,Agaricia tenuifolia,Thin Leaf Lettuce Coral,NT,0.2
+133441,Acropora walindii,NA,VU,0.4
+133443,Montipora australiensis,NA,VU,0.4
+133445,Porites harrisoni,NA,NT,0.2
+133447,Echinopora taylorae,NA,NT,0.2
+133448,Goniopora columna,NA,NT,0.2
+133450,Montipora turtlensis,NA,VU,0.4
+133453,Pachyseris rugosa,NA,VU,0.4
+133456,Physogyra lichtensteini,NA,VU,0.4
+133458,Hydnophora microconos,NA,NT,0.2
+133459,Goniopora lobata,NA,NT,0.2
+133460,Montipora cocosensis,NA,VU,0.4
+133463,Acropora aculeus,NA,VU,0.4
+133464,Alveopora excelsa,NA,EN,0.6
+133466,Millepora striata,NA,EN,0.6
+133467,Alveopora minuta,NA,EN,0.6
+133470,Micromussa amakusensis,NA,NT,0.2
+133472,Isopora crateriformis,NA,VU,0.4
+133478,Hydnophora exesa,NA,NT,0.2
+133479,Acropora hyacinthus,Brush Coral,NT,0.2
+133482,Alveopora spongiosa,NA,NT,0.2
+133484,Anomastraea irregularis,NA,VU,0.4
+133486,Porites horizontalata,NA,VU,0.4
+133488,Pectinia africanus,NA,VU,0.4
+133489,Montipora delicatula,NA,VU,0.4
+133490,Acanthastrea maxima,NA,NT,0.2
+133493,Platygyra ryukyuensis,NA,NT,0.2
+133494,Acropora papillare,NA,VU,0.4
+133496,Porites cylindrica,NA,NT,0.2
+133497,Caulastrea echinulata,NA,VU,0.4
+133498,Turbinaria peltata,NA,VU,0.4
+133499,Porites cocosensis,NA,VU,0.4
+133500,Acropora kosurini,NA,VU,0.4
+133501,Alveopora gigas,NA,VU,0.4
+133503,Fungia fungites,Common Mushroom Coral,NT,0.2
+133506,Cyphastrea hexasepta,NA,VU,0.4
+133508,Platygyra acuta,NA,NT,0.2
+133509,Podabacia motuporensis,NA,NT,0.2
+133510,Favia lizardensis,NA,NT,0.2
+133512,Porites sverdrupi,NA,VU,0.4
+133513,Acropora anthocercis,NA,VU,0.4
+133515,Goniastrea ramosa,NA,VU,0.4
+133517,Lithophyllon ranjithi,NA,EN,0.6
+133523,Alveopora fenestrata,NA,VU,0.4
+133526,Seriatopora aculeata,NA,VU,0.4
+133529,Horastrea indica,NA,VU,0.4
+133531,Acropora palmerae,NA,VU,0.4
+133532,Acropora verweyi,NA,VU,0.4
+133539,Leptoseris incrustans,NA,VU,0.4
+133540,Poritipora paliformis,NA,VU,0.4
+133542,Leptastrea aequalis,NA,VU,0.4
+133545,Paraclavarina triangularis,NA,NT,0.2
+133550,Acropora glauca,NA,NT,0.2
+133552,Pocillopora fungiformis,NA,EN,0.6
+133554,Echinopora fruticulosa,NA,NT,0.2
+133555,Porites deformis,NA,NT,0.2
+133557,Acanthastrea brevis,NA,VU,0.4
+133558,Pavona cactus,NA,VU,0.4
+133560,Goniastrea palauensis,NA,NT,0.2
+133563,Montipora peltiformis,NA,NT,0.2
+133565,Lobophyllia dentatus,NA,VU,0.4
+133567,Alveopora viridis,NA,NT,0.2
+133568,Porites rugosa,NA,VU,0.4
+133571,Platygyra carnosus,NA,NT,0.2
+133572,Porites echinulata,NA,NT,0.2
+133573,Australomussa rowleyensis,NA,NT,0.2
+133574,Porites pukoensis,NA,CR,0.8
+133577,Favites spinosa,NA,VU,0.4
+133578,Favites bestae,NA,NT,0.2
+133580,Montipora hirsuta,NA,NT,0.2
+133581,Pavona diffluens,NA,VU,0.4
+133583,Acropora awi,NA,VU,0.4
+133585,Pseudosiderastrea tayami,NA,NT,0.2
+133588,Euphyllia cristata,NA,VU,0.4
+133593,Favia stelligera,NA,NT,0.2
+133599,Montipora undata,NA,NT,0.2
+133600,Acropora indonesia,NA,VU,0.4
+133601,Favia helianthoides,NA,NT,0.2
+133602,Isopora togianensis,NA,EN,0.6
+133603,Millepora murrayi,NA,NT,0.2
+133604,Acropora arabensis,NA,NT,0.2
+133607,Goniopora minor,NA,NT,0.2
+133612,Millepora foveolata,NA,VU,0.4
+133616,Favia matthaii,NA,NT,0.2
+133617,Acropora jacquelineae,NA,VU,0.4
+133619,Lobophyllia diminuta,NA,VU,0.4
+133620,Australogyra zelli,NA,VU,0.4
+133622,Montipora capitata,NA,NT,0.2
+133623,Montipora cebuensis,NA,VU,0.4
+133624,Acanthastrea faviaformis,NA,VU,0.4
+133627,Goniastrea peresi,NA,NT,0.2
+133628,Cyphastrea agassizi,NA,VU,0.4
+133629,Favites stylifera,NA,NT,0.2
+133630,Favites micropentagona,NA,NT,0.2
+133631,Erythrastrea flabellata,NA,NT,0.2
+133633,Turbinaria mesenterina,NA,VU,0.4
+133635,Montipora venosa,NA,NT,0.2
+133637,Pocillopora indiania,NA,VU,0.4
+133638,Favia maritima,NA,NT,0.2
+133639,Acropora pichoni,NA,NT,0.2
+133642,Acanthastrea hemprichii,NA,VU,0.4
+133644,Acropora formosa,Staghorn Coral,NT,0.2
+133645,Porites somaliensis,NA,NT,0.2
+133647,Acropora polystoma,NA,VU,0.4
+133650,Favites paraflexuosa,NA,NT,0.2
+133651,Platygyra lamellina,NA,NT,0.2
+133654,Favites chinensis,NA,NT,0.2
+133656,Echinophyllia costata,NA,VU,0.4
+133660,Isopora cuneata,NA,VU,0.4
+133661,Acropora echinata,NA,VU,0.4
+133662,Galaxea fascicularis,NA,NT,0.2
+133664,Pachyseris involuta,NA,VU,0.4
+133665,Goniastrea thecata,NA,NT,0.2
+133666,Acropora millepora,NA,NT,0.2
+133668,Goniopora stokesi,NA,NT,0.2
+133670,Micromussa minuta,NA,NT,0.2
+133671,Heteropsammia eupsammides,NA,NT,0.2
+133676,Psammocora vaughani,NA,NT,0.2
+133683,Pectinia maxima,NA,EN,0.6
+133684,Coscinaraea hahazimaensis,NA,VU,0.4
+133685,Stylophora pistillata,Smooth Cauliflower Coral,NT,0.2
+133687,Echinopora forskaliana,NA,NT,0.2
+133688,Acropora elegans,NA,VU,0.4
+133689,Anacropora reticulata,NA,VU,0.4
+133692,Parasimplastrea sheppardi,NA,EN,0.6
+133694,Pectinia ayleni,NA,NT,0.2
+133695,Caulastrea curvata,NA,VU,0.4
+133696,Montipora altasepta,NA,VU,0.4
+133697,Turbinaria reniformis,NA,VU,0.4
+133698,Acropora nana,NA,NT,0.2
+133701,Ctenella chagius,NA,EN,0.6
+136315,Orcaella heinsohni,Australian Snubfin Dolphin,VU,0.4
+154700,Enneapterygius namarrgon,Lightning Man Triplefin,EN,0.6
+154717,Anchoa choerostoma,Bermuda Anchovy,EN,0.6
+154763,Axoclinus multicinctus,Multibarred Triplefin,VU,0.4
+154817,Malacoctenus zonogaster,Belted Blenny,VU,0.4
+154957,Hypsoblennius striatus,Striated Blenny,NT,0.2
+154986,Paraclinus magdalenae,Magdalena Blenny,EN,0.6
+155156,Lepidonectes corallicola,Galapagos Triplefin Blenny,VU,0.4
+158617,Squalus edmundsi,Edmunds’ Spurdog,NT,0.2
+161320,Rhinobatos albomaculatus,White-spotted Guitarfish,VU,0.4
+161325,Squatina nebulosa,Clouded Angelshark,VU,0.4
+161329,Dipturus cerva,White-spotted Skate,NT,0.2
+161339,Raja radula,Rough Skate,EN,0.6
+161360,Squalus chloroculus,Greeneye Spurdog,EN,0.6
+161366,Bathyraja spinicauda,Spinytail Skate,NT,0.2
+161373,Pseudobatos percellens,Southern Guitarfish,NT,0.2
+161376,Carcharhinus sorrah,Spottail Shark,NT,0.2
+161378,Carcharhinus acronotus,Blacknose Shark,NT,0.2
+161391,Bathyraja murrayi,Murray's Skate,NT,0.2
+161394,Urotrygon simulatrix,Fake Round Ray,VU,0.4
+161404,Squalus montalbani,Philippine Spurdog,VU,0.4
+161408,Glaucostegus halavi,Halavi Guitarfish,CR,0.8
+161409,Rhinobatos irvinei,Spineback Guitarfish,VU,0.4
+161410,Squalus hemipinnis,Indonesian Shortsnout Spurdog,NT,0.2
+161418,Leucoraja erinacea,Little Skate,NT,0.2
+161423,Narcine vermiculatus,Vermiculate Numbfish,NT,0.2
+161425,Raja undulata,Undulate Skate,EN,0.6
+161426,Chiloscyllium arabicum,Arabian Carpetshark,NT,0.2
+161431,Urogymnus granulatus,Mangrove Whipray,VU,0.4
+161442,Centrophorus lusitanicus,Lowfin Gulper Shark,VU,0.4
+161447,Rhinobatos punctifer,Spotted Guitarfish,NT,0.2
+161456,Squatina formosa,Taiwan Angelshark,EN,0.6
+161459,Raja maderensis,Madeira Skate,VU,0.4
+161461,Leucoraja fullonica,Shagreen Skate,VU,0.4
+161463,Rhinoptera marginata,Lusitanian Cownose Ray,NT,0.2
+161464,Leucoraja circularis,Sandy Skate,EN,0.6
+161465,Pastinachus solocirostris,Roughnose Stingray,EN,0.6
+161476,Acroteriobatus variegatus,Stripenose Guitarfish,CR,0.8
+161477,Malacoraja senta,Smooth Skate,EN,0.6
+161480,Mustelus mosis,Arabian Smoothhound,NT,0.2
+161484,Scyliorhinus stellaris,Nursehound,NT,0.2
+161488,Halaelurus boesemani,Speckled Catshark,VU,0.4
+161495,Fontitrygon margarita,NA,EN,0.6
+161496,Spiniraja whitleyi,Melbourne Skate,VU,0.4
+161506,Paragaleus randalli,Slender Weasel Shark,NT,0.2
+161525,Squatina tergocellatoides,Ocellated Angelshark,VU,0.4
+161526,Carcharhinus albimarginatus,Silvertip Shark,VU,0.4
+161529,Bathyraja maccaini,McCain's Skate,NT,0.2
+161535,Dipturus gudgeri,Bight Skate,NT,0.2
+161540,Maculabatis pastinacoides,Round Whipray,VU,0.4
+161541,Urotrygon reticulata,Reticulate Round Ray,VU,0.4
+161542,Amblyraja radiata,Thorny Skate,VU,0.4
+161546,Urogymnus lobistomus,Tubemouth Whipray,VU,0.4
+161547,Pateobatis uarnacoides,Bleeker's Whipray,VU,0.4
+161555,Acroteriobatus leucospilus,Greyspot Guitarfish,EN,0.6
+161557,Chiloscyllium hasselti,Indonesian Bambooshark,NT,0.2
+161558,Squatina japonica,Japanese Angelshark,VU,0.4
+161566,Maculabatis gerrardi,Whitespotted Whipray,VU,0.4
+161570,Lamiopsis temminckii,Broadfin Shark,EN,0.6
+161589,Platyrhina sinensis,Chinese Fanray,VU,0.4
+161597,Alopias pelagicus,Pelagic Thresher,EN,0.6
+161598,Pateobatis hortlei,Hortle's Whipray,VU,0.4
+161611,Glyphis siamensis,Irrawaddy River Shark,CR,0.8
+161613,Torpedo suessii,Red Sea Torpedo,CR,0.8
+161615,Pateobatis fai,Pink Whipray,VU,0.4
+161618,Hemitrygon laevigata,Yantai Stingray,NT,0.2
+161621,Himantura undulata,Bleeker's Variegated Whipray,VU,0.4
+161624,Benthobatis yangi,Taiwanese Blind Electric Ray,VU,0.4
+161631,Leucoraja ocellata,Winter Skate,EN,0.6
+161635,Deania quadrispinosa,Longsnout Dogfish,NT,0.2
+161637,Dipturus australis,Sydney Skate,VU,0.4
+161652,Holohalaelurus favus,Honeycomb Izak Catshark,EN,0.6
+161659,Bathyraja irrasa,Kerguelen Sandpaper Skate,NT,0.2
+161665,Narke japonica,Japanese Sleeper Ray,VU,0.4
+161667,Haploblepharus kistnasamyi,Natal Shyshark,VU,0.4
+161669,Beringraja pulchra,Mottled Skate,VU,0.4
+161675,Holohalaelurus punctatus,African Spotted Catshark,EN,0.6
+161691,Raja brachyura,Blonde Skate,NT,0.2
+161692,Himantura uarnak,Reticulate Whipray,VU,0.4
+161695,Chaenogaleus macrostoma,Hooktooth Shark,VU,0.4
+161696,Alopias superciliosus,Bigeye Thresher,VU,0.4
+161729,Dipturus nidarosiensis,Norwegian Skate,NT,0.2
+161736,Atelomycterus baliensis,Bali Catshark,VU,0.4
+161743,Pseudobatos lentiginosus,Freckled Guitarfish,NT,0.2
+161744,Pateobatis jenkinsii,Jenkins' Whipray,VU,0.4
+161745,Temera hardwickii,NA,VU,0.4
+161746,Heteronarce garmani,Natal Sleeper Ray,VU,0.4
+165658,Prognathodes carlhubbsi,NA,NT,0.2
+165712,Chaetodon trifascialis,Triangulate Butterflyfish,NT,0.2
+165717,Chaetodon rainfordi,Rainford's Butterflyfish,NT,0.2
+165823,Centropyge nahackyi,Nahacky's Angelfish,NT,0.2
+165836,Holacanthus limbaughi,Clipperton Angelfish,NT,0.2
+165861,Holacanthus clarionensis,Clarion Angelfish,VU,0.4
+167006,Takifugu ocellatus,Ocellated Puffer,NT,0.2
+169676,Chaetodontoplus vanderloosi,NA,EN,0.6
+170046,Palinurus charlestoni,Cape Verde Spiny Lobster,NT,0.2
+170158,Dentex angolensis,Angola Dentex,NT,0.2
+170161,Cheimerius matsubarai,Hoshierenko,VU,0.4
+170168,Stenotomus chrysops,Scup,NT,0.2
+170170,Chrysoblephus laticeps,Roman Seabream,NT,0.2
+170173,Acanthopagrus vagus,Riverbream,VU,0.4
+170179,Acanthopagrus chinshira,NA,NT,0.2
+170183,Chrysoblephus cristiceps,Dageraad,CR,0.8
+170184,Polysteganus praeorbitalis,Scotsman Seabream,VU,0.4
+170194,Chrysoblephus anglicus,Englishman Seabream,NT,0.2
+170199,Acanthopagrus sivicolus,Okinawa Seabream,VU,0.4
+170200,Lithognathus aureti,West Coast Steenbras,NT,0.2
+170204,Cymatoceps nasutus,Black Musselcracker,VU,0.4
+170206,Polysteganus undulosus,Seventy-four Seabream,CR,0.8
+170208,Pachymetopon grande,Bronze Seabream,NT,0.2
+170225,Rhabdosargus globiceps,White Stumpnose,VU,0.4
+170226,Sparodon durbanensis,Musselcracker Seabream,NT,0.2
+170231,Argyrozona argyrozona,Carpenter Seabream,NT,0.2
+170244,Pagellus bogaraveo,Blackspot Seabream,NT,0.2
+170245,Dentex dentex,Common Dentex,VU,0.4
+170247,Petrus rupestris,Red Steenbras,EN,0.6
+170256,Chrysoblephus gibbiceps,Red Stumpnose Seabream,EN,0.6
+170309,Kajikia audax,Striped Marlin,NT,0.2
+170314,Makaira nigricans,Blue Marlin,VU,0.4
+170316,Scomberomorus commerson,Narrow-barred Spanish Mackerel,NT,0.2
+170322,Kajikia albida,White Marlin,VU,0.4
+170330,Scomberomorus munroi,Spotted Mackerel,NT,0.2
+170341,Thunnus orientalis,Pacific Bluefin Tuna,VU,0.4
+173322,Zostera chilensis,Species code: Zh,EN,0.6
+173333,Posidonia australis,Species code: Pa,NT,0.2
+173335,Zostera caulescens,Species code: Zl,NT,0.2
+173337,Halophila engelmanni,Stargrass,NT,0.2
+173338,Halophila hawaiiana,Species code: Hh,VU,0.4
+173339,Zostera asiatica,Species code: za,NT,0.2
+173341,Phyllospadix japonicus,Asian Surf Grass,EN,0.6
+173342,Halophila beccarii,Ocean Turf Grass,VU,0.4
+173344,Phyllospadix iwatensis,Surfgrass,VU,0.4
+173345,Zostera geojeensis,Species code: Zg,EN,0.6
+173349,Posidonia sinuosa,Species code: Pn,VU,0.4
+173357,Zostera caespitosa,Species code: Zs,VU,0.4
+173370,Zostera capensis,Species code: Zp,VU,0.4
+173381,Halophila nipponica,Species code: Hk,NT,0.2
+173382,Halophila baillonii,Clover Grass,VU,0.4
+176712,Hydrophis pacificus,Pacific Sea Snake,NT,0.2
+176714,Aipysurus foliosquama,Leaf-scaled Sea Snake,CR,0.8
+176721,Laticauda semifasciata,Chinese Sea Snake,NT,0.2
+176736,Laticauda frontalis,Yellow-lipped Sea Snake,NT,0.2
+176739,Laticauda guineai,NA,NT,0.2
+176740,Laticauda schistorhynchus,Flat-tail Sea Snake,VU,0.4
+176763,Aipysurus fuscus,Dusky Sea Snake,EN,0.6
+176770,Aipysurus apraefrontalis,Short-nosed Sea Snake,CR,0.8
+177966,Acanthurus chronixis,Kapingamarangi Surgeonfish,VU,0.4
+178799,Sonneratia griffithii,NA,CR,0.8
+178801,Tabebuia palustris,NA,VU,0.4
+178807,Heritiera globosa,NA,EN,0.6
+178808,Camptostemon philippinense,NA,EN,0.6
+178814,Sonneratia ovata,NA,NT,0.2
+178815,Heritiera fomes,NA,EN,0.6
+178816,Phoenix paludosa,Mangrove Date Palm,NT,0.2
+178831,Rhizophora samoensis,NA,NT,0.2
+178833,Pelliciera rhizophorae,Manglar Piñuelo,VU,0.4
+178834,Bruguiera hainesii,NA,CR,0.8
+178835,Brownlowia tersa,NA,NT,0.2
+178839,Aegialitis rotundifolia,NA,NT,0.2
+178844,Avicennia integra,NA,VU,0.4
+178847,Avicennia bicolor,NA,VU,0.4
+178853,Ceriops decandra,NA,NT,0.2
+178856,Aegiceras floridum,NA,NT,0.2
+178858,Mora oleifera,NA,VU,0.4
+178938,Enneanectes smithi,NA,VU,0.4
+178999,Clinus latipennis,False Bay Klipfish,EN,0.6
+179081,Springeratus polyporatus,NA,EN,0.6
+180123,Ecsenius kurti,NA,VU,0.4
+181359,Sotalia guianensis,Guiana Dolphin,NT,0.2
+183221,Myxodagnus sagitta,Arrow Stargazer,VU,0.4
+183305,Xyrichtys victori,Galapagos razorfish,VU,0.4
+183360,Labrisomus jenkinsi,Jenkins' Blenny,VU,0.4
+183373,Hypsoblennius proteus,Socorro Blenny,VU,0.4
+183393,Gillellus chathamensis,Cocos Stargazer,VU,0.4
+183427,Lepidonectes bimaculatus,Twinspot triplefin,VU,0.4
+183433,Halichoeres salmofasciatus,NA,VU,0.4
+183473,Thalassoma virens,Emerald wrasse,VU,0.4
+183482,Dactyloscopus lacteus,Milky Sand Stargazer,VU,0.4
+183513,Paraclinus fehlmanni,NA,VU,0.4
+183519,Halichoeres malpelo,Malpelo wrasse,VU,0.4
+183525,Acanthemblemaria mangognatha,Revillagigedo Barnacle Blenny,VU,0.4
+183535,Mccoskerichthys sandae,Tufted blenny,NT,0.2
+183572,Dialommus fuscus,Galápagos four-eyed blenny,VU,0.4
+183582,Halichoeres discolor,Cocos wrasse,VU,0.4
+183583,Acanthemblemaria atrata,Cocos Barnacle Blenny,VU,0.4
+183612,Axoclinus rubinoffi,Rubinoff's triplefin,VU,0.4
+183625,Halichoeres insularis,Socorro wrasse,VU,0.4
+183694,Platygillellus bussingi,Bussing's Stargazer,NT,0.2
+183703,Thalassoma robertsoni,NA,VU,0.4
+183705,Platygillellus altivelis,Sailfin Stargazer,NT,0.2
+183720,Opisthonema berlangai,Galapágos Thread Herring,VU,0.4
+183739,Xyrichtys wellingtoni,NA,VU,0.4
+183771,Halichoeres adustus,Black wrasse,VU,0.4
+183794,Platygillellus rubellulus,Shortfin Sand Stargazer,VU,0.4
+183853,Starksia galapagensis,Galapagos Blenny,VU,0.4
+183855,Axoclinus cocoensis,Cocos triplefin,VU,0.4
+183873,Acanthemblemaria castroi,Galápagos Barnacle Blenny,VU,0.4
+183896,Paraclinus walkeri,NA,CR,0.8
+183943,Gobioclinus dendriticus,Bravo Clinid,VU,0.4
+183968,Acanthemblemaria stephensi,Malpelo Barnacle Blenny,VU,0.4
+184001,Labrisomus socorroensis,Misspelled Blenny,VU,0.4
+184004,Chaenopsis schmitti,Yellow-mouth pikeblenny,VU,0.4
+185144,Scartella springeri,Springer's Blenny,VU,0.4
+185147,Scartella poiti,NA,VU,0.4
+185152,Lupinoblennius paivai,Paiva's Blenny,EN,0.6
+185163,Scartella nuchifilis,NA,VU,0.4
+187392,Coris bulbifrons,Doubleheader,VU,0.4
+187425,Conniella apterygia,Rowley Shoals Wrasse,VU,0.4
+187435,Halichoeres socialis,Social Wrasse,EN,0.6
+187479,Tautoga onitis,Black-fish,VU,0.4
+187495,Bodianus scrofa,Barred Hogfish,VU,0.4
+187506,Bodianus frenchii,Foxfish,NT,0.2
+187520,Achoerodus gouldii,Western Blue Groper,VU,0.4
+187572,Achoerodus viridis,Eastern Blue Groper,NT,0.2
+187608,Halichoeres burekae,Mardi Gras Wrasse,EN,0.6
+187654,Labrus viridis,Green Wrasse,VU,0.4
+187944,Tenualosa toli,Toli Shad,VU,0.4
+189747,Enneapterygius leucopunctatus,NA,NT,0.2
+190711,Chlorurus bowersi,Bower's Parrotfish,NT,0.2
+190748,Scarus trispinosus,Greenback Parrotfish,EN,0.6
+190761,Scarus hypselopterus,Yellow-tail Parrotfish,NT,0.2
+192256,Conus explorator,NA,NT,0.2
+192272,Conus gauguini,NA,NT,0.2
+192284,Conus luquei,NA,NT,0.2
+192286,Conus lugubris,NA,CR,0.8
+192314,Conus jeanmartini,NA,VU,0.4
+192343,Conus trencarti,NA,NT,0.2
+192348,Conus curralensis,NA,NT,0.2
+192349,Conus terryni,NA,NT,0.2
+192350,Conus decoratus,NA,VU,0.4
+192354,Conus kersteni,NA,NT,0.2
+192358,Conus dorotheae,NA,NT,0.2
+192368,Conus evorai,NA,NT,0.2
+192388,Conus duffyi,NA,VU,0.4
+192403,Conus cuneolus,NA,EN,0.6
+192406,Conus julii,NA,VU,0.4
+192412,Conus henckesi,NA,VU,0.4
+192429,Conus nielsenae,NA,NT,0.2
+192435,Conus compressus,NA,VU,0.4
+192437,Conus hennequini,NA,VU,0.4
+192438,Conus felitae,NA,VU,0.4
+192469,Conus derrubado,NA,NT,0.2
+192475,Conus josephinae,NA,NT,0.2
+192485,Conus navarroi,NA,NT,0.2
+192487,Conus echinophilus,NA,EN,0.6
+192492,Conus xicoi,NA,VU,0.4
+192497,Conus mercator,NA,EN,0.6
+192499,Conus taslei,NA,NT,0.2
+192503,Conus thevenardensis,NA,VU,0.4
+192514,Conus tacomae,NA,VU,0.4
+192522,Conus bruguieresi,NA,EN,0.6
+192523,Conus atlanticoselvagem,NA,NT,0.2
+192530,Conus teodorae,NA,VU,0.4
+192532,Conus stearnsii,NA,VU,0.4
+192535,Conus curassaviensis,NA,NT,0.2
+192541,Conus immelmani,NA,VU,0.4
+192544,Conus crotchii,NA,EN,0.6
+192556,Conus belairensis,NA,EN,0.6
+192572,Conus fontonae,NA,VU,0.4
+192584,Conus diminutus,NA,NT,0.2
+192594,Conus allaryi,NA,VU,0.4
+192602,Conus salreiensis,NA,CR,0.8
+192610,Conus saragasae,NA,NT,0.2
+192613,Conus guinaicus,NA,VU,0.4
+192626,Conus mordeirae,NA,CR,0.8
+192643,Conus kirkandersi,Kirk Ander's Cone,NT,0.2
+192658,Conus richardbinghami,Richard's Cone,VU,0.4
+192684,Conus anabathrum,Florida Cone,VU,0.4
+192687,Conus cloveri,NA,EN,0.6
+192698,Conus rawaiensis,NA,VU,0.4
+192703,Conus trochulus,NA,NT,0.2
+192709,Conus hybridus,NA,EN,0.6
+192715,Conus melvilli,NA,VU,0.4
+192716,Conus aurantius,Golden Cone,NT,0.2
+192744,Conus ateralbus,NA,EN,0.6
+192748,Conus unifasciatus,NA,EN,0.6
+192768,Conus hieroglyphus,Hieroglyphic Cone,VU,0.4
+192785,Conus regonae,NA,VU,0.4
+192795,Conus boschorum,NA,NT,0.2
+192823,Conus fernandesi,NA,EN,0.6
+192852,Conus ardisiaceus,NA,VU,0.4
+192871,Conus cardinalis,Cardinal Cone,NT,0.2
+192878,Conus cuvieri,NA,VU,0.4
+193598,Takifugu vermicularis,Purple Puffer,NT,0.2
+193605,Takifugu chinensis,Chinese Puffer,CR,0.8
+193612,Takifugu rubripes,Japanese Pufferfish,NT,0.2
+193654,Takifugu plagiocellatus,NA,EN,0.6
+193666,Takifugu flavidus,Tawny Puffer,NT,0.2
+193706,Canthigaster marquesensis,NA,VU,0.4
+193734,Chelonodon pleurospilus,Blaasop Beauty,EN,0.6
+193751,Canthigaster cyanetron,NA,EN,0.6
+193786,Arothron inconditus,Bellystriped Blaasop,VU,0.4
+193802,Canthigaster sanctaehelenae,St. Helena Sharpnose Pufferfish,EN,0.6
+194300,Tursiops truncatus Fiordland subpopulation,Fiordland Bottlenose Dolphin,CR,0.8
+195023,Engraulis anchoita,Argentine Anchovy,NT,0.2
+195100,Hippocampus patagonicus,Patagonian Seahorse,VU,0.4
+195320,Urogymnus polylepis,NA,EN,0.6
+195409,Epinephelus itajara,Atlantic Goliath Grouper,VU,0.4
+195438,Hemiscyllium michaeli,Michael's Epaulette Shark,NT,0.2
+195446,Dipturus endeavouri,Endeavour Skate,NT,0.2
+195456,Himantura leoparda,Leopard Whipray,VU,0.4
+195459,Mobula alfredi,Reef Manta Ray,VU,0.4
+195475,Rhynchobatus palpebratus,Eyebrow Wedgefish,NT,0.2
+196016,Eptatretus burgeri,Inshore Hagfish,NT,0.2
+196030,Eptatretus longipinnis,Longfin Hagfish,VU,0.4
+196038,Eptatretus octatrema,Eightgilled Hagfish,CR,0.8
+196056,Myxine garmani,NA,VU,0.4
+196066,Myxine paucidens,NA,EN,0.6
+196069,Myxine sotoi,NA,VU,0.4
+196072,Nemamyxine kreffti,NA,NT,0.2
+196080,Paramyxine cheni,NA,VU,0.4
+196082,Paramyxine fernholmi,NA,VU,0.4
+196084,Paramyxine nelsoni,NA,VU,0.4
+196087,Paramyxine taiwanae,NA,EN,0.6
+196674,Neoopisthopterus cubanus,Cuban Longfin Herring,VU,0.4
+198582,Sardinella maderensis,Madeiran Sardinella,VU,0.4
+198920,Neophocaena phocaenoides,Indo-Pacific Finless Porpoise,VU,0.4
+198921,Mobula birostris,Giant Manta Ray,VU,0.4
+199932,Hemiscyllium freycineti,Indonesian Speckled Carpet Shark,NT,0.2
+201946,Alosa aestivalis,Blueback Herring,VU,0.4
+14134315,Dipturus canutus,Grey Skate,EN,0.6
+15307967,Conus denizi,NA,NT,0.2
+15307977,Conus cacao,NA,VU,0.4
+16727327,Centrophorus moluccensis Eastern Australian subpopulation,Endeavour Dogfish,NT,0.2
+22680038,Tachyeres leucocephalus,White-headed Steamerduck,VU,0.4
+22680405,Somateria mollissima,Common Eider,NT,0.2
+22680412,Somateria fischeri,Spectacled Eider,NT,0.2
+22680415,Polysticta stelleri,Steller's Eider,VU,0.4
+22680427,Clangula hyemalis,Long-tailed Duck,VU,0.4
+22694286,Larus atlanticus,Olrog's Gull,NT,0.2
+22694296,Larus heermanni,Heermann's Gull,NT,0.2
+22694436,Saundersilarus saundersi,Saunders's Gull,VU,0.4
+22694452,Larus fuliginosus,Lava Gull,VU,0.4
+22694473,Pagophila eburnea,Ivory Gull,NT,0.2
+22694497,Rissa tridactyla,Black-legged Kittiwake,VU,0.4
+22694502,Rissa brevirostris,Red-legged Kittiwake,VU,0.4
+22694552,Thalasseus elegans,Elegant Tern,NT,0.2
+22694585,Thalasseus bernsteini,Chinese Crested Tern,CR,0.8
+22694607,Sterna striata,White-fronted Tern,NT,0.2
+22694641,Sterna virgata,Kerguelen Tern,NT,0.2
+22694685,Sternula lorata,Peruvian Tern,EN,0.6
+22694691,Sternula nereis,Fairy Tern,VU,0.4
+22694699,Sternula balaenarum,Damara Tern,VU,0.4
+22694716,Onychoprion aleuticus,Aleutian Tern,VU,0.4
+22694750,Chlidonias albostriatus,Black-fronted Tern,EN,0.6
+22694834,Larosterna inca,Inca Tern,NT,0.2
+22694852,Alca torda,Razorbill,NT,0.2
+22694870,Brachyramphus marmoratus,Marbled Murrelet,EN,0.6
+22694875,Brachyramphus brevirostris,Kittlitz's Murrelet,NT,0.2
+22694887,Synthliboramphus craveri,Craveri's Murrelet,VU,0.4
+22694899,Synthliboramphus wumizusume,Japanese Murrelet,VU,0.4
+22694903,Ptychoramphus aleuticus,Cassin's Auklet,NT,0.2
+22694927,Fratercula arctica,Atlantic Puffin,VU,0.4
+22696606,Podiceps auritus,Horned Grebe,VU,0.4
+22696649,Papasula abbotti,Abbott's Booby,EN,0.6
+22696668,Morus capensis,Cape Gannet,EN,0.6
+22696730,Microcarbo coronatus,Crowned Cormorant,NT,0.2
+22696756,Nannopterum harrisi,Flightless Cormorant,VU,0.4
+22696766,Phalacrocorax neglectus,Bank Cormorant,EN,0.6
+22696802,Phalacrocorax nigrogularis,Socotra Cormorant,VU,0.4
+22696806,Phalacrocorax capensis,Cape Cormorant,EN,0.6
+22696810,Leucocarbo bougainvilliorum,Guanay Cormorant,NT,0.2
+22696840,Leucocarbo campbelli,Campbell Shag,VU,0.4
+22696846,Leucocarbo carunculatus,Rough-faced Shag,VU,0.4
+22696853,Leucocarbo chalconotus,Stewart Shag,VU,0.4
+22696861,Leucocarbo onslowi,Chatham Shag,CR,0.8
+22696869,Leucocarbo colensoi,Auckland Shag,VU,0.4
+22696876,Leucocarbo ranfurlyi,Bounty Shag,VU,0.4
+22696898,Poikilocarbo gaimardi,Red-legged Cormorant,NT,0.2
+22696907,Phalacrocorax featherstoni,Pitt Shag,EN,0.6
+22697619,Pelecanus thagus,Peruvian Pelican,NT,0.2
+22697728,Fregata aquila,Ascension Frigatebird,VU,0.4
+22697742,Fregata andrewsi,Christmas Frigatebird,CR,0.8
+22697752,Aptenodytes forsteri,Emperor Penguin,NT,0.2
+22697776,Eudyptes pachyrhynchus,Fiordland Penguin,VU,0.4
+22697782,Eudyptes robustus,Snares Penguin,VU,0.4
+22697789,Eudyptes sclateri,Erect-crested Penguin,EN,0.6
+22697793,Eudyptes chrysolophus,Macaroni Penguin,VU,0.4
+22697797,Eudyptes schlegeli,Royal Penguin,NT,0.2
+22697800,Megadyptes antipodes,Yellow-eyed Penguin,EN,0.6
+22697810,Spheniscus demersus,African Penguin,EN,0.6
+22697817,Spheniscus humboldti,Humboldt Penguin,VU,0.4
+22697822,Spheniscus magellanicus,Magellanic Penguin,NT,0.2
+22697825,Spheniscus mendiculus,Galapagos Penguin,EN,0.6
+22697847,Gavia adamsii,Yellow-billed Loon,NT,0.2
+22697896,Pseudobulweria aterrima,Mascarene Petrel,CR,0.8
+22697913,Pseudobulweria becki,Beck's Petrel,CR,0.8
+22697925,Pseudobulweria rostrata,Tahiti Petrel,NT,0.2
+22697935,Pseudobulweria macgillivrayi,Fiji Petrel,CR,0.8
+22697949,Pterodroma axillaris,Chatham Petrel,VU,0.4
+22697957,Pterodroma cervicalis,White-necked Petrel,VU,0.4
+22697963,Pterodroma inexpectata,Mottled Petrel,NT,0.2
+22697970,Pterodroma leucoptera,White-winged Petrel,VU,0.4
+22697975,Pterodroma cookii,Cook's Petrel,VU,0.4
+22697984,Pterodroma pycrofti,Pycroft's Petrel,VU,0.4
+22697987,Pterodroma brevipes,Collared Petrel,VU,0.4
+22697990,Pterodroma defilippiana,Masatierra Petrel,VU,0.4
+22697997,Pterodroma longirostris,Stejneger's Petrel,VU,0.4
+22698001,Pterodroma alba,Phoenix Petrel,EN,0.6
+22698005,Pterodroma arminjoniana,Trindade Petrel,VU,0.4
+22698017,Pterodroma sandwichensis,Hawaiian Petrel,EN,0.6
+22698020,Pterodroma phaeopygia,Galapagos Petrel,CR,0.8
+22698030,Pterodroma externa,Juan Fernandez Petrel,VU,0.4
+22698035,Pterodroma baraui,Barau's Petrel,EN,0.6
+22698042,Pterodroma solandri,Providence Petrel,VU,0.4
+22698049,Pterodroma magentae,Magenta Petrel,CR,0.8
+22698062,Pterodroma madeira,Zino's Petrel,EN,0.6
+22698084,Pterodroma incerta,Atlantic Petrel,EN,0.6
+22698088,Pterodroma cahow,Bermuda Petrel,EN,0.6
+22698092,Pterodroma hasitata,Black-capped Petrel,EN,0.6
+22698097,Pterodroma caribbaea,Jamaican Petrel,CR,0.8
+22698136,Bulweria fallax,Jouanin's Petrel,NT,0.2
+22698140,Procellaria aequinoctialis,White-chinned Petrel,VU,0.4
+22698150,Procellaria parkinsoni,Black Petrel,VU,0.4
+22698155,Procellaria westlandica,Westland Petrel,EN,0.6
+22698159,Procellaria cinerea,Grey Petrel,NT,0.2
+22698172,Calonectris leucomelas,Streaked Shearwater,NT,0.2
+22698182,Ardenna bulleri,Buller's Shearwater,VU,0.4
+22698188,Ardenna carneipes,Flesh-footed Shearwater,NT,0.2
+22698195,Ardenna creatopus,Pink-footed Shearwater,VU,0.4
+22698209,Ardenna grisea,Sooty Shearwater,NT,0.2
+22698230,Puffinus yelkouan,Yelkouan Shearwater,VU,0.4
+22698235,Puffinus auricularis,Townsend's Shearwater,CR,0.8
+22698246,Puffinus opisthomelas,Black-vented Shearwater,NT,0.2
+22698252,Puffinus huttoni,Hutton's Shearwater,EN,0.6
+22698272,Puffinus bannermani,Bannerman's Shearwater,EN,0.6
+22698277,Puffinus heinrothi,Heinroth's Shearwater,VU,0.4
+22698280,Pelecanoides garnotii,Peruvian Diving-petrel,EN,0.6
+22698305,Diomedea exulans,Wandering Albatross,VU,0.4
+22698310,Diomedea amsterdamensis,Amsterdam Albatross,EN,0.6
+22698314,Diomedea epomophora,Southern Royal Albatross,VU,0.4
+22698320,Phoebastria irrorata,Waved Albatross,CR,0.8
+22698335,Phoebastria albatrus,Short-tailed Albatross,VU,0.4
+22698350,Phoebastria nigripes,Black-footed Albatross,NT,0.2
+22698365,Phoebastria immutabilis,Laysan Albatross,NT,0.2
+22698388,Thalassarche salvini,Salvin's Albatross,VU,0.4
+22698393,Thalassarche eremita,Chatham Albatross,VU,0.4
+22698398,Thalassarche chrysostoma,Grey-headed Albatross,EN,0.6
+22698425,Thalassarche chlororhynchos,Atlantic Yellow-nosed Albatross,EN,0.6
+22698431,Phoebetria fusca,Sooty Albatross,EN,0.6
+22698448,Phoebetria palpebrata,Light-mantled Albatross,NT,0.2
+22698471,Nesofregetta fuliginosa,Polynesian Storm-petrel,EN,0.6
+22698520,Hydrobates monorhis,Swinhoe's Storm-petrel,NT,0.2
+22698530,Hydrobates macrodactylus,Guadalupe Storm-petrel,CR,0.8
+22698543,Hydrobates markhami,Markham's Storm-petrel,NT,0.2
+22698548,Hydrobates matsudairae,Matsudaira's Storm-petrel,VU,0.4
+22698562,Hydrobates homochroa,Ashy Storm-petrel,EN,0.6
+22698567,Hydrobates hornbyi,Ringed Storm-petrel,NT,0.2
+22724836,Melanitta fusca,Velvet Scoter,VU,0.4
+22728011,Pterodroma feae,Cape Verde Petrel,NT,0.2
+22728318,Diomedea antipodensis,Antipodean Albatross,EN,0.6
+22728323,Diomedea sanfordi,Northern Royal Albatross,EN,0.6
+22728328,Thalassarche bulleri,Buller's Albatross,NT,0.2
+22728349,Thalassarche impavida,Campbell Albatross,VU,0.4
+22728364,Diomedea dabbenena,Tristan Albatross,CR,0.8
+22728372,Thalassarche carteri,Indian Yellow-nosed Albatross,EN,0.6
+22728432,Puffinus mauretanicus,Balearic Shearwater,CR,0.8
+22728437,Procellaria conspicillata,Spectacled Petrel,VU,0.4
+22728442,Pterodroma atrata,Henderson Petrel,EN,0.6
+22728808,Fregetta maoriana,New Zealand Storm-petrel,CR,0.8
+22729000,Brachyramphus perdix,Long-billed Murrelet,NT,0.2
+22729421,Calonectris edwardsii,Cape Verde Shearwater,NT,0.2
+22729604,Thalassarche cauta,Shy Albatross,NT,0.2
+22729609,Thalassarche steadi,White-capped Albatross,NT,0.2
+22732425,Melanitta americana,Black Scoter,NT,0.2
+22734408,Eudyptes moseleyi,Northern Rockhopper Penguin,EN,0.6
+22735250,Eudyptes chrysocome,Southern Rockhopper Penguin,VU,0.4
+22735624,Hydrobates monteiroi,Monteiro's Storm-petrel,VU,0.4
+22736135,Pterodroma deserta,Desertas Petrel,VU,0.4
+42566169,Aetobatus ocellatus,Spotted Eagle Ray,VU,0.4
+43398244,Pristis pectinata Eastern Atlantic subpopulation,Smalltooth Sawfish,CR,0.8
+43398250,Pristis pectinata Western Atlantic subpopulation,Smalltooth Sawfish,CR,0.8
+43508842,Pristis pristis Eastern Atlantic subpopulation,Largetooth Sawfish,CR,0.8
+43508845,Pristis pristis Western Atlantic subpopulation,Largetooth Sawfish,CR,0.8
+43508905,Pristis pristis Indo-West Pacific subpopulation,Largetooth Sawfish,CR,0.8
+43508949,Pristis pristis Eastern Pacific subpopulation,Largetooth Sawfish,CR,0.8
+45354718,Puffinus bryani,Bryan's Shearwater,CR,0.8
+46079873,Omobranchus mekranensis,Mekran Blenny,VU,0.4
+46104077,Lupinoblennius vinctus,Mangrove Blenny,NT,0.2
+46967807,Dermochelys coriacea East Pacific Ocean subpopulation,Leatherback,CR,0.8
+46967817,Dermochelys coriacea West Pacific Ocean subpopulation,Leatherback,CR,0.8
+46967827,Dermochelys coriacea Northwest Atlantic Ocean subpopulation,Leatherback,EN,0.6
+46967838,Dermochelys coriacea Southwest Atlantic Ocean subpopulation,Leatherback,CR,0.8
+46967863,Dermochelys coriacea Southwest Indian Ocean subpopulation,Leatherback,CR,0.8
+47137303,Archosargus pourtalesii,Galápagos Seabream,NT,0.2
+47137515,Calamus taurinus,Galápagos porgy,NT,0.2
+47143176,Emblemariopsis pricei,Seafan Blenny,VU,0.4
+48342104,Meiacanthus abruptus,NA,VU,0.4
+48342108,Omobranchus aurosplendidus,NA,VU,0.4
+48342120,Oman ypsilon,Oman Blenny,VU,0.4
+48342152,Omobranchus hikkaduwensis,NA,VU,0.4
+48342178,Dactyloscopus insulatus,NA,VU,0.4
+48342221,Entomacrodus solus,Lonely Blenny,EN,0.6
+48342236,Meiacanthus naevius,NA,VU,0.4
+48342282,Parablennius serratolineatus,NA,VU,0.4
+48342284,Omobranchus smithi,NA,VU,0.4
+48342288,Medusablennius chani,NA,VU,0.4
+48342328,Ecsenius randalli,NA,VU,0.4
+48342339,Ecsenius tricolor,Derawan Combtooth-Blenny,VU,0.4
+48342342,Praealticus natalis,Natal Blenny,VU,0.4
+48342357,Mimoblennius lineathorax,NA,VU,0.4
+48342364,Ecsenius tigris,Tiger Blenny,VU,0.4
+48342396,Ophioblennius clippertonensis,NA,VU,0.4
+48342467,Parablennius lodosus,Mud Blenny,VU,0.4
+48342534,Entomacrodus chapmani,NA,VU,0.4
+59034974,Evynnis cardinalis,Threadfin Porgy,EN,0.6
+62101215,Synthliboramphus hypoleucus,Guadalupe Murrelet,EN,0.6
+62101249,Synthliboramphus scrippsi,Scripps's Murrelet,VU,0.4
+65365349,Cosmocampus balli,Ball's Pipefish,VU,0.4
+70680197,Carcharhinus dussumieri,Whitecheek Shark,EN,0.6
+70680908,Carcharhinus tjutjot,Indonesian Whaler Shark,VU,0.4
+70682503,Pastinachus sephen,Cowtail Ray,NT,0.2
+70688138,Dipturus confusus,Longnose Skate,CR,0.8
+71711344,Stegostoma tigrinum Eastern Indonesian-Oceania subpopulation,Zebra Shark,NT,0.2
+71711476,Stegostoma tigrinum Indian Ocean-Southeast Asian subpopulation,Zebra Shark,EN,0.6
+72050476,Arctocephalus australis Peruvian/Northern Chilean subpopulation,Peruvian Fur Seal,VU,0.4
+75154879,Sardinella lemuru,Bali sardinella,NT,0.2
+82031425,Sousa chinensis,Indo-Pacific Humpback Dolphin,VU,0.4
+82031633,Sousa plumbea,Indian Ocean Humpback Dolphin,EN,0.6
+82031667,Sousa sahulensis,Australian Humpback Dolphin,VU,0.4
+83776383,Caretta caretta North East Atlantic subpopulation,Loggerhead Turtle,EN,0.6
+84126444,Caretta caretta North East Indian Ocean subpopulation,Loggerhead Turtle,CR,0.8
+84127873,Caretta caretta North West Indian Ocean subpopulation,Loggerhead Turtle,CR,0.8
+84156809,Caretta caretta South Pacific subpopulation,Loggerhead Turtle,CR,0.8
+84189617,Caretta caretta South East Indian Ocean subpopulation,Loggerhead Turtle,NT,0.2
+84199475,Caretta caretta South West Indian Ocean subpopulation,Loggerhead Turtle,NT,0.2
+84784918,Aetomylaeus nichofii,Banded Eagle Ray,VU,0.4
+91209505,Squalus acanthias,Spiny Dogfish,VU,0.4
+98842673,Tenualosa macrura,Longtail shad,NT,0.2
+98894402,Coilia mystus,Osbeck's Grenadier Anchovy,EN,0.6
+98895427,Coilia nasus,Japanese Grenadier Anchovy,EN,0.6
+104019954,Rhynchobatus immaculatus,Taiwanese Wedgefish,CR,0.8
+104023514,Aetomylaeus milvus,Ocellate Eagle Ray,EN,0.6
+104050689,Glaucostegus cemiculus,Blackchin Guitarfish,CR,0.8
+104061138,Glaucostegus typus,Giant Guitarfish,CR,0.8
+104062579,Pachyptila macgillivrayi,MacGillivray's Prion,EN,0.6
+104176764,Brevitrygon walga,Scaly Whipray,NT,0.2
+107259870,Hippocampus spinosissimus,Hedgehog Seahorse,VU,0.4
+107604987,Maculabatis arabica,Pakistan Whipray,CR,0.8
+107605014,Maculabatis ambigua,Baraka's Whipray,NT,0.2
+110847130,Mobula mobular,Giant Devilray,EN,0.6
+116880357,Squatina david,David's Angelshark,NT,0.2
+117636167,Balaenoptera edeni Gulf of Mexico subpopulation,Gulf of Mexico Whale,CR,0.8
+118360372,Plectropomus marisrubri,NA,VU,0.4
+126710128,Mobula hypostoma,Atlantic Devilray,EN,0.6
+130391495,Rhynchorhina mauritaniensis,False Shark Ray,CR,0.8
+130393378,Squatina guggenheim,Angular Angelshark,EN,0.6
+132438298,Hydrobates leucorhous,Leach's Storm-petrel,VU,0.4
+132441735,Hydrobates cheimomnestes,Ainley's Storm-petrel,VU,0.4
+132450926,Hydrobates socorroensis,Townsend's Storm-petrel,EN,0.6
+132467692,Puffinus newelli,Newell's Shearwater,CR,0.8
+132468585,Puffinus myrtae,Rapa Shearwater,CR,0.8
+134820643,Lagenorhynchus obscurus ssp. posidonia,Peruvian Dusky Dolphin,VU,0.4
+134822416,Tursiops truncatus ssp. gephyreus,Lahille’s Bottlenose Dolphin,VU,0.4
+135381188,Epinephelus bruneus,Longtooth Grouper,VU,0.4
+157011948,Dugong dugon Nansei subpopulation,Dugong,CR,0.8
