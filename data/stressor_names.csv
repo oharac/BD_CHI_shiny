@@ -16,4 +16,4 @@ direct_human,Direct human disturbance,land-based
 nutrient,Nutrient pollution,land-based
 organic,Organic chemical pollution,land-based
 light,Light pollution,land-based
-shipping,Shipping (cumulative ocean),ocean
+shipping,Shipping,ocean

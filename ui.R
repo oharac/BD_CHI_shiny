@@ -135,36 +135,41 @@ body <- dashboardBody(
      
      textOutput("globeCaption"),
      globeOutput("globePlot")
-     )# ,
+     ),
     
-    ### 3.1.4 Trends ------------------
-    # tabItem( tabName = 'global_trend',
-    #  div(id = 'temp_message_about',
-    #    h1('Average Annual Change (Trend) of Cumulative Impact from 2003-2013',
-    #     style = "color:white" , align = "center" ) ,
-    #    tags$hr()
-    #    ),
-    #  
-    #  fluidRow(
-    #    column(2, offset = 2,
-    #           fluidRow(
-    #             materialSwitch(
-    #               inputId = "land_toggle",
-    #               label = HTML("<i id = 'trend-help' class='fa fa-question-circle' role='presentation' aria-label='question-circle icon'></i><span>Toggle Land Cover</span>"), 
-    #               value = TRUE,
-    #               status = "primary"
-    #             ),
-    #             tippy_this("trend-help", tooltip = "Use the switch to toggle land polygons, and use the interactive plot's select tool to refine a subset of data for the box plot below.", placement = "bottom")
-    #           )
-    #     )),
-    #  
-    #  fluidRow(
-    #    column(8, offset = 2, plotlyOutput("trendPlotly"))
-    #    ),
-    #  
-    #  plotOutput("trendPlot"),
-    #  textOutput("trendCaption")
-    #  )
+    ###################################
+    ###  Intensification map/trend  ###
+    ###################################
+    tabItem( tabName = 'global_trend',
+     div(id = 'temp_message_about',
+       h1('Average Annual Change (Trend) of Cumulative Impact from 2003-2013',
+        style = "color:white" , align = "center" ) ,
+       tags$hr()
+       ),
+
+     fluidRow(
+       column(width = 10,
+              fluidRow(
+                radioButtons(
+                  inputId = "intens_type",
+                  label = 'Trend type',
+                  choices = c('% intensifying' = 'incr', 
+                              '% abating' = 'decr', 
+                              'net % intensifying' = 'net'),
+                  inline = TRUE,
+                  selected = 'net'
+                ),
+                tippy_this("trend-help", tooltip = "Net intensification is (intensifying - abating).", placement = "bottom")
+              )
+        )),
+
+      fluidRow(
+       column(12, plotlyOutput("trendPlotly"))
+       ),
+
+     plotOutput("trendPlot"),
+     textOutput("trendCaption")
+     )
     )
   )
 

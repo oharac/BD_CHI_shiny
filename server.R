@@ -3,18 +3,25 @@
 server <- function(input, output) {
   
   #################################
+  ###      Stressor table       ###
+  #################################
+  output$stressor_info <- renderTable({
+    str_table
+  })
+  
+  #################################
   ###  Impact by taxon boxplot  ###
   #################################
   
   taxa_impacts <- reactive({
-    ### why is 'selected' argument not working in ui?
     tx <- input$selected_taxon
     taxa_impacts <- impact_df %>% 
       filter(desc == tx | tx == 'all at-risk species') %>%
       left_join(str_names, by = c('stressor' = 'str_field')) %>%
       mutate(str_name = fct_rev(str_name))
     return(taxa_impacts)
-  })
+  }) %>%
+    bindCache(input$selected_taxon)
   
   output$taxonPlot <- renderPlot({
     means_df <- taxa_impacts() %>%
@@ -36,7 +43,8 @@ server <- function(input, output) {
             panel.background = element_rect(fill = 'black', color = NA),
             axis.text = element_text(color = 'white', size = 12))
     return(taxa_plot)
-  })
+  }) %>%
+    bindCache(input$selected_taxon)
 
   output$taxonCaption <- renderText({
     sprintf('Boxplot shows distribution of impacted range for %s (n = %s),
@@ -67,7 +75,8 @@ server <- function(input, output) {
       mutate(desc = factor(desc, levels = c(str_order, 'all species')))
     
     return(str_impacts)
-  })
+  }) %>%
+    bindCache(input$selected_stressor)
   
   output$strPlot <- renderPlot({
     means_df <- str_impacts() %>%
@@ -75,7 +84,7 @@ server <- function(input, output) {
       summarize(impact_pct = mean(impact_pct))
     
     str_plot <- ggplot(str_impacts(), aes(x = desc, y = impact_pct)) +
-      geom_boxplot(aes(fill = category), 
+      geom_boxplot(aes(fill = desc), 
                    color = 'grey90') +
       geom_point(data = means_df, shape = 23, size = 3,
                  color = 'grey90', fill = 'red') +
@@ -88,7 +97,8 @@ server <- function(input, output) {
             panel.background = element_rect(fill = 'black', color = NA),
             axis.text = element_text(color = 'white', size = 12))
     return(str_plot)
-  })
+  }) %>%
+    bindCache(input$selected_stressor)
   
   output$strCaption <- renderText({
     sprintf('Boxplot shows distribution of impacted range by taxon for
@@ -137,26 +147,124 @@ server <- function(input, output) {
              (purple = 0%%, yellow = 100%%).", input$selected_year)
   })
   
+
+  #####################################
+  ###  Intensification map and box  ###
+  #####################################
+  
+  ### get proper data from intens_r_list
+  intens_df_reactive <- reactive({
+    type <- input$intens_type
+    message('creating intens_df_reactive element, type = ', type)
+    category <- 'all'
+    i_stem <- '%s_%s'
+    if(type == 'net') {
+      ### subtract decr from incr to get net
+      i1 <- sprintf(i_stem, category, 'incr')
+      i2 <- sprintf(i_stem, category, 'decr')
+      df <- intens_r_list[[i1]] %>%
+        full_join(intens_r_list[[i2]] %>%
+                    select(x, y, pct_decr = pct_int)) %>%
+        mutate(across(where(is.numeric), ~ifelse(is.na(.), 0, .)),
+               trend = pct_int - pct_decr)
+    } else {
+      ### choose the proper version and just return it
+      i <- sprintf(i_stem, category, type)
+      df <- intens_r_list[[i]] %>%
+        rename(trend = pct_int)
+    }
+    df <- df %>%
+      filter(y > -87 & y < 87)
+    return(df)
+  }) %>%
+    bindCache(input$intens_type)
   
   ### Interactive trend map output
-  # output$trendPlotly <- renderPlotly({
-  #   buildTrendMapOutput(global_trends, input$land_toggle)
-  #   })
-  
-  ### Trend boxplot output
-  # output$trendPlot <- renderPlot({
-  #   buildTrendBoxOutput(global_trends, event_data('plotly_selected'))
-  #   })
-  
-  
-  
-  ### Caption for trend output
-  # output$trendCaption <- renderText({
-  #   buildTrendCaption(event_data('plotly_selected'))
-  #   })
-  
+  intens_pal_reactive <- reactive({
+    ### diverging color palette from ColorBrewer
+    incr_pal <- colorRampPalette(colors = c('#f7f7f7', '#8e0152'))(101)
+    decr_pal <- colorRampPalette(colors = c('#f7f7f7', '#276419'))(101)
+    zero_col <- 'grey90'
+    pal_prms <- if(input$intens_type == 'net') {
+      list(colors = c(rev(decr_pal), incr_pal[-1]),
+           breaks = seq(-100, 100, 50))
+    } else if(input$intens_type == 'incr') {
+      list(colors = incr_pal,
+           breaks = seq(0, 100, 25))
+    } else if(input$intens_type == 'decr') {
+      list(colors = decr_pal,
+           breaks = seq(0, 100, 25))
+    }
+    return(pal_prms)
+  })
+  output$trendPlotly <- renderPlotly({
+    pal_prms <- intens_pal_reactive()
 
-  output$stressor_info <- renderTable({
-    str_table
-    })
+    plot <- ggplot(data = intens_df_reactive()) +
+      geom_raster(aes(x=x, y = y, fill = trend)) +
+      theme_void() +
+      theme(panel.background = element_rect(fill = NA, color = NA),
+            plot.background = element_rect(fill = NA, color = NA),
+            panel.grid.major = element_blank(),
+            plot.margin = unit(c(0, 0, 0, 0), 'cm'),
+            legend.text = element_text(color = "white"),
+            legend.title = element_text(color = "white")) +
+      labs(fill = NA) +
+      scale_fill_gradientn(colors = pal_prms$colors,
+                           breaks = pal_prms$breaks,
+                           labels = paste0(pal_prms$breaks, '%'),
+                           na.value = 'grey80') +
+      coord_fixed(ratio = 1, xlim = c(-180, 180), ylim = c(-87, 87)) 
+        ### to set aspect ratio.  Clip northern and southernmost cells
+      
+    # Output as interactive plotly
+    ggplotly(plot)
+  }) %>%
+    bindCache(input$intens_type)
+
+  
+  intens_select_reactive <- reactive({
+    selected_points <- event_data('plotly_selected')
+    if(!is.null(selected_points)) {
+      # Bump selected points to match indexes
+      selected_rows <- selected_points$pointNumber + 1
+      
+      # Filter on selected points
+      selected_data <- intens_df_reactive() %>%
+        filter(row_number() %in% selected_rows)
+      return(selected_data)
+    } else {
+      return(intens_df_reactive())
+    }
+  })
+
+  ### Trend boxplot output
+  output$trendPlot <- renderPlot({
+    global <- intens_df_reactive()
+    selected <- intens_select_reactive()
+    # Rescale value for mean of selected points
+    min <- min(global$trend)
+    max <- max(global$trend)
+    mean <- mean(selected$trend)
+    mean_scaled <- ceiling((mean-min)/(max-min) * 100)
+
+    # Derive color from continuous palette for rescaled mean
+    col <- intens_pal_reactive()[mean_scaled]
+
+    # Build boxplot
+    ggplot(data = selected, aes(x = trend)) +
+      geom_boxplot(color = "white", fill= 'blue', size = 1.5) +
+      plot_theme +
+      xlim(min, max)
+  })
+
+  ### Caption for trend output
+  output$trendCaption <- renderText({
+    if (!is.null(event_data('plotly_selected'))) {
+      "Distribution of intensification/abatement for selected area."
+    } else {
+      "Distribution of intensification/abatement globally."
+    }
+  })
+  
 }

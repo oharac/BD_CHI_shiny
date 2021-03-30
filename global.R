@@ -9,6 +9,7 @@ library(shinyBS)
 library(shinyjs)
 library(shinycssloaders)
 library(shinyWidgets)
+library(plotly)
 library(tippy)
 library(here)
 library(rgdal)
@@ -48,14 +49,15 @@ str_table <- str_names %>%
          category = str_to_title(category)) %>%
   select(Category = category, `Stressor name` = str_name)
 
-### Read in data
+######################################################
+### generate list of raster/dfs for impact by year ###
+######################################################
 r_nspp <- raster::raster(here::here('data/n_spp_map_latlong.tif'))
 nspp_df <- raster::rasterToPoints(r_nspp) %>%
   as.data.frame() %>%
-  setNames(c('x', 'y', 'nspp')) %>%
-  mutate(cell_id = 1:n()) 
+  setNames(c('x', 'y', 'nspp'))
 
-### for impact rasters, let's do as a list to avoid need for filtering by year.
+### let's do as a list to avoid need for filtering by year.
 ### Find out if Fitz server has multiple cores!
 impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_all_[0-9]{4}_latlong.tif',
                         full.names = TRUE)
@@ -68,14 +70,16 @@ map_year_list <- parallel::mclapply(impact_fs, mc.cores = 4,
                                         raster::rasterToPoints() %>%
                                         as.data.frame() %>%
                                         setNames(c('x', 'y', 'n_imp')) %>%
-                                        mutate(cell_id = 1:n()) %>%
-                                        dt_join(nspp_df %>% select(-x, -y), 
-                                                by = 'cell_id', type = 'left') %>%
+                                        dt_join(nspp_df, 
+                                                by = c('x', 'y'), type = 'left') %>%
                                         mutate(pct_imp = ifelse(nspp > 0, round(n_imp / nspp * 100), 0))
                                       return(r_df)
                                     }) %>%
   setNames(str_extract(impact_fs, '[0-9]{4}'))
 
+#########################################
+### generate df of impacts by species ###
+#########################################
 message('reading in impacted range by species')
 spp_impact_data <- read_csv(here::here('data', 'imp_range_by_spp_2013.csv')) %>%
   distinct()
@@ -89,3 +93,91 @@ impact_df <- spp_impact_data %>%
   mutate(impact_pct = impact_km2 / range_km2,
          impact_pct = ifelse(is.nan(impact_pct), 0, impact_pct)) %>%
   filter(stressor != 'cum_ocean')
+
+#######################################################
+### generate list of raster/dfs for intensification ###
+#######################################################
+intens_fs <- list.files(here::here('data/intens_maps'), 
+                        pattern = 'intens_.+_latlong.tif',
+                        full.names = TRUE)
+
+message('creating intensification list')
+intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 5,
+                                    FUN = function(f) { ### f <- intens_fs[1]
+                                      r <- raster::raster(f)
+                                      r_df <- r %>%
+                                        raster::rasterToPoints() %>%
+                                        as.data.frame() %>%
+                                        setNames(c('x', 'y', 'n_int')) %>%
+                                        dt_join(nspp_df, 
+                                                by = c('x', 'y'), type = 'left') %>%
+                                        mutate(pct_int = ifelse(nspp > 0, round(n_int / nspp * 100), 0))
+                                      return(r_df)
+                                    }) %>%
+  setNames(str_remove_all(intens_fs, '.+intens_|2.+'))
+
+
+
+## ggplot theme
+# plot_theme <- theme_classic() +
+#   theme(axis.text.y = element_blank(),
+#         axis.ticks.y = element_blank(),
+#         axis.line.y = element_blank(),
+#         legend.position = "none",
+#         plot.background = element_rect(fill = "black"),
+#         panel.background = element_rect(fill = "black"),
+#         axis.text.x = element_text(color = "white"))
+
+## Build spatial plotly for trend data
+
+
+## Build boxplot for selected values
+# buildTrendBoxOutput <- function(global_trends, selected_points) {
+#   if (!is.null(selected_points)) {
+#     # Bump selected points to match indexes
+#     selected_rows <- selected_points$pointNumber + 1
+#     
+#     # Filter on selected points
+#     selected_data <- global_trends %>%
+#       filter(row_number() %in% selected_rows)
+#     
+#     # Rescale value for mean of selected points
+#     min <- min(global_trends$value)
+#     max <- max(global_trends$value)
+#     mean <- mean(selected_data$value)
+#     mean_scaled <- ceiling((mean-min)/(max-min) * 100)
+#     
+#     # Derive color from continuous palette for rescaled mean
+#     col <- viridis_pal(begin = 0, end = 1)(100)[mean_scaled]
+#     
+#     # Build boxplot
+#     ggplot(data = selected_data, aes(x = value)) +
+#       geom_boxplot(color = "white", fill= col, size = 1.5) +
+#       plot_theme +
+#       xlim(min, max)
+#   } else {
+#     # Rescale value for mean of all points
+#     min <- min(global_trends$value)
+#     max <- max(global_trends$value)
+#     mean <- mean(global_trends$value)
+#     mean_scaled <- ceiling((mean-min)/(max-min)  * 100)
+#     
+#     # Derive color from continuous palette for rescaled mean
+#     col <- viridis_pal(begin = 0, end = 1)(100)[mean_scaled]
+#     
+#     # Build boxplot
+#     ggplot(data = global_trends, aes(x = value)) +
+#       geom_boxplot(color = "white", fill= col, size = 1.5) +
+#       plot_theme +
+#       xlim(min, max)
+#   }
+# }
+
+## Build trend caption
+# buildTrendCaption <- function(selected_points) {
+#   if (!is.null(selected_points)) {
+#     "Distribution of average annual changes (trend) for selected area."
+#   } else {
+#     "Distribution of average annual changes (trend) globally."
+#   }
+# }
