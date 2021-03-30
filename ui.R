@@ -93,8 +93,8 @@ body <- dashboardBody(
                     selectInput("selected_taxon", label = "By Taxon:", 
                                 choices  = taxa_names$tx_name,
                                 selected = 1),
-                    plotOutput("taxonPlot"),
-                    textOutput("taxonCaption")
+                    textOutput("taxonCaption"),
+                    plotOutput("taxonPlot")
              )
     ),
     
@@ -111,8 +111,8 @@ body <- dashboardBody(
                    selectInput("selected_stressor", label = "By Stressor:",
                                choices = str_names$str_name,
                                selected = 1),
-                   plotOutput("strPlot"),
-                   textOutput("strCaption")
+                   textOutput("strCaption"),
+                   plotOutput("strPlot")
             )
     ),
     
@@ -123,18 +123,32 @@ body <- dashboardBody(
             div(id = 'annual_trend',
               h1('Cumulative impact on at-risk marine species by year',
                  style = "color:white" , align = "center" ) ,
-              tags$hr()
+              tags$hr(),
+              p('Cumulative impact on at-risk biodiversity by year and stressor
+                 category. Spine length indicates relative species richness 
+                 (number of at-risk species) in that location.  Color indicates 
+                 proportion of species affected by one or more stressors in that 
+                 location (purple = 0%, yellow = 100%).')
             ),
      
-            textOutput("impactsGlobeCaption"),
-            
             radioGroupButtons(
-              inputId = "selected_year",
+              inputId = "impact_year",
               choices = c(2003:2013),
               justified = TRUE,
               selected = 2008
               ),
-           
+            radioButtons(
+              inputId = "impact_cat",
+              label = 'Stressor category',
+              choices = c('Cumulative' = 'all', 
+                          'Fishing'    = 'fishing', 
+                          'Climate'    = 'climate',
+                          'Land-based' = 'land-based',
+                          'Ocean-based' = 'ocean'),
+              inline = TRUE,
+              selected = 'all'
+            ),
+            
            globeOutput("impactsGlobe")
      ),
     
@@ -145,19 +159,58 @@ body <- dashboardBody(
             div(id = 'annual_trend',
                 h1('Intensification and abatement of impacts',
                    style = "color:white" , align = "center" ) ,
-                tags$hr()
+                tags$hr(),
+                HTML('<p>Intensification and abatement of impacts on at-risk biodiversity.
+                      <i>Intensification</i> indicates the proportion (%) of species in a 
+                      cell experiencing one or more stressors increasing in intensity;
+                      <i>abatement</i> indicates proportion of species experiencing one 
+                      or more stressors decreasing in intensity. <i>Net intensification</i>
+                      is the difference: (% intensifying - % abating).  Spine length 
+                      indicates relative species richness (number of at-risk species).  
+                      Color indicates % intensification/abatement: green = 100% abatement, 
+                      magenta = 100% intensification, grey = 0%.</p>')
             ),
             
-            textOutput("intensGlobeCaption"),
-            radioGroupButtons(
+            radioButtons(
               inputId = "intens_type",
-              label = 'Trend type',
-              choices = c('% intensifying' = 'incr', 
-                          '% abating' = 'decr', 
-                          'net % intensifying' = 'net'),
-              justified = TRUE,
+              label = 'Trend direction',
+              choices = c('net % intensifying' = 'net',
+                          '% intensifying' = 'incr', 
+                          '% abating' = 'decr'),
+              inline = TRUE,
               selected = 'net'
             ),
+            radioButtons(
+              inputId = "intens_cat",
+              label = 'Stressor category',
+              choices = c('Cumulative' = 'all', 
+                          'Fishing'    = 'fishing', 
+                          'Climate'    = 'climate',
+                          'Land-based' = 'land-based',
+                          'Ocean-based' = 'ocean'),
+              inline = TRUE,
+              selected = 'all'
+            ),
+            # radioGroupButtons(
+            #   inputId = "intens_type",
+            #   label = 'Trend direction',
+            #   choices = c('% intensifying' = 'incr', 
+            #               '% abating' = 'decr', 
+            #               'net % intensifying' = 'net'),
+            #   justified = TRUE,
+            #   selected = 'net'
+            # ),
+            # radioGroupButtons(
+            #   inputId = "intens_cat",
+            #   label = 'Stressor category',
+            #   choices = c('Cumulative' = 'all', 
+            #               'Fishing'    = 'fishing', 
+            #               'Climate'    = 'climate',
+            #               'Land-based' = 'land-based',
+            #               'Ocean-based' = 'ocean'),
+            #   justified = TRUE,
+            #   selected = 'all'
+            # ),
             globeOutput("intensGlobe")
     )
   )

@@ -28,7 +28,11 @@ dt_join <- function (df1, df2, by, type) {
   return(as.data.frame(dt_full))
 }
 
-message('taxa/stressor name mappings for UI')
+### define a function for transforming species richness
+richness_xfm <- function(x) {
+  x^.7 ### a little less drastic than sqrt
+}
+
 taxa_names <- read_csv(here('data/iucn_taxa_2020-1.csv')) %>%
   select(tx_field = assess_gp, tx_name = desc) %>%
   distinct() %>%
@@ -59,7 +63,7 @@ nspp_df <- raster::rasterToPoints(r_nspp) %>%
 
 ### let's do as a list to avoid need for filtering by year.
 ### Find out if Fitz server has multiple cores!
-impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_all_[0-9]{4}_latlong.tif',
+impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_.+_[0-9]{4}_latlong.tif',
                         full.names = TRUE)
 
 message('creating impact map year list')
@@ -75,7 +79,7 @@ map_year_list <- parallel::mclapply(impact_fs, mc.cores = 4,
                                         mutate(pct_imp = ifelse(nspp > 0, round(n_imp / nspp * 100), 0))
                                       return(r_df)
                                     }) %>%
-  setNames(str_extract(impact_fs, '[0-9]{4}'))
+  setNames(str_remove_all(basename(impact_fs), 'impact_|_latlong.tif'))
 
 #########################################
 ### generate df of impacts by species ###
@@ -117,67 +121,3 @@ intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 5,
   setNames(str_remove_all(intens_fs, '.+intens_|2.+'))
 
 
-
-## ggplot theme
-# plot_theme <- theme_classic() +
-#   theme(axis.text.y = element_blank(),
-#         axis.ticks.y = element_blank(),
-#         axis.line.y = element_blank(),
-#         legend.position = "none",
-#         plot.background = element_rect(fill = "black"),
-#         panel.background = element_rect(fill = "black"),
-#         axis.text.x = element_text(color = "white"))
-
-## Build spatial plotly for trend data
-
-
-## Build boxplot for selected values
-# buildTrendBoxOutput <- function(global_trends, selected_points) {
-#   if (!is.null(selected_points)) {
-#     # Bump selected points to match indexes
-#     selected_rows <- selected_points$pointNumber + 1
-#     
-#     # Filter on selected points
-#     selected_data <- global_trends %>%
-#       filter(row_number() %in% selected_rows)
-#     
-#     # Rescale value for mean of selected points
-#     min <- min(global_trends$value)
-#     max <- max(global_trends$value)
-#     mean <- mean(selected_data$value)
-#     mean_scaled <- ceiling((mean-min)/(max-min) * 100)
-#     
-#     # Derive color from continuous palette for rescaled mean
-#     col <- viridis_pal(begin = 0, end = 1)(100)[mean_scaled]
-#     
-#     # Build boxplot
-#     ggplot(data = selected_data, aes(x = value)) +
-#       geom_boxplot(color = "white", fill= col, size = 1.5) +
-#       plot_theme +
-#       xlim(min, max)
-#   } else {
-#     # Rescale value for mean of all points
-#     min <- min(global_trends$value)
-#     max <- max(global_trends$value)
-#     mean <- mean(global_trends$value)
-#     mean_scaled <- ceiling((mean-min)/(max-min)  * 100)
-#     
-#     # Derive color from continuous palette for rescaled mean
-#     col <- viridis_pal(begin = 0, end = 1)(100)[mean_scaled]
-#     
-#     # Build boxplot
-#     ggplot(data = global_trends, aes(x = value)) +
-#       geom_boxplot(color = "white", fill= col, size = 1.5) +
-#       plot_theme +
-#       xlim(min, max)
-#   }
-# }
-
-## Build trend caption
-# buildTrendCaption <- function(selected_points) {
-#   if (!is.null(selected_points)) {
-#     "Distribution of average annual changes (trend) for selected area."
-#   } else {
-#     "Distribution of average annual changes (trend) globally."
-#   }
-# }

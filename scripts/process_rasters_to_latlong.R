@@ -5,7 +5,7 @@ library(here)
 ### transform impact rasters to 4326
 res_out <- 1 ### in degrees
 
-r_fs <- list.files(here('data/impact_maps'), pattern = 'impact_all_[0-9]{4}.tif',
+r_fs <- list.files(here('data/impact_maps'), pattern = 'impact_.+_[0-9]{4}.tif',
                    full.names = TRUE)
 r_out_fs <- str_replace(r_fs, '.tif', '_latlong.tif')
 base_rast <- raster(ext = extent(c(-180, +180, -90, +90)),
