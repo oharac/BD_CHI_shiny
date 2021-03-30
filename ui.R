@@ -31,7 +31,7 @@ sidebar <- dashboardSidebar(
 
     menuItem("About", tabName = 'about', icon = icon('question-circle')),
     menuItem("Impact by taxon", tabName = 'taxa_info', icon = icon('fish')),
-    menuItem(" Impact by stressor", tabName = 'str_info', icon = icon('ship')),
+    menuItem("Impact by stressor", tabName = 'str_info', icon = icon('ship')),
     menuItem("Global Annual Impact", tabName = 'annual_impact', icon = icon('globe-americas')),
     menuItem("Global Trends", tabName = 'global_trend', icon = icon('chart-line'))
     )
@@ -85,7 +85,7 @@ body <- dashboardBody(
     #################################
     tabItem(tabName = 'taxa_info',
             div(id = 'temp_message_about',
-                h1('Impacted range across stressors by taxon',
+                h1('Impacted range across stressors, by taxon',
                    style = "color:white" , align = "center" ) ,
                 tags$hr()
              ),
@@ -103,7 +103,7 @@ body <- dashboardBody(
     ##################################
     tabItem(tabName = 'str_info',
             div(id = 'temp_message_about',
-                h1('Impacted range across taxa by stressor',
+                h1('Impacted range across taxa, by stressor',
                    style = "color:white" , align = "center" ) ,
                 tags$hr()
              ),
@@ -121,57 +121,47 @@ body <- dashboardBody(
     ####################################
     tabItem(tabName = 'annual_impact',
             div(id = 'annual_trend',
-              h1('Global Cumulative Impact by Year',
+              h1('Cumulative impact on at-risk marine species by year',
                  style = "color:white" , align = "center" ) ,
               tags$hr()
             ),
      
-     radioGroupButtons(
-       inputId = "selected_year",
-       choices = c(2003:2013),
-       justified = TRUE,
-       selected = 2008
-       ),
-     
-     textOutput("globeCaption"),
-     globeOutput("globePlot")
+            textOutput("impactsGlobeCaption"),
+            
+            radioGroupButtons(
+              inputId = "selected_year",
+              choices = c(2003:2013),
+              justified = TRUE,
+              selected = 2008
+              ),
+           
+           globeOutput("impactsGlobe")
      ),
     
-    ###################################
-    ###  Intensification map/trend  ###
-    ###################################
-    tabItem( tabName = 'global_trend',
-     div(id = 'temp_message_about',
-       h1('Average Annual Change (Trend) of Cumulative Impact from 2003-2013',
-        style = "color:white" , align = "center" ) ,
-       tags$hr()
-       ),
-
-     fluidRow(
-       column(width = 10,
-              fluidRow(
-                radioButtons(
-                  inputId = "intens_type",
-                  label = 'Trend type',
-                  choices = c('% intensifying' = 'incr', 
-                              '% abating' = 'decr', 
-                              'net % intensifying' = 'net'),
-                  inline = TRUE,
-                  selected = 'net'
-                ),
-                tippy_this("trend-help", tooltip = "Net intensification is (intensifying - abating).", placement = "bottom")
-              )
-        )),
-
-      fluidRow(
-       column(12, plotlyOutput("trendPlotly"))
-       ),
-
-     plotOutput("trendPlot"),
-     textOutput("trendCaption")
-     )
+    ######################################
+    ###  Intensification globe output  ###
+    ######################################
+    tabItem(tabName = 'global_trend',
+            div(id = 'annual_trend',
+                h1('Intensification and abatement of impacts',
+                   style = "color:white" , align = "center" ) ,
+                tags$hr()
+            ),
+            
+            textOutput("intensGlobeCaption"),
+            radioGroupButtons(
+              inputId = "intens_type",
+              label = 'Trend type',
+              choices = c('% intensifying' = 'incr', 
+                          '% abating' = 'decr', 
+                          'net % intensifying' = 'net'),
+              justified = TRUE,
+              selected = 'net'
+            ),
+            globeOutput("intensGlobe")
     )
   )
+)
 
 ## Assemble UI components as dashboard page -------------
 ui <- dashboardPage(header, sidebar, body, skin = "blue")

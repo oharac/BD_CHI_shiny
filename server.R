@@ -110,50 +110,50 @@ server <- function(input, output) {
   ### Annual impact globe output ###
   ##################################
   
-  map_year <- reactive({
+  impacts_year_map <- reactive({
     ### color vector for translating pct impacted into a viridis value
     ### index 1 corresponds to 0%, while index 101 corresponds to 100%
     colors_gradient <- hcl.colors(n = 101, palette = 'viridis')
     
-    ### define a function for transforming species richness
     richness_xfm <- function(x) {
       x^.7 ### a little less drastic than sqrt
     }
     
-    map_year <- map_year_list[[input$selected_year]] %>%
+    impacts_year_map <- map_year_list[[input$selected_year]] %>%
       ### NOTE: because R indexes from 1, add 1 to pct_impact for index
       mutate(col = colors_gradient[pct_imp + 1]) %>%
       mutate(length = richness_xfm(nspp))
-    return(map_year)
+    return(impacts_year_map)
   })
   
-  output$globePlot <- renderGlobe({
+  output$impactsGlobe <- renderGlobe({
     globePlot <<- globejs(
-      lat  = map_year()$y,
-      long = map_year()$x,
-      val  = map_year()$length,
+      lat  = impacts_year_map()$y,
+      long = impacts_year_map()$x,
+      val  = impacts_year_map()$length,
       pointsize = 1,
-      color = map_year()$col,
+      color = impacts_year_map()$col,
       atmosphere = TRUE,
       title = input$selected_year)
     }) %>%
     bindCache(input$selected_year)
   
   ### Caption for globe output
-  output$globeCaption <- renderText({
-    sprintf("Cumulative impact on at-risk biodiversity for %s. Length indicates 
+  output$impactsGlobeCaption <- renderText({
+    sprintf('Cumulative impact on at-risk biodiversity for %s. Spine length indicates 
              relative species richness (number of at-risk species).  Color 
-             indicates proportion of species impacted 
-             (purple = 0%%, yellow = 100%%).", input$selected_year)
+             indicates proportion of species affected by one or more stressors 
+             (purple = 0%%, yellow = 100%%).', input$selected_year)
   })
   
 
-  #####################################
-  ###  Intensification map and box  ###
-  #####################################
+
+  ####################################
+  ### Intensification globe output ###
+  ####################################
   
-  ### get proper data from intens_r_list
   intens_df_reactive <- reactive({
+    # input <- list(intens_type = 'decr')
     type <- input$intens_type
     message('creating intens_df_reactive element, type = ', type)
     category <- 'all'
@@ -173,98 +173,59 @@ server <- function(input, output) {
       df <- intens_r_list[[i]] %>%
         rename(trend = pct_int)
     }
-    df <- df %>%
-      filter(y > -87 & y < 87)
+    
     return(df)
   }) %>%
     bindCache(input$intens_type)
   
-  ### Interactive trend map output
-  intens_pal_reactive <- reactive({
+  intens_map_reactive <- reactive({
+    ### color vector for translating pct intensification into a color
+    ### note: for net, need to add 100 to the indices
     ### diverging color palette from ColorBrewer
     incr_pal <- colorRampPalette(colors = c('#f7f7f7', '#8e0152'))(101)
     decr_pal <- colorRampPalette(colors = c('#f7f7f7', '#276419'))(101)
-    zero_col <- 'grey90'
-    pal_prms <- if(input$intens_type == 'net') {
-      list(colors = c(rev(decr_pal), incr_pal[-1]),
-           breaks = seq(-100, 100, 50))
-    } else if(input$intens_type == 'incr') {
-      list(colors = incr_pal,
-           breaks = seq(0, 100, 25))
-    } else if(input$intens_type == 'decr') {
-      list(colors = decr_pal,
-           breaks = seq(0, 100, 25))
+    # input <- list(intens_type = 'decr')
+    colors_gradient <- switch(input$intens_type,
+                              net = c(rev(decr_pal), incr_pal[-1]),
+                              incr = incr_pal,
+                              decr = decr_pal)
+    bump <- ifelse(input$intens_type == 'net', 101, 1)
+    
+    ### define a function for transforming species richness
+    richness_xfm <- function(x) {
+      x^.7 ### a little less drastic than sqrt
     }
-    return(pal_prms)
+    
+    intens_map <- intens_df_reactive() %>%
+      ### NOTE: because R indexes from 1, add 1 to pct_impact for index
+      mutate(col = colors_gradient[trend + bump]) %>%
+      mutate(length = richness_xfm(nspp))
+    return(intens_map)
   })
-  output$trendPlotly <- renderPlotly({
-    pal_prms <- intens_pal_reactive()
-
-    plot <- ggplot(data = intens_df_reactive()) +
-      geom_raster(aes(x=x, y = y, fill = trend)) +
-      theme_void() +
-      theme(panel.background = element_rect(fill = NA, color = NA),
-            plot.background = element_rect(fill = NA, color = NA),
-            panel.grid.major = element_blank(),
-            plot.margin = unit(c(0, 0, 0, 0), 'cm'),
-            legend.text = element_text(color = "white"),
-            legend.title = element_text(color = "white")) +
-      labs(fill = NA) +
-      scale_fill_gradientn(colors = pal_prms$colors,
-                           breaks = pal_prms$breaks,
-                           labels = paste0(pal_prms$breaks, '%'),
-                           na.value = 'grey80') +
-      coord_fixed(ratio = 1, xlim = c(-180, 180), ylim = c(-87, 87)) 
-        ### to set aspect ratio.  Clip northern and southernmost cells
-      
-    # Output as interactive plotly
-    ggplotly(plot)
+  
+  output$intensGlobe <- renderGlobe({
+    globePlot <<- globejs(
+      lat  = intens_map_reactive()$y,
+      long = intens_map_reactive()$x,
+      val  = intens_map_reactive()$length,
+      pointsize = 1,
+      color = intens_map_reactive()$col,
+      atmosphere = TRUE,
+      title = input$intens_type)
   }) %>%
     bindCache(input$intens_type)
-
   
-  intens_select_reactive <- reactive({
-    selected_points <- event_data('plotly_selected')
-    if(!is.null(selected_points)) {
-      # Bump selected points to match indexes
-      selected_rows <- selected_points$pointNumber + 1
-      
-      # Filter on selected points
-      selected_data <- intens_df_reactive() %>%
-        filter(row_number() %in% selected_rows)
-      return(selected_data)
-    } else {
-      return(intens_df_reactive())
-    }
-  })
-
-  ### Trend boxplot output
-  output$trendPlot <- renderPlot({
-    global <- intens_df_reactive()
-    selected <- intens_select_reactive()
-    # Rescale value for mean of selected points
-    min <- min(global$trend)
-    max <- max(global$trend)
-    mean <- mean(selected$trend)
-    mean_scaled <- ceiling((mean-min)/(max-min) * 100)
-
-    # Derive color from continuous palette for rescaled mean
-    col <- intens_pal_reactive()[mean_scaled]
-
-    # Build boxplot
-    ggplot(data = selected, aes(x = trend)) +
-      geom_boxplot(color = "white", fill= 'blue', size = 1.5) +
-      plot_theme +
-      xlim(min, max)
-  })
-
-  ### Caption for trend output
-  output$trendCaption <- renderText({
-    if (!is.null(event_data('plotly_selected'))) {
-      "Distribution of intensification/abatement for selected area."
-    } else {
-      "Distribution of intensification/abatement globally."
-    }
+  ### Caption for globe output
+  output$intensGlobeCaption <- renderText({
+    'Intensification and abatement of impacts on at-risk biodiversity. 
+    "Intensification" indicates the proportion (%) of species in a cell 
+    experiencing one or more stressors increasing in intensity; "abatement" 
+    indicates proportion of species experiencing one or more stressors 
+    decreasing in intensity. "Net intensification" is the difference:
+    (% intensifying - % abating).  Spine length indicates relative species 
+    richness (number of at-risk species).  Color indicates 
+    % intensification/abatement: green = 100%% abatement, magenta = 100%% 
+    intensification, white = 0%%.'
   })
   
 }
