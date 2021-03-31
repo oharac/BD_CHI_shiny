@@ -2,7 +2,10 @@
 
 ## 1. header -------------------------------
 header <- dashboardHeader(
-  title = HTML('Cumulative human impacts on at-risk marine biodiversity'), 
+  title = tags$img(src='img/science_logo.png'),
+  # tags$a(tags$img(src='img/science_logo.png'), 
+  #                'Cumulative human impacts on at-risk marine biodiversity',
+  #                href = 'https://doi.org/10.1126/science.abe6731', target = '_blank'), 
   disable = FALSE, 
   titleWidth  = 600,
   ### tabs for: link to the article, link to Casey's page, link to Ian's page?
@@ -45,7 +48,8 @@ sidebar <- dashboardSidebar(
     p(a('O\'Hara, C. C., M. Frazier, B. S. Halpern, At-risk marine biodiversity faces extensive, expanding, and intensifying 
               human impacts.',
       em('Science'), '(2021). doi:10.1126/science.abe6731.', 
-      href='https://doi.org/10.1126/science.abe6731', target = '_blank'))
+      href='https://doi.org/10.1126/science.abe6731', target = '_blank')),
+    img('img/science_logo.png')
     )
   )
 ## 3. body --------------------------------
