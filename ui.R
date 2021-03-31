@@ -87,8 +87,11 @@ body <- dashboardBody(
                     em('Science'), '(2021).', 
                     a('doi:10.1126/science.abe6731', href='https://doi.org/10.1126/science.abe6731',
                       target = '_blank'), '.')
-             )
+             ),
+             img(src = 'img/fig2b_for_shiny.png', align = 'center')
+             
     ),
+    
     ###################################
     ###  About - Abstract and data  ###
     ###################################
@@ -97,45 +100,18 @@ body <- dashboardBody(
          h2('About this project',
             style = 'color:white' , align = 'left'),
          tags$hr(),
-         h3('Abstract'),
-         p('Human activities and climate change threaten marine biodiversity worldwide, 
-         though sensitivity to these stressors varies considerably by species and 
-         taxonomic group. Mapping the spatial distribution of 14 anthropogenic stressors 
-         from 2003 to 2013 onto the ranges of 1271 at-risk marine species sensitive 
-         to them, we found that, on average, species faced potential impacts across 57% 
-         of their ranges, that this footprint expanded over time, and that the impacts 
-         intensified across 37% of their ranges. Although fishing activity dominated the 
-         footprint of impacts in national waters, climate stressors drove the expansion 
-         and intensification of impacts. Mitigating impacts on at-risk biodiversity is
-         critical to supporting resilient marine ecosystems, and identifying the 
-         cooccurrence of impacts across multiple taxonomic groups highlights 
-         opportunities to amplify the benefits of conservation management.'),
-       # hr(),
-       # p('The fourteen individual stressors include:'),
-       # tableOutput('stressor_info'),
-       h3('Methods in brief'),
-       p('For each of 1271 threatened and near-threatened 
-          marine species comprehensively assessed and mapped for the IUCN Red List of 
-          Threatened Species ("at-risk species"), we identified sensitivity to 14 
-          anthropogenic stressors. We then intersected species range maps with relevant 
-          maps of annual stressor intensity from 2003 to 2013 to determine the extent of 
-          potential impacts across species’ ranges, as well as how rapidly these impacts 
-          have been expanding in extent and increasing in intensity.'),
-       p('For this dashboard, high resolution spatial data from the original paper 
-          (~10 km x ~10 km in Mollweide equal-area coordinate reference system), 
-          has been reprojected and aggregated to lower resolution for use in 
-          in spatial visualizations.'),
-       # hr(),
-       h3('Data Sources'),
-       p('O\'Hara, C. C., M. Frazier, B. S. Halpern, At-risk marine biodiversity faces extensive, expanding, 
-          and intensifying human impacts.', em('Science'), '(2021).', 
-         a('doi:10.1126/science.abe6731', href='https://doi.org/10.1126/science.abe6731',
-           target = '_blank'), '.'),
-       p('Code and results from data analysis for: C. C. O\'Hara, M. Frazier, 
-          B. S. Halpern, At-risk marine biodiversity faces extensive, expanding, 
-          and intensifying human impacts.', em('Knowledge Network for Biocomplexity'),  '(2020);', 
-          a('doi:10.5063/SJ1J03', href = 'https://doi.org/10.5063/SJ1J03',
-            target = '_blank'), '.')
+         radioGroupButtons(
+           inputId = 'about_select',
+           label = NULL,
+           choices = c('Abstract' = 'abstract', 
+                       'Methods in brief' = 'methods', 
+                       'Stressors' = 'stressors',
+                       # 'Species',
+                       'Data' = 'data'),
+           justified = TRUE,
+           selected = 'abstract'
+         ),
+         htmlOutput('about')
        ),
      ),
     
@@ -180,7 +156,7 @@ body <- dashboardBody(
     ####################################
     tabItem(tabName = 'annual_impact',
             div(id = 'annual_trend',
-              h2('Cumulative impact on at-risk marine species by year',
+              h2('Cumulative impact on at-risk marine species',
                  style = 'color:white' , align = 'left' ) ,
               tags$hr(),
               p('Cumulative impact on at-risk biodiversity by stressor category
@@ -209,7 +185,9 @@ body <- dashboardBody(
               selected = 'all'
             ),
             
-           globeOutput('impactsGlobe', height = '450px')
+           globeOutput('impactsGlobe', height = '450px'),
+           
+           
      ),
     
     ####################################
@@ -246,7 +224,16 @@ body <- dashboardBody(
               selected = 'all'
             ),
             
-            globeOutput('expandGlobe', height = '450px')
+            globeOutput('expandGlobe', height = '450px'),
+            p('Note that the change in species affected by the cumulative
+               set of stressors may appear smaller in certain places than the
+               change in species affected by a subset of stressors.  This occurs
+               because stressors may be expanding onto ranges of species already 
+               affected by another category of stressors.  For example, if a
+               species was already impacted by fishing stressors in 2003, and 
+               climate stressors expand into the same area by 2013, the cumulative
+               set of stressors will show no change even though the climate
+               stressors will show an increase.')
     ),
     
     ######################################
@@ -274,30 +261,12 @@ body <- dashboardBody(
               justified = TRUE,
               selected = 'all'
             ),
-            # radioGroupButtons(
-            #   inputId = 'intens_type',
-            #   label = 'Trend direction',
-            #   choices = c('% intensifying' = 'incr', 
-            #               '% abating' = 'decr', 
-            #               'net % intensifying' = 'net'),
-            #   justified = TRUE,
-            #   selected = 'net'
-            # ),
-            # radioGroupButtons(
-            #   inputId = 'intens_cat',
-            #   label = 'Stressor category',
-            #   choices = c('Cumulative' = 'all', 
-            #               'Fishing'    = 'fishing', 
-            #               'Climate'    = 'climate',
-            #               'Land-based' = 'land-based',
-            #               'Ocean-based' = 'ocean'),
-            #   justified = TRUE,
-            #   selected = 'all'
-            # ),
+
             globeOutput('intensGlobe', height = '450px'),
+            
             radioGroupButtons(
               inputId = 'intens_type',
-              label = 'Select trend direction:',
+              label = NULL,
               choices = c('net % intensifying' = 'net',
                           '% intensifying' = 'incr', 
                           '% abating' = 'decr'),
