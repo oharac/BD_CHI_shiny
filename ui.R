@@ -1,8 +1,9 @@
 
-
-## 1. header -------------------------------
+##################################
+###           Header           ###
+##################################
 header <- dashboardHeader(
-  title = HTML('Cumulative human impacts on at-risk marine biodiversity'), 
+  title = HTML('Visualizing human impacts on at-risk marine biodiversity'), 
   disable = FALSE, 
   titleWidth  = 600,
   ### tabs for: link to the article, link to Casey's page, link to Ian's page?
@@ -23,7 +24,9 @@ header <- dashboardHeader(
 
 
 
-## 2. sidebar ------------------------------
+##################################
+###          Sidebar           ###
+##################################
 sidebar <- dashboardSidebar( 
   width = 250,
   sidebarMenu(
@@ -48,7 +51,10 @@ sidebar <- dashboardSidebar(
       href='https://doi.org/10.1126/science.abe6731', target = '_blank'))
     )
   )
-## 3. body --------------------------------
+
+##################################
+###            Body            ###
+##################################
 body <- dashboardBody( 
   ## 3.0. CSS styles in header ----------------------------
   tags$head(
