@@ -3,10 +3,9 @@
 ###           Header           ###
 ##################################
 header <- dashboardHeader(
-  title = tags$img(src='img/science_logo.jpg'),
-  # tags$a(tags$img(src='img/science_logo.png'), 
-  #                'Visualizing human impacts on at-risk marine biodiversity',
-  #                href = 'https://doi.org/10.1126/science.abe6731', target = '_blank'), 
+  title = tags$a(tags$img(src='img/science_logo.png', height = 48), 
+                 'Visualizing human impacts on at-risk marine biodiversity',
+                 href = 'https://doi.org/10.1126/science.abe6731', target = '_blank'),
   disable = FALSE, 
   titleWidth  = 600,
   ### tabs for: link to the article, link to Casey's page, link to Ian's page?
@@ -40,19 +39,18 @@ sidebar <- dashboardSidebar(
     menuItem('Impact by taxon', tabName = 'taxa_info', icon = icon('fish')),
     menuItem('Impact by stressor', tabName = 'str_info', icon = icon('ship')),
     menuItem('Impact by year', tabName = 'annual_impact', icon = icon('globe-americas')),
-    menuItem('Intensification', tabName = 'global_trend', icon = icon('chart-line')),
+    menuItem('Trends in impact', tabName = 'global_trend', icon = icon('chart-line')),
     
-    hr(),
+    hr()
     
-    p('This Shiny app was developed in March 2021 by', 
-      a('Ian Brunjes', href='https://brenniedev.github.io/ianbrunjes/', target = '_blank'),
-      'and', a('Casey O\'Hara', href='http://www.oharascience.com/', target = '_blank'),
-      '. Find the original paper at:'),
-    p(a('O\'Hara, C. C., M. Frazier, B. S. Halpern, At-risk marine biodiversity faces extensive, expanding, and intensifying 
-              human impacts.',
-      em('Science'), '(2021). doi:10.1126/science.abe6731.', 
-      href='https://doi.org/10.1126/science.abe6731', target = '_blank')),
-    img('img/science_logo.png')
+    # p('This Shiny app was developed in March 2021 by', 
+    #   a('Ian Brunjes', href='https://brenniedev.github.io/ianbrunjes/', target = '_blank'),
+    #   'and', a('Casey O\'Hara', href='http://www.oharascience.com/', target = '_blank'),
+    #   '. Find the original paper at:'),
+    # p(a('O\'Hara, C. C., M. Frazier, B. S. Halpern, At-risk marine biodiversity faces extensive, expanding, and intensifying 
+    #           human impacts.',
+    #   em('Science'), '(2021). doi:10.1126/science.abe6731.', 
+    #   href='https://doi.org/10.1126/science.abe6731', target = '_blank'))
     )
   )
 
@@ -73,7 +71,7 @@ body <- dashboardBody(
     ###################################
     tabItem( tabName = 'about',
      div(id = 'temp_message_about',
-         h1('Visualizing human impacts to at-risk marine biodiversity',
+         h1('Visualizing human impacts on at-risk marine biodiversity',
             style = 'color:white' , align = 'center'),
          tags$hr(),
          p('A Shiny App to explore data from'),
@@ -178,19 +176,20 @@ body <- dashboardBody(
      
             radioGroupButtons(
               inputId = "impact_year",
+              label = 'Select year:',
               choices = c(2003:2013),
               justified = TRUE,
               selected = 2008
               ),
-            radioButtons(
+            radioGroupButtons(
               inputId = "impact_cat",
-              label = 'Stressor category',
+              label = 'Select stressor category:',
               choices = c('Cumulative' = 'all', 
                           'Fishing'    = 'fishing', 
                           'Climate'    = 'climate',
                           'Land-based' = 'land-based',
                           'Ocean-based' = 'ocean'),
-              inline = TRUE,
+              justified = TRUE,
               selected = 'all'
             ),
             
@@ -202,7 +201,7 @@ body <- dashboardBody(
     ######################################
     tabItem(tabName = 'global_trend',
             div(id = 'annual_trend',
-                h1('Intensification and abatement of impacts',
+                h1('Trends in impact intensity',
                    style = "color:white" , align = "center" ) ,
                 tags$hr(),
                 p('Intensification and abatement of impacts on at-risk biodiversity.',
@@ -216,24 +215,24 @@ body <- dashboardBody(
                    magenta = 100% intensification, grey = 0%.')
             ),
             
-            radioButtons(
+            radioGroupButtons(
               inputId = "intens_type",
-              label = 'Trend direction',
+              label = 'Select trend direction:',
               choices = c('net % intensifying' = 'net',
                           '% intensifying' = 'incr', 
                           '% abating' = 'decr'),
-              inline = TRUE,
+              justified = TRUE,
               selected = 'net'
             ),
-            radioButtons(
+            radioGroupButtons(
               inputId = "intens_cat",
-              label = 'Stressor category',
+              label = 'Select stressor category:',
               choices = c('Cumulative' = 'all', 
                           'Fishing'    = 'fishing', 
                           'Climate'    = 'climate',
                           'Land-based' = 'land-based',
                           'Ocean-based' = 'ocean'),
-              inline = TRUE,
+              justified = TRUE,
               selected = 'all'
             ),
             # radioGroupButtons(

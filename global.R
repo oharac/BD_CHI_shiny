@@ -63,11 +63,13 @@ nspp_df <- raster::rasterToPoints(r_nspp) %>%
 
 ### let's do as a list to avoid need for filtering by year.
 ### Find out if Fitz server has multiple cores!
-impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_.+_[0-9]{4}_latlong.tif',
+impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_all_[0-9]{4}_latlong.tif',
                         full.names = TRUE)
+# impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_.+_[0-9]{4}_latlong.tif',
+#                         full.names = TRUE)
 
 message('creating impact map year list')
-map_year_list <- parallel::mclapply(impact_fs, mc.cores = 4,
+map_year_list <- parallel::mclapply(impact_fs, mc.cores = 1,
                                     FUN = function(f) { ### f <- impact_fs[1]
                                       r <- raster::raster(f) 
                                       r_df <- r %>%
@@ -106,7 +108,7 @@ intens_fs <- list.files(here::here('data/intens_maps'),
                         full.names = TRUE)
 
 message('creating intensification list')
-intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 5,
+intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 1,
                                     FUN = function(f) { ### f <- intens_fs[1]
                                       r <- raster::raster(f)
                                       r_df <- r %>%
