@@ -114,15 +114,16 @@ server <- function(input, output) {
     ### color vector for translating pct impacted into a viridis value
     ### index 1 corresponds to 0%, while index 101 corresponds to 100%
     colors_gradient <- hcl.colors(n = 101, palette = 'viridis')
-    
-    map_name <- paste(input$impact_cat, input$impact_year, sep = '_')
-    impacts_year_map <- map_year_list[[map_name]] %>%
+    # input <- list(impact_cat = 'all')
+    map_name <- paste(input$impact_cat, 2013, sep = '_')
+    impacts_year_map <- impact_map_list[[map_name]] %>%
       ### NOTE: because R indexes from 1, add 1 to pct_impact for index
       mutate(col = colors_gradient[pct_imp + 1]) %>%
       mutate(length = richness_xfm(nspp))
     
     return(impacts_year_map)
-  })
+  }) %>%
+    bindCache(input$impact_cat)
   
   output$impactsGlobe <- renderGlobe({
     globePlot <- globejs(
@@ -132,10 +133,47 @@ server <- function(input, output) {
       pointsize = 1,
       color = impacts_year_map()$col,
       atmosphere = TRUE,
-      title = paste(input$impact_year, input$impact_cat))
-    }) %>%
-    bindCache(input$impact_year, input$impact_cat)
+      title = paste(2013, input$impact_cat))
+    })
 
+  ####################################
+  ###    Expansion globe output    ###
+  ####################################
+  
+  expand_pal <- function() {
+    incr_pal <- colorRampPalette(colors = c('grey20', '#c51b7d'))(101)
+    decr_pal <- colorRampPalette(colors = c('grey20', '#4d9221'))(101)
+    colors_gradient <- c(rev(decr_pal), incr_pal[-1])
+  }
+  
+  expand_map_reactive <- reactive({
+    # input <- list(expand_cat = 'all')
+    message('creating expand_map_reactives, category = ', input$expand_cat)
+    
+    expand_df <- impact_diff_list[[paste0('diff_', input$expand_cat)]]
+    
+    colors_gradient <- expand_pal()
+    ### NOTE: because R indexes from 1, add 101 to diff for index so -100 -> 1
+    bump <- 101
+    
+    expand_map <- expand_df %>%
+      mutate(col = colors_gradient[delta + bump]) %>%
+      mutate(length = richness_xfm(nspp))
+    
+    return(expand_map)
+  })
+  
+  output$expandGlobe <- renderGlobe({
+    globePlot <- globejs(
+      lat  = expand_map_reactive()$y,
+      long = expand_map_reactive()$x,
+      val  = expand_map_reactive()$length,
+      pointsize = 1,
+      color = expand_map_reactive()$col,
+      atmosphere = TRUE,
+      title = paste('delta', input$expand_cat))
+  })
+  
   ####################################
   ### Intensification globe output ###
   ####################################
@@ -211,5 +249,94 @@ server <- function(input, output) {
     % intensification/abatement: green = 100% abatement, magenta = 100% 
     intensification, grey = 0%.'
   })
+  
+  ###################################
+  ###  About - Abstract and data  ###
+  ###################################
+  about <- list(
+    abstract = 'Human activities and climate change threaten marine biodiversity 
+    worldwide, though sensitivity to these stressors varies considerably by 
+    species and taxonomic group. Mapping the spatial distribution of 14 anthropogenic 
+    stressors from 2003 to 2013 onto the ranges of 1271 at-risk marine species 
+    sensitive to them, we found that, on average, species faced potential impacts 
+    across 57% of their ranges, that this footprint expanded over time, and that 
+    the impacts intensified across 37% of their ranges. Although fishing activity 
+    dominated the footprint of impacts in national waters, climate stressors drove 
+    the expansion and intensification of impacts. Mitigating impacts on at-risk 
+    biodiversity is critical to supporting resilient marine ecosystems, and 
+    identifying the cooccurrence of impacts across multiple taxonomic groups 
+    highlights opportunities to amplify the benefits of conservation management.',
+  methods = '<p>For each of 1271 threatened and near-threatened marine species 
+    comprehensively assessed and mapped for the 
+    <a href = "https://www.iucnredlist.org/" target = "_blank">IUCN Red List of 
+    Threatened Species</a> ("at-risk species"), we identified sensitivity to 14 
+    anthropogenic stressors.
+    We then intersected species range maps with relevant maps of annual stressor 
+    intensity from 2003 to 2013 to determine the extent of potential impacts 
+    across species\' ranges, as well as how rapidly these impacts have been expanding
+    in extent and increasing in intensity.</p>
+
+    <p>For this dashboard, high resolution spatial data from the original paper 
+    (~10 km x ~10 km in Mollweide equal-area coordinate reference system), 
+    has been reprojected and aggregated to lower resolution for use in in 
+    spatial visualizations.<p>',
+  data = '<p>O\'Hara, C. C., M. Frazier, B. S. Halpern, At-risk marine 
+    biodiversity faces extensive, expanding, and intensifying human impacts. 
+    <i>Science</i>, (2021). 
+    <a href = "https://doi.org/10.1126/science.abe6731" target = "_blank">
+    doi:10.1126/science.abe6731</a>.</p>
+  
+    <p>Code and results from data analysis for: C. C. O\'Hara, M. Frazier, 
+    B. S. Halpern, At-risk marine biodiversity faces extensive, expanding, 
+    and intensifying human impacts. <i>Knowledge Network for Biocomplexity</i>, 
+    (2020); <a href = "(https://doi.org/10.5063/SJ1J03)" target = "_blank">
+    doi:10.5063/SJ1J03</a>.</p>',
+  stressors = '<h3>Fishing stressors</h3>
+    <ul><li><b>Fishing: artisanal:</b> Total tonnes of catch from nonindustrial fisheries calculated for each year (Watson 2018, 0.5° resolution). Catch divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+        <li><b>Fishing: demersal destructive:</b> Total tonnes of catch for industrial demersal fishing using gear types causing habitat destruction calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+        <li><b>Fishing: demersal nondestructive high bycatch:</b> Total tonnes of catch for industrial demersal fishing using high bycatch practices calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+        <li><b>Fishing: demersal nondestructive low bycatch:</b> Total tonnes of catch for industrial demersal fishing using low bycatch practices calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by the region’s productivity.
+        <li><b>Fishing: pelagic high bycatch:</b> Total tonnes of catch for industrial pelagic fishing using high bycatch practices calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+        <li><b>Fishing: pelagic low bycatch:</b> Total tonnes of catch for industrial pelagic fishing using low bycatch practices calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+    </ul>
+    <h3>Climate stressors</h3>
+    <ul><li><b>Sea surface temperature:</b> Number of extreme SST weeks during a 
+        five-year period subtracted from the number of extreme SST weeks during a 
+        baseline 5 year period (1985-1989). An extreme week is defined as (weekly 
+        SST - weekly climatological SST) exceeding 1 SD of anomalies calculated 
+        across 1982-2017 for that week.
+        <li><b>Ocean acidification:</b> Monthly aragonite saturation values (Ω) 
+        averaged to obtain annual estimates.
+        <li><b>Sea level rise:</b> Monthly anomalies averaged to obtain annual 
+        mean sea level anomaly. 5 year mean of annual data used to smooth large yearly variation.
+    </ul>
+    <h3>Land-based stressors</h3>
+    <ul><li><b>Nutrient pollution (runoff):</b> Intensity of pollution from modeled
+        plumes of land-based fertilizer pollution (Halpern et al. 2008), based 
+        on country level fertilizer use (UN 2016), land cover data (Friedle et 
+        al. 2010), and elevation data (USGS 2004)
+        <li><b>Organic chemical pollution (runoff):</b> Intensity of pollution 
+        from modeled plumes of land-based pesticide pollution (Halpern et al. 2008), 
+        based on country level pesticide use (UN 2016), land cover data (Friedle et 
+        al. 2010), and elevation data (USGS 2004)
+        <li><b>Direct human disturbance:</b> Density (people per km<sup>2</sup>) 
+        converted to population (people per raster cell). Intervening years 
+        (i.e., years outside of 2000, 2005, 2010, 2015, 2020) interpolated using 
+        a linear model. For each raster cell, coastal human population summed for 
+        10 km radius. Data cropped to include only cells 1km from the coast.
+        <li><b>Light pollution:</b> Non-calibrated radiance values from satellite 
+        data calibrated across year/satellite following methods of Elvidge et al. 2009.
+    </ul>
+    <h3>Ocean-based stressors</h3>
+    <ul><li><b>Shipping:</b> Tournadre (2018) data used to create yearly rasters 
+      describing annual proportional change in shipping relative to 2011. 
+      Multiplied yearly proportional change raster with high resolution 
+      shipping raster (Halpern et al. 2015 and Wallbridge 2013) to estimate 
+      shipping traffic over time.</ul>'
+  )
+  
+  output$about <- renderText({
+    about[[input$about_select]]
+    })
   
 }

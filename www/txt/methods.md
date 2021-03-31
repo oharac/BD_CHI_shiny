@@ -1,0 +1,3 @@
+For each of 1271 threatened and near-threatened marine species comprehensively assessed and mapped for the [IUCN Red List of Threatened Species](https://www.iucnredlist.org/) ("at-risk species"), we identified sensitivity to 14 anthropogenic stressors. We then intersected species range maps with relevant maps of annual stressor intensity from 2003 to 2013 to determine the extent of potential impacts across species’ ranges, as well as how rapidly these impacts have been expanding in extent and increasing in intensity.
+
+For this dashboard, high resolution spatial data from the original paper (~10 km x ~10 km in Mollweide equal-area coordinate reference system), has been reprojected and aggregated to lower resolution for use in in spatial visualizations.

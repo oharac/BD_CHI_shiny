@@ -63,23 +63,42 @@ nspp_df <- raster::rasterToPoints(r_nspp) %>%
 
 ### let's do as a list to avoid need for filtering by year.
 ### Find out if Fitz server has multiple cores!
-impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_.+_[0-9]{4}_latlong.tif',
+# impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_all_[0-9]{4}_latlong.tif',
+#                         full.names = TRUE)
+impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_.+_20.3_latlong.tif',
                         full.names = TRUE)
 
 message('creating impact map year list')
-map_year_list <- parallel::mclapply(impact_fs, mc.cores = 4,
-                                    FUN = function(f) { ### f <- impact_fs[1]
-                                      r <- raster::raster(f) 
-                                      r_df <- r %>%
-                                        raster::rasterToPoints() %>%
-                                        as.data.frame() %>%
-                                        setNames(c('x', 'y', 'n_imp')) %>%
-                                        dt_join(nspp_df, 
-                                                by = c('x', 'y'), type = 'left') %>%
-                                        mutate(pct_imp = ifelse(nspp > 0, round(n_imp / nspp * 100), 0))
-                                      return(r_df)
-                                    }) %>%
+impact_map_list <- parallel::mclapply(impact_fs, mc.cores = 1,
+                                      FUN = function(f) { ### f <- impact_fs[1]
+                                        r <- raster::raster(f) 
+                                        r_df <- r %>%
+                                          raster::rasterToPoints() %>%
+                                          as.data.frame() %>%
+                                          setNames(c('x', 'y', 'n_imp')) %>%
+                                          dt_join(nspp_df, 
+                                                  by = c('x', 'y'), type = 'left') %>%
+                                          mutate(pct_imp = ifelse(nspp > 0, round(n_imp / nspp * 100), 0))
+                                        return(r_df)
+                                      }) %>%
   setNames(str_remove_all(basename(impact_fs), 'impact_|_latlong.tif'))
+
+#########################################
+###      set up difference list       ###
+#########################################
+message('creating difference list')
+strs_vec <- c('all', 'fishing', 'climate', 'land-based', 'ocean')
+impact_diff_list <- parallel::mclapply(strs_vec, mc.cores = 1,
+         FUN = function(s) { ### s <- strs_vec[1]
+           df03 <- impact_map_list[[paste(s, 2003, sep = '_')]] %>%
+             select(x, y, pct_03 = pct_imp)
+           df13 <- impact_map_list[[paste(s, 2013, sep = '_')]] %>%
+             select(x, y, nspp, pct_13 = pct_imp)
+           diff <- df13 %>% left_join(df03) %>%
+             mutate(delta = pct_13 - pct_03)
+           return(diff)
+         }) %>%
+  setNames(paste0('diff_', strs_vec))
 
 #########################################
 ### generate df of impacts by species ###
@@ -106,7 +125,7 @@ intens_fs <- list.files(here::here('data/intens_maps'),
                         full.names = TRUE)
 
 message('creating intensification list')
-intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 5,
+intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 1,
                                     FUN = function(f) { ### f <- intens_fs[1]
                                       r <- raster::raster(f)
                                       r_df <- r %>%

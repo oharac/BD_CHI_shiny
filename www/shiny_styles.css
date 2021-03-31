@@ -2,6 +2,18 @@
 	 font-size: 20px;
 	 padding-right: 30px;
 }
+ .fa-globe-africa {
+	 font-size: 20px;
+	 padding-right: 30px;
+}
+ .fa-globe-asia {
+	 font-size: 20px;
+	 padding-right: 30px;
+}
+ .fa-home {
+	 font-size: 20px;
+	 padding-right: 30px;
+}
  .fa-chart-line {
 	 font-size: 20px;
 	 padding-right: 30px;
@@ -10,12 +22,16 @@
 	 font-size: 20px;
 	 padding-right: 30px;
 }
- .tab-content {
-	 padding-left: 20px;
+ .fa-ship {
+	 font-size: 20px;
 	 padding-right: 30px;
 }
  .fa-question-circle {
 	 font-size: 20px;
+	 padding-right: 30px;
+} 
+ .tab-content {
+	 padding-left: 20px;
 	 padding-right: 30px;
 }
 /* active selected tab in the sidebarmenu */
@@ -57,8 +73,8 @@
 }
 
 .radioGroupButtons {
-  padding-top: 20px;
-  padding-bottom: 80px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .shiny-image-output {

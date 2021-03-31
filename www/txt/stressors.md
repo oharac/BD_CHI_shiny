@@ -1,0 +1,21 @@
+<h3>Fishing stressors</h3>
+<ul><li><b>Fishing: artisanal:</b> Total tonnes of catch from nonindustrial fisheries calculated for each year (Watson 2018, 0.5° resolution). Catch divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+    <li><b>Fishing: demersal destructive:</b> Total tonnes of catch for industrial demersal fishing using gear types causing habitat destruction calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+    <li><b>Fishing: demersal nondestructive high bycatch:</b> Total tonnes of catch for industrial demersal fishing using high bycatch practices calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+    <li><b>Fishing: demersal nondestructive low bycatch:</b> Total tonnes of catch for industrial demersal fishing using low bycatch practices calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by the region’s productivity.
+    <li><b>Fishing: pelagic high bycatch:</b> Total tonnes of catch for industrial pelagic fishing using high bycatch practices calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+    <li><b>Fishing: pelagic low bycatch:</b> Total tonnes of catch for industrial pelagic fishing using low bycatch practices calculated for each year. Catch data divided by corresponding year’s Net Primary Productivity (monthly data averaged for yearly NPP estimate) to standardize by region’s productivity.
+</ul>
+<h3>Climate stressors</h3>
+<ul><li><b>Sea surface temperature:</b> Number of extreme SST weeks during a five-year period subtracted from the number of extreme SST weeks during a baseline 5 year period (1985-1989). An extreme week is defined as (weekly SST - weekly climatological SST) exceeding 1 SD of anomalies calculated across 1982-2017 for that week.
+    <li><b>Ocean acidification:</b> Monthly aragonite saturation values (Ω) averaged to obtain annual estimates.
+    <li><b>Sea level rise:</b> Monthly anomalies averaged to obtain annual mean sea level anomaly. 5 year mean of annual data used to smooth large yearly variation.
+</ul>
+<h3>Land-based stressors</h3>
+<ul><li><b>Nutrient pollution (runoff):</b> Intensity of pollution from modeled plumes of land-based fertilizer pollution (Halpern et al. 2008), based on country level fertilizer use (UN 2016), land cover data (Friedle et al. 2010), and elevation data (USGS 2004)
+    <li><b>Organic chemical pollution (runoff):</b> Intensity of pollution from modeled plumes of land-based pesticide pollution (Halpern et al. 2008), based on country level pesticide use (UN 2016), land cover data (Friedle et al. 2010), and elevation data (USGS 2004)
+    <li><b>Direct human disturbance:</b> Density (people per km<sup>2</sup>) converted to population (people per raster cell). Intervening years (i.e., years outside of 2000, 2005, 2010, 2015, 2020) interpolated using a linear model. For each raster cell, coastal human population summed for 10 km radius. Data cropped to include only cells 1km from the coast.
+    <li><b>Light pollution:</b> Non-calibrated radiance values from satellite data calibrated across year/satellite following methods of Elvidge et al. 2009.
+</ul>
+<h3>Ocean-based stressors</h3>
+<ul><li><b>Shipping:</b> Tournadre (2018) data used to create yearly rasters describing annual proportional change in shipping relative to 2011. Multiplied yearly proportional change raster with high resolution shipping raster (Halpern et al. 2015 and Wallbridge 2013) to estimate shipping traffic over time.</ul>
