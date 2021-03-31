@@ -114,15 +114,16 @@ server <- function(input, output) {
     ### color vector for translating pct impacted into a viridis value
     ### index 1 corresponds to 0%, while index 101 corresponds to 100%
     colors_gradient <- hcl.colors(n = 101, palette = 'viridis')
-    
-    map_name <- paste(input$impact_cat, input$impact_year, sep = '_')
-    impacts_year_map <- map_year_list[[map_name]] %>%
+    # input <- list(impact_cat = 'all')
+    map_name <- paste(input$impact_cat, 2013, sep = '_')
+    impacts_year_map <- impact_map_list[[map_name]] %>%
       ### NOTE: because R indexes from 1, add 1 to pct_impact for index
       mutate(col = colors_gradient[pct_imp + 1]) %>%
       mutate(length = richness_xfm(nspp))
     
     return(impacts_year_map)
-  })
+  }) %>%
+    bindCache(input$impact_cat)
   
   output$impactsGlobe <- renderGlobe({
     globePlot <- globejs(
@@ -132,10 +133,47 @@ server <- function(input, output) {
       pointsize = 1,
       color = impacts_year_map()$col,
       atmosphere = TRUE,
-      title = paste(input$impact_year, input$impact_cat))
-    }) %>%
-    bindCache(input$impact_year, input$impact_cat)
+      title = paste(2013, input$impact_cat))
+    })
 
+  ####################################
+  ###    Expansion globe output    ###
+  ####################################
+  
+  expand_pal <- function() {
+    incr_pal <- colorRampPalette(colors = c('grey20', '#c51b7d'))(101)
+    decr_pal <- colorRampPalette(colors = c('grey20', '#4d9221'))(101)
+    colors_gradient <- c(rev(decr_pal), incr_pal[-1])
+  }
+  
+  expand_map_reactive <- reactive({
+    # input <- list(expand_cat = 'all')
+    message('creating expand_map_reactives, category = ', input$expand_cat)
+    
+    expand_df <- impact_diff_list[[paste0('diff_', input$expand_cat)]]
+    
+    colors_gradient <- expand_pal()
+    ### NOTE: because R indexes from 1, add 101 to diff for index so -100 -> 1
+    bump <- 101
+    
+    expand_map <- expand_df %>%
+      mutate(col = colors_gradient[delta + bump]) %>%
+      mutate(length = richness_xfm(nspp))
+    
+    return(expand_map)
+  })
+  
+  output$expandGlobe <- renderGlobe({
+    globePlot <- globejs(
+      lat  = expand_map_reactive()$y,
+      long = expand_map_reactive()$x,
+      val  = expand_map_reactive()$length,
+      pointsize = 1,
+      color = expand_map_reactive()$col,
+      atmosphere = TRUE,
+      title = paste('delta', input$expand_cat))
+  })
+  
   ####################################
   ### Intensification globe output ###
   ####################################
