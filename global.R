@@ -58,6 +58,7 @@ str_table <- str_names %>%
 ######################################################
 ### generate list of raster/dfs for impact by year ###
 ######################################################
+message('generating list of raster dfs for impact')
 r_nspp <- raster::raster(here::here('data/n_spp_map_latlong.tif'))
 nspp_df <- raster::rasterToPoints(r_nspp) %>%
   as.data.frame() %>%
@@ -71,18 +72,18 @@ impact_fs <- list.files(here::here('data/impact_maps'), pattern = 'impact_.+_20.
                         full.names = TRUE)
 
 message('creating impact map year list')
-impact_map_list <- parallel::mclapply(impact_fs, mc.cores = 1,
-                                      FUN = function(f) { ### f <- impact_fs[1]
-                                        r <- raster::raster(f) 
-                                        r_df <- r %>%
-                                          raster::rasterToPoints() %>%
-                                          as.data.frame() %>%
-                                          setNames(c('x', 'y', 'n_imp')) %>%
-                                          dt_join(nspp_df, 
-                                                  by = c('x', 'y'), type = 'left') %>%
-                                          mutate(pct_imp = ifelse(nspp > 0, round(n_imp / nspp * 100), 0))
-                                        return(r_df)
-                                      }) %>%
+impact_map_list <- lapply(impact_fs, 
+                          FUN = function(f) { ### f <- impact_fs[1]
+                            r <- raster::raster(f) 
+                            r_df <- r %>%
+                              raster::rasterToPoints() %>%
+                              as.data.frame() %>%
+                              setNames(c('x', 'y', 'n_imp')) %>%
+                              dt_join(nspp_df, 
+                                      by = c('x', 'y'), type = 'left') %>%
+                              mutate(pct_imp = ifelse(nspp > 0, round(n_imp / nspp * 100), 0))
+                            return(r_df)
+                          }) %>%
   setNames(str_remove_all(basename(impact_fs), 'impact_|_latlong.tif'))
 
 #########################################
@@ -90,22 +91,23 @@ impact_map_list <- parallel::mclapply(impact_fs, mc.cores = 1,
 #########################################
 message('creating difference list')
 strs_vec <- c('all', 'fishing', 'climate', 'land-based', 'ocean')
-impact_diff_list <- parallel::mclapply(strs_vec, mc.cores = 1,
-         FUN = function(s) { ### s <- strs_vec[1]
-           df03 <- impact_map_list[[paste(s, 2003, sep = '_')]] %>%
-             select(x, y, pct_03 = pct_imp)
-           df13 <- impact_map_list[[paste(s, 2013, sep = '_')]] %>%
-             select(x, y, nspp, pct_13 = pct_imp)
-           diff <- df13 %>% left_join(df03) %>%
-             mutate(delta = pct_13 - pct_03)
-           return(diff)
-         }) %>%
+impact_diff_list <- lapply(strs_vec,
+                           FUN = function(s) { ### s <- strs_vec[1]
+                             df03 <- impact_map_list[[paste(s, 2003, sep = '_')]] %>%
+                               select(x, y, pct_03 = pct_imp)
+                             df13 <- impact_map_list[[paste(s, 2013, sep = '_')]] %>%
+                               select(x, y, nspp, pct_13 = pct_imp)
+                             diff <- df13 %>% left_join(df03) %>%
+                               mutate(delta = pct_13 - pct_03)
+                             return(diff)
+                           }) %>%
   setNames(paste0('diff_', strs_vec))
 
 #########################################
 ### generate df of impacts by species ###
 #########################################
 message('reading in impacted range by species')
+
 spp_impact_data <- read_csv(here::here('data', 'imp_range_by_spp_2013.csv')) %>%
   distinct()
 spp_risk <- read_csv(here::here('data', 'iucn_risk_2020-1.csv'))
@@ -122,23 +124,24 @@ impact_df <- spp_impact_data %>%
 #######################################################
 ### generate list of raster/dfs for intensification ###
 #######################################################
+message('generating list of raster dfs for intensification')
+
 intens_fs <- list.files(here::here('data/intens_maps'), 
                         pattern = 'intens_.+_latlong.tif',
                         full.names = TRUE)
 
-message('creating intensification list')
-intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 1,
-                                    FUN = function(f) { ### f <- intens_fs[1]
-                                      r <- raster::raster(f)
-                                      r_df <- r %>%
-                                        raster::rasterToPoints() %>%
-                                        as.data.frame() %>%
-                                        setNames(c('x', 'y', 'n_int')) %>%
-                                        dt_join(nspp_df, 
-                                                by = c('x', 'y'), type = 'left') %>%
-                                        mutate(pct_int = ifelse(nspp > 0, round(n_int / nspp * 100), 0))
-                                      return(r_df)
-                                    }) %>%
+intens_r_list <- lapply(intens_fs, 
+                        FUN = function(f) { ### f <- intens_fs[1]
+                          r <- raster::raster(f)
+                          r_df <- r %>%
+                            raster::rasterToPoints() %>%
+                            as.data.frame() %>%
+                            setNames(c('x', 'y', 'n_int')) %>%
+                            dt_join(nspp_df, 
+                                    by = c('x', 'y'), type = 'left') %>%
+                            mutate(pct_int = ifelse(nspp > 0, round(n_int / nspp * 100), 0))
+                          return(r_df)
+                        }) %>%
   setNames(str_remove_all(intens_fs, '.+intens_|2.+'))
 
 message('creating calc_spp_df dataframe')
@@ -153,5 +156,5 @@ calc_spp_df <- impact_df %>%
   group_by(iucn_sid, sciname, comname, desc) %>%
   summarize(strs = paste(str_name, collapse = ', '))
   
-print(calc_spp_df)
+message('calc_spp_df has ', nrow(calc_spp_df), ' rows')
 
