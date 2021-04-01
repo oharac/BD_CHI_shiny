@@ -17,6 +17,8 @@ library(raster)
 library(tidyverse)
 library(threejs)
 
+# install.packages(c('shinydashboard','shiny','shinyBS','shinyjs','shinycssloaders','shinyWidgets','tippy','here','rgdal','raster','tidyverse','threejs'))
+
 ### dt_join is datatable version of dplyr joins, for speed
 dt_join <- function (df1, df2, by, type) {
   a <- case_when(type == 'left'  ~ c(FALSE, TRUE, FALSE), 
