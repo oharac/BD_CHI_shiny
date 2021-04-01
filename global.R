@@ -139,4 +139,14 @@ intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 1,
                                     }) %>%
   setNames(str_remove_all(intens_fs, '.+intens_|2.+'))
 
-
+calc_spp_df <- impact_df %>%
+  filter(iucn_sid %in% c(8005, 19488, 39374, 2478, 7750, 21860, 132928, 22694870)) %>%
+  select(iucn_sid, sciname, comname, desc) %>% 
+  distinct() %>%
+  left_join(spp_impact_data) %>%
+  left_join(str_names, by = c('stressor' = 'str_field')) %>%
+  filter(!is.na(impact_km2)) %>%
+  filter(!str_detect(stressor, 'cum_')) %>%
+  group_by(iucn_sid, sciname, comname, desc) %>%
+  summarize(strs = paste(str_name, collapse = ', '))
+  

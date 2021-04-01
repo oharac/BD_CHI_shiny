@@ -26,6 +26,10 @@
 	 font-size: 20px;
 	 padding-right: 30px;
 }
+ .fa-calculator {
+	 font-size: 20px;
+	 padding-right: 30px;
+}
  .fa-question-circle {
 	 font-size: 20px;
 	 padding-right: 30px;
@@ -91,4 +95,9 @@ a {
 
 .tippy-content {
   font-size: 14px;
+}
+
+/* credits */
+.credits {
+  padding-left: 10px;
 }
