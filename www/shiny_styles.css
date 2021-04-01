@@ -92,3 +92,8 @@ a {
 .tippy-content {
   font-size: 14px;
 }
+
+/* credits */
+.credits {
+  padding-left: 10px;
+}

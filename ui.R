@@ -48,15 +48,17 @@ sidebar <- dashboardSidebar(
     
     hr(),
     
-    p('This Shiny app was developed in March', br(), '2021 by',
-      a('Ian Brunjes', href='https://brenniedev.github.io/ianbrunjes/', target = '_blank'),
-      'and', a('Casey O\'Hara', href='http://www.oharascience.com/', target = '_blank'), br(),
-      '. Find the original paper at:'),
-    p(a('O\'Hara, C. C., M. Frazier, B. S. Halpern,', br(), 
-        'At-risk marine biodiversity faces extensive,', br(), 'expanding, and intensifying
-              human impacts.', br(),
-      em('Science'), '(2021). doi:10.1126/science.abe6731.',
-      href='https://doi.org/10.1126/science.abe6731', target = '_blank'))
+    p(class = 'credits', 'This Shiny app was developed in March', br(),
+      '2021 by', a('Ian Brunjes', href='https://brenniedev.github.io/ianbrunjes/', target = '_blank'),
+      'and', a('Casey O\'Hara.', href='http://www.oharascience.com/', target = '_blank'), br(),
+      'Find the original paper at:'),
+    p(class = 'credits',
+      a('O\'Hara, C. C., M. Frazier, B. S. Halpern,', br(),
+        'At-risk marine biodiversity faces', br(),
+        'extensive, expanding, and intensifying', br(),
+        'human impacts.', em('Science'), '(2021).', br(),
+        'doi:10.1126/science.abe6731.',
+        href='https://doi.org/10.1126/science.abe6731', target = '_blank'))
     )
   )
 
@@ -87,8 +89,8 @@ body <- dashboardBody(
                     em('Science'), '(2021).', 
                     a('doi:10.1126/science.abe6731', href='https://doi.org/10.1126/science.abe6731',
                       target = '_blank'), '.')
-             ),
-             img(src = 'img/fig2b_for_shiny.png', align = 'center')
+             ), br(),
+             column(width = 12, align = "center", img(src = 'img/fig2b_for_shiny.png'))
              
     ),
     
