@@ -11,22 +11,7 @@ header <- dashboardHeader(
             align = 'left'),
   disable = FALSE, 
   titleWidth  = '100%'
-  ### tabs for: link to the article, link to Casey's page, link to Ian's page?
-  # tags$li(a(href = 'https://brenniedev.github.io/ianbrunjes/',
-  #           icon('user-circle'),
-  #           title = 'Ian Brunjes'),
-  #           class = 'dropdown'),
-  # tags$li(a(href = 'https://github.com/BrennieDev/OHI_shiny_app',
-  #           icon('github'),
-  #           title = 'GitHub'),
-  #           class = 'dropdown'),
-  # tags$li(a(href = 'https://www.instagram.com/ciscodoggodisco/',
-  #           icon('dog'),
-  #           title = 'Here is my dog.'),
-  #           class = 'dropdown')
  )
-
-
 
 
 ##################################
@@ -48,17 +33,31 @@ sidebar <- dashboardSidebar(
     
     hr(),
     
-    p('This Shiny app was developed in March', br(), '2021 by',
-      a('Ian Brunjes', href='https://brenniedev.github.io/ianbrunjes/', target = '_blank'),
-      'and', a('Casey O\'Hara', href='http://www.oharascience.com/', target = '_blank'), br(),
-      '. Find the original paper at:'),
-    p(a('O\'Hara, C. C., M. Frazier, B. S. Halpern,', br(), 
-        'At-risk marine biodiversity faces extensive,', br(), 'expanding, and intensifying
-              human impacts.', br(),
-      em('Science'), '(2021). doi:10.1126/science.abe6731.',
-      href='https://doi.org/10.1126/science.abe6731', target = '_blank'))
+    div(id = 'sidebar_note',
+        h2('Visualizing human impacts on at-risk marine biodiversity',
+           style = 'color:white' , align = 'left'),
+        tags$hr(),
+        p('A Shiny App to explore data from'),
+        h4('O\'Hara, C. C., M. Frazier, B. S. Halpern,',
+           a('At-risk marine biodiversity faces extensive, expanding, and intensifying 
+              human impacts.', href='https://doi.org/10.1126/science.abe6731'),
+           em('Science'), '(2021).', 
+           a('doi:10.1126/science.abe6731', href='https://doi.org/10.1126/science.abe6731',
+             target = '_blank'), '.')
+    ),
+    ### problematic sidebar credits:
+    column(2,
+           p('This Shiny app was developed in March 2021 by',
+             a('Ian Brunjes', href='https://brenniedev.github.io/ianbrunjes/', target = '_blank'),
+             'and', a('Casey O\'Hara.', href='http://www.oharascience.com/', target = '_blank'),
+             'Find the original paper at:'),
+           p(a('O\'Hara, C. C., M. Frazier, B. S. Halpern, At-risk marine biodiversity faces extensive,', br(), 'expanding, and intensifying
+              human impacts.',
+               em('Science'), '(2021). doi:10.1126/science.abe6731.',
+               href='https://doi.org/10.1126/science.abe6731', target = '_blank'))
     )
   )
+)
 
 ##################################
 ###            Body            ###
@@ -66,7 +65,7 @@ sidebar <- dashboardSidebar(
 body <- dashboardBody( 
   ## 3.0. CSS styles in header ----------------------------
   tags$head(
-    tags$script('document.title = "BD CHI Dashboard"'),
+    tags$script('document.title = "Dashboard: Visualizing human impacts on at-risk marine biodiversity"'),
     includeCSS(here('www', 'shiny_styles.css')),
     ),
   
