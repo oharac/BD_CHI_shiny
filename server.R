@@ -107,7 +107,7 @@ server <- function(input, output) {
     bindCache(input$selected_stressor)
   
   output$strCaption <- renderText({
-    sprintf('Boxplot shows distribution of % of range affected by
+    sprintf('Boxplot shows distribution of %% of range affected by
              %s, by taxon. Red diamond indicates mean value.', 
             tolower(input$selected_stressor))
   })
