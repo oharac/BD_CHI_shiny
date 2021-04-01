@@ -34,22 +34,23 @@ server <- function(input, output) {
                    color = 'grey90') +
       geom_point(data = means_df, shape = 23, size = 3,
                  color = 'grey90', fill = 'red') +
-      scale_fill_viridis_d() +
       scale_y_continuous(breaks = seq(0, 1, .25), labels = paste0(seq(0, 100, 25), '%')) +
+      scale_fill_viridis_d() +
       coord_flip() +
       theme_classic() +
-      theme(axis.title.x = element_blank(),
+      theme(text = element_text(color = 'white', size = 12),
+            axis.title.y = element_blank(),
             legend.position = 'none',
             plot.background  = element_rect(fill = 'black', color = NA),
             panel.background = element_rect(fill = 'black', color = NA),
             axis.text = element_text(color = 'white', size = 12)) +
-      labs(y = 'Percent of range affected')
+      labs(y = 'Percent of species range affected')
     return(taxa_plot)
   }) %>%
     bindCache(input$selected_taxon)
 
   output$taxonCaption <- renderText({
-    sprintf('Boxplot shows distribution of impacted range for %s (n = %s),
+    sprintf('Boxplot shows distribution of %% of range affected for %s (n = %s),
              by stressor and stressor category. Red diamond indicates
              mean value.', input$selected_taxon, n_distinct(taxa_impacts()$iucn_sid))
   })
@@ -90,23 +91,24 @@ server <- function(input, output) {
                    color = 'grey90') +
       geom_point(data = means_df, shape = 23, size = 3,
                  color = 'grey90', fill = 'red') +
-      scale_fill_viridis_d() +
       scale_y_continuous(breaks = seq(0, 1, .25), labels = paste0(seq(0, 100, 25), '%')) +
+      scale_fill_viridis_d() +
       coord_flip() +
       theme_classic() +
-      theme(axis.title.x = element_blank(),
+      theme(text = element_text(color = 'white', size = 12),
+            axis.title.y = element_blank(),
             legend.position = 'none',
             plot.background  = element_rect(fill = 'black', color = NA),
             panel.background = element_rect(fill = 'black', color = NA),
             axis.text = element_text(color = 'white', size = 12)) +
-      labs(y = 'Percent of range affected')
+      labs(y = 'Percent of species range affected')
     return(str_plot)
   }) %>%
     bindCache(input$selected_stressor)
   
   output$strCaption <- renderText({
-    sprintf('Boxplot shows distribution of impacted range by taxon for
-             %s. Red diamond indicates mean value.', 
+    sprintf('Boxplot shows distribution of %% of range affected by
+             %s, by taxon. Red diamond indicates mean value.', 
             tolower(input$selected_stressor))
   })
   
