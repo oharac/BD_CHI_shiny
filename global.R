@@ -141,6 +141,7 @@ intens_r_list <- parallel::mclapply(intens_fs, mc.cores = 1,
                                     }) %>%
   setNames(str_remove_all(intens_fs, '.+intens_|2.+'))
 
+message('creating calc_spp_df dataframe')
 calc_spp_df <- impact_df %>%
   filter(iucn_sid %in% c(8005, 19488, 39374, 2478, 7750, 21860, 132928, 22694870)) %>%
   select(iucn_sid, sciname, comname, desc) %>% 
@@ -152,3 +153,5 @@ calc_spp_df <- impact_df %>%
   group_by(iucn_sid, sciname, comname, desc) %>%
   summarize(strs = paste(str_name, collapse = ', '))
   
+print(calc_spp_df)
+

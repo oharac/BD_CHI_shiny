@@ -200,17 +200,22 @@ server <- function(input, output) {
       ### subtract decr from incr to get net
       i1 <- sprintf('%s_%s', cat, 'incr')
       i2 <- sprintf('%s_%s', cat, 'decr')
+      message('type = net, i1 = ', i1, ' i2 = ', i2)
       intens_df <- intens_r_list[[i1]] %>%
         full_join(intens_r_list[[i2]] %>%
                     select(x, y, pct_decr = pct_int)) %>%
         mutate(across(where(is.numeric), ~ifelse(is.na(.), 0, .)),
                trend = pct_int - pct_decr)
+      message('intens_df has ', nrow(intens_df), ' rows')
     } else {
       ### choose the proper version and just return it
       i <- sprintf('%s_%s', cat, type)
+      message('type = ', type, 'i = ', i)
+      
       intens_df <- intens_r_list[[i]] %>%
         rename(trend = pct_int)
     }
+    return(intens_df)
   }
   
   intens_map_reactive <- reactive({
@@ -225,6 +230,7 @@ server <- function(input, output) {
       ### push -100 to become 1 etc.
       bump <- ifelse(input$intens_type == 'net', 101, 1)
 
+      message('mapping intens_df')
       intens_map <- intens_df %>%
         mutate(col = colors_gradient[trend + bump]) %>%
         mutate(length = richness_xfm(nspp))
