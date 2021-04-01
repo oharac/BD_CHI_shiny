@@ -28,6 +28,7 @@ sidebar <- dashboardSidebar(
     menuItem('Global impact map', tabName = 'annual_impact', icon = icon('globe-americas')),
     menuItem('Global expansion map', tabName = 'expansion', icon = icon('globe-africa')),
     menuItem('Global intensification map', tabName = 'intensification', icon = icon('globe-asia')),
+    menuItem('Calculating impacted range', tabName = 'calc_impacts', icon = icon('calculator')),
     menuItem('Impact by taxon', tabName = 'taxa_info', icon = icon('fish')),
     menuItem('Impact by stressor', tabName = 'str_info', icon = icon('ship')),
     
@@ -101,6 +102,31 @@ body <- dashboardBody(
          htmlOutput('about')
        ),
      ),
+    
+    #################################
+    ###    Calculating impacts    ###
+    #################################
+    tabItem(tabName = 'calc_impacts',
+            div(id = 'temp_message_about',
+                h2('How do we calculate impacted range?',
+                   style = 'color:white' , align = 'left' ) ,
+                tags$hr()
+            ),
+            column(12,
+                   selectInput('selected_spp', label = 'Select a species', 
+                               choices  = c('Whale shark' = 19488,
+                                            'Oceanic white-tip shark' = 39374,
+                                            'Sea otter' = 7750,
+                                            'Sei whale' = 2475,
+                                            'Atl. bluefin tuna' = 21860,
+                                            'Marbled murrelet' = 22694870,
+                                            'Hawksbill turtle' = 8005,
+                                            'Cantharellus noumeae coral' = 133384),
+                               selected = 19488)#,
+                   # textOutput('taxonCaption'),
+                   # plotOutput('taxonPlot')
+            )
+    ),
     
     #################################
     ###  Impact by taxon boxplot  ###
