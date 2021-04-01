@@ -11,22 +11,7 @@ header <- dashboardHeader(
             align = 'left'),
   disable = FALSE, 
   titleWidth  = '100%'
-  ### tabs for: link to the article, link to Casey's page, link to Ian's page?
-  # tags$li(a(href = 'https://brenniedev.github.io/ianbrunjes/',
-  #           icon('user-circle'),
-  #           title = 'Ian Brunjes'),
-  #           class = 'dropdown'),
-  # tags$li(a(href = 'https://github.com/BrennieDev/OHI_shiny_app',
-  #           icon('github'),
-  #           title = 'GitHub'),
-  #           class = 'dropdown'),
-  # tags$li(a(href = 'https://www.instagram.com/ciscodoggodisco/',
-  #           icon('dog'),
-  #           title = 'Here is my dog.'),
-  #           class = 'dropdown')
  )
-
-
 
 
 ##################################
@@ -43,6 +28,7 @@ sidebar <- dashboardSidebar(
     menuItem('Global impact map', tabName = 'annual_impact', icon = icon('globe-americas')),
     menuItem('Global expansion map', tabName = 'expansion', icon = icon('globe-africa')),
     menuItem('Global intensification map', tabName = 'intensification', icon = icon('globe-asia')),
+    menuItem('Calculating impacted range', tabName = 'calc_impacts', icon = icon('calculator')),
     menuItem('Impact by taxon', tabName = 'taxa_info', icon = icon('fish')),
     menuItem('Impact by stressor', tabName = 'str_info', icon = icon('ship')),
     
@@ -62,13 +48,14 @@ sidebar <- dashboardSidebar(
     )
   )
 
+
 ##################################
 ###            Body            ###
 ##################################
 body <- dashboardBody( 
   ## 3.0. CSS styles in header ----------------------------
   tags$head(
-    tags$script('document.title = "BD CHI Dashboard"'),
+    tags$script('document.title = "Dashboard: Visualizing human impacts on at-risk marine biodiversity"'),
     includeCSS(here('www', 'shiny_styles.css')),
     ),
   
@@ -116,6 +103,46 @@ body <- dashboardBody(
          htmlOutput('about')
        ),
      ),
+    
+    #################################
+    ###    Calculating impacts    ###
+    #################################
+    tabItem(tabName = 'calc_impacts',
+            div(id = 'temp_message_about',
+                h2('How do we calculate impacted range?',
+                   style = 'color:white' , align = 'left' ) ,
+                tags$hr(),
+                p('For each species, we use IUCN Red List data to identify which stressors
+                   threaten it, and where those stressors overlap the species global range.
+                   Walk through the process on a few select species!'),
+                selectInput('calc_spp', label = 'Select a species', 
+                            choices  = c('Whale shark' = 19488,
+                                         'Oceanic white-tip shark' = 39374,
+                                         'Sea otter' = 7750,
+                                         'Fin whale' = 2478,
+                                         'Atl. bluefin tuna' = 21860,
+                                         'Marbled murrelet' = 22694870,
+                                         'Hawksbill turtle' = 8005,
+                                         'Lettuce coral' = 132928),
+                            selected = 19488)
+            ),
+            column(12, align = 'center',
+
+                   radioGroupButtons(
+                     inputId = 'calc_step',
+                     label = NULL,
+                     choices = c('Species range'     = 'range', 
+                                 'Stressors (count)' = 'strs', 
+                                 'Stressors (flat)'  = 'strs_flat',
+                                 'Impacts'           = 'impacts'),
+                     justified = TRUE,
+                     selected = 'range'
+                   ),
+                   imageOutput('calcMap', height = '300px', width = '600px'),
+                   textOutput('calcCaption')
+                   # plotOutput('taxonPlot')
+            )
+    ),
     
     #################################
     ###  Impact by taxon boxplot  ###

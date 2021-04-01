@@ -345,4 +345,38 @@ server <- function(input, output) {
     about[[input$about_select]]
     })
   
+  #################################
+  ###    Calculating impacts    ###
+  #################################
+  output$calcMap <- renderImage({
+    f <- normalizePath(
+      file.path('./www', sprintf('maps/%s_%s.png', input$calc_step, input$calc_spp))
+      )
+    list(src = f)
+  }, deleteFile = FALSE)
+  output$calcCaption <- renderText({
+    spp_info <- calc_spp_df %>%
+      filter(iucn_sid == input$calc_spp) %>%
+      mutate(comname = case_when(comname == 'Lettuce Coral' ~'Lettuce coral', 
+                                 TRUE ~ paste('The', tolower(comname))))
+    
+    range_text <- sprintf('Global range for %s (%s, taxon: %s)', 
+                          tolower(spp_info$comname), spp_info$sciname, spp_info$desc)
+    str_ct_text <- sprintf('Stressors that threaten %s (%s): %s.  Map shows how many of 
+                            these stressors are acting in any particular cell (2013 data).', 
+                           tolower(spp_info$comname), spp_info$sciname, tolower(spp_info$strs))
+    str_flat_text <- sprintf('Stressors, flattened to show presence of any stressor (%s) that threaten %s (%s)  (2013 data).', 
+                             tolower(spp_info$strs), tolower(spp_info$comname), spp_info$sciname)
+    impact_text   <- sprintf('"Impact" area indicates locations where range of %s (%s) overlaps one 
+                             or more stressors that threaten it (%s).  "Refugia" are parts of the species 
+                             range free from significant impacts; "no impact" areas indicate locations
+                             where stressors act outside of the species range (2013 data).', 
+                             tolower(spp_info$comname), spp_info$sciname, tolower(spp_info$strs))
+    txt <- switch(input$calc_step,
+                  range     = range_text,
+                  strs      = str_ct_text,
+                  strs_flat = str_flat_text,
+                  impacts   = impact_text)
+  })
+  
 }
