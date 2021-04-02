@@ -1,6 +1,7 @@
 # global.R
-
-message('\n\n\n\n\n\n\n\n\n\n\nrunning global.R')
+message('########################################')
+message('\n\n\n\n\n\n\n\n\n\n\nrunning global.R:  ', Sys.time())
+message('########################################\n\n')
 
 ## Load packages
 library(shinydashboard)
@@ -125,14 +126,34 @@ impact_df <- spp_impact_data %>%
          impact_pct = ifelse(is.nan(impact_pct), 0, impact_pct)) %>%
   filter(stressor != 'cum_ocean')
 
+########################################################
+###    generate dataframe for impact calc species    ###
+########################################################
+
+message('creating calc_spp_df dataframe')
+calc_spp_df <- impact_df %>%
+  filter(iucn_sid %in% c(8005, 19488, 39374, 2478, 7750, 21860, 132928, 22694870)) %>%
+  select(iucn_sid, sciname, comname, desc) %>% 
+  distinct() %>%
+  left_join(spp_impact_data) %>%
+  left_join(str_names, by = c('stressor' = 'str_field')) %>%
+  filter(!is.na(impact_km2)) %>%
+  filter(!str_detect(stressor, 'cum_')) %>%
+  group_by(iucn_sid, sciname, comname, desc) %>%
+  summarize(strs = paste(str_name, collapse = ', '))
+
+message('calc_spp_df has ', nrow(calc_spp_df), ' rows')
+
+
 #######################################################
 ### generate list of raster/dfs for intensification ###
 #######################################################
 message('generating list of raster dfs for intensification')
 
-intens_fs <- list.files(here::here('data/intens_maps'), 
+intens_fs <- list.files(here('data/intens_maps'), 
                         pattern = 'intens_.+_latlong.tif',
                         full.names = TRUE)
+message('intensification maps: ', paste(intens_fs, collapse = ', '))
 
 intens_r_list <- lapply(intens_fs, 
                         FUN = function(f) { ### f <- intens_fs[1]
@@ -148,17 +169,4 @@ intens_r_list <- lapply(intens_fs,
                         }) %>%
   setNames(str_remove_all(intens_fs, '.+intens_|2.+'))
 
-message('creating calc_spp_df dataframe')
-calc_spp_df <- impact_df %>%
-  filter(iucn_sid %in% c(8005, 19488, 39374, 2478, 7750, 21860, 132928, 22694870)) %>%
-  select(iucn_sid, sciname, comname, desc) %>% 
-  distinct() %>%
-  left_join(spp_impact_data) %>%
-  left_join(str_names, by = c('stressor' = 'str_field')) %>%
-  filter(!is.na(impact_km2)) %>%
-  filter(!str_detect(stressor, 'cum_')) %>%
-  group_by(iucn_sid, sciname, comname, desc) %>%
-  summarize(strs = paste(str_name, collapse = ', '))
-  
-message('calc_spp_df has ', nrow(calc_spp_df), ' rows')
-
+message('########################################\n\n')
