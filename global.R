@@ -1,6 +1,6 @@
 # global.R
 
-message('running global.R')
+message('\n\n\n\n\n\n\n\n\n\n\nrunning global.R')
 
 ## Load packages
 library(shinydashboard)
@@ -35,7 +35,8 @@ richness_xfm <- function(x) {
   x^.7 ### a little less drastic than sqrt
 }
 
-taxa_names <- read_csv(here('data/iucn_taxa_2020-1.csv')) %>%
+taxa_names <- read_csv(here('data/iucn_taxa_2020-1.csv'),
+                       col_types = cols('iucn_sid' = 'i')) %>%
   select(tx_field = assess_gp, tx_name = desc) %>%
   distinct() %>%
   bind_rows(data.frame(tx_field = 'all', tx_name = 'all at-risk species')) %>%
@@ -108,10 +109,13 @@ impact_diff_list <- lapply(strs_vec,
 #########################################
 message('reading in impacted range by species')
 
-spp_impact_data <- read_csv(here::here('data', 'imp_range_by_spp_2013.csv')) %>%
+spp_impact_data <- read_csv(here::here('data', 'imp_range_by_spp_2013.csv'), 
+                            col_types = cols('iucn_sid' = 'i')) %>%
   distinct()
-spp_risk <- read_csv(here::here('data', 'iucn_risk_2020-1.csv'))
-spp_taxa <- read_csv(here::here('data', 'iucn_taxa_2020-1.csv'))
+spp_risk <- read_csv(here::here('data', 'iucn_risk_2020-1.csv'), 
+                     col_types = cols('iucn_sid' = 'i'))
+spp_taxa <- read_csv(here::here('data', 'iucn_taxa_2020-1.csv'), 
+                     col_types = cols('iucn_sid' = 'i'))
 
 impact_df <- spp_impact_data %>%
   dt_join(spp_risk, type = 'left', by = 'iucn_sid') %>%

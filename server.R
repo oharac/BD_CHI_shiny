@@ -355,9 +355,11 @@ server <- function(input, output) {
   ###    Calculating impacts    ###
   #################################
   output$calcMap <- renderImage({
-    f <- normalizePath(
-      file.path('./www', sprintf('maps/%s_%s.png', input$calc_step, input$calc_spp))
-      )
+    # f <- normalizePath(
+    #   file.path('./www', sprintf('maps/%s_%s.png', input$calc_step, input$calc_spp))
+    #   )
+    f <- sprintf(here('www/maps/%s_%s.png'), input$calc_step, input$calc_spp)
+    
     list(src = f)
   }, deleteFile = FALSE)
   output$calcCaption <- renderText({
